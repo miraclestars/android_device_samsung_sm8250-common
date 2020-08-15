@@ -213,7 +213,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.enableadvancedscan=true \
     persist.vendor.radio.sib16_support=1 \
-    ro.telephony.default_network=9 \
+    ro.telephony.default_network=26,9 \
     telephony.lteOnCdmaDevice=0 \
     vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
 
