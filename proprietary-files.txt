@@ -880,9 +880,6 @@ vendor/lib64/vendor.qti.imsrtpservice@2.1.so
 vendor/lib/vendor.qti.hardware.seccam@1.0.so
 vendor/lib64/vendor.qti.hardware.seccam@1.0.so
 
-# Secure Processing Unit
-vendor/bin/hw/vendor.qti.spu@1.0-service:product/vendor_overlay/29/bin/hw/vendor.qti.spu@1.0-service
-
 # Sensors
 vendor/bin/sscrpcd
 vendor/lib/libsensorslog.so
