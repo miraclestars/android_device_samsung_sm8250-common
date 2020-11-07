@@ -6,3 +6,4 @@ persist.sys.softsim.type=default
 ro.kernel.qemu=0
 net.bt.name=Android
 ro.vendor.qti.va_aosp.support=1
+ro.crypto.dm_default_key.options_format.version=2
