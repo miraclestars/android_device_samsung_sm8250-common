@@ -28,6 +28,9 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/radio          u:object_r:radio_block_device:s0
 
 /dev/batch_io                                u:object_r:io_device:s0
+/dev/sec-nfc                                 u:object_r:nfc_device:s0
+/dev/pn547                                   u:object_r:nfc_device:s0
+/dev/p61                                     u:object_r:nfc_device:s0
 /dev/ssp_sensorhub                           u:object_r:ssp_device:s0
 
 # bluetooth
