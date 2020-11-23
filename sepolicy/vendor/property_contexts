@@ -14,3 +14,8 @@ persist.vendor.cbd.                          u:object_r:vendor_radio_prop:s0
 ### radio
 ro.multisim.                                 u:object_r:vendor_radio_prop:s0
 ro.vendor.multisim.                          u:object_r:vendor_radio_prop:s0
+
+# Thermal
+persist.sys.thermal.                         u:object_r:thermal_engine_prop:s0
+sys.thermal.                                 u:object_r:thermal_engine_prop:s0
+vendor.sys.thermal.                          u:object_r:thermal_engine_prop:s0
