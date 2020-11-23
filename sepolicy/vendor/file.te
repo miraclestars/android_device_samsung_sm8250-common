@@ -42,6 +42,7 @@ type epicd_socket, file_type, data_file_type;
 ### SYSFS
 type sysfs_argos, sysfs_type, r_fs_type, fs_type;
 type sysfs_bbd, sysfs_type, r_fs_type, fs_type;
+type sysfs_fsc, sysfs_type, r_fs_type, fs_type;
 type sysfs_iio, sysfs_type, r_fs_type, fs_type;
 type sysfs_input, sysfs_type, r_fs_type, fs_type;
 type sysfs_mdnie, sysfs_type, r_fs_type, fs_type;

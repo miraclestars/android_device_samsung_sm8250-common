@@ -120,6 +120,9 @@
 /mnt/vendor/efs/tee(/.*)?                    u:object_r:tee_efs_file:s0
 /mnt/vendor/efs/wifi(/.*)?                   u:object_r:wifi_efs_file:s0
 
+### Sys files
+/sys/module/fsc(/.*)?                        u:object_r:sysfs_fsc:s0
+
 ### VENDOR
 /(vendor|system/vendor)/bin/cbd                  u:object_r:cbd_exec:s0
 /(vendor|system/vendor)/bin/secril_config_svc    u:object_r:secril_config_svc_exec:s0
