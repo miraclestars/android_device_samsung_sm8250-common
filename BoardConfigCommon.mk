@@ -228,33 +228,11 @@ BOARD_VENDOR := samsung
 VENDOR_SECURITY_PATCH := 2020-09-01
 
 # SELinux
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
-    device/qcom/sepolicy/generic/public \
-    device/qcom/sepolicy/qva/public \
-    $(COMMON_PATH)/sepolicy/public
+include device/qcom/sepolicy_vndr/SEPolicy.mk
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/qcom/sepolicy/generic/private \
-    device/qcom/sepolicy/qva/private \
-    $(COMMON_PATH)/sepolicy/private
-
-PRODUCT_PUBLIC_SEPOLICY_DIRS += \
-    device/qcom/sepolicy/product/public
-
-PRODUCT_PRIVATE_SEPOLICY_DIRS += \
-    device/qcom/sepolicy/product/private
-
-BOARD_SEPOLICY_DIRS += \
-    device/qcom/sepolicy/generic/vendor/common \
-    device/qcom/sepolicy/generic/vendor/$(TARGET_BOARD_PLATFORM) \
-    device/qcom/sepolicy/generic/vendor/test \
-    device/qcom/sepolicy/qva/vendor/common \
-    device/qcom/sepolicy/qva/vendor/common/sysmonapp \
-    device/qcom/sepolicy/qva/vendor/ssg \
-    device/qcom/sepolicy/qva/vendor/$(TARGET_BOARD_PLATFORM) \
-    device/qcom/sepolicy/qva/vendor/test \
-    device/qcom/sepolicy/timeservice \
-    $(COMMON_PATH)/sepolicy/vendor
+BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/public
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true
