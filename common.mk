@@ -286,7 +286,7 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     init.y2q.rc \
     init.y2qdcmw.rc \
-    ueventd.rc
+    ueventd.qcom.rc
 
 # Input
 PRODUCT_COPY_FILES += \
