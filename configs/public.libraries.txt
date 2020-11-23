@@ -10,3 +10,5 @@ libqti-perfd-client.so
 libsdsprpc.so
 libsnpe_dsp_v66_domains_v2_skel.so
 libswldc_capture_core.camera.samsung.so
+libprotobuf-cpp-full.so
+libprotobuf-cpp-lite.so
