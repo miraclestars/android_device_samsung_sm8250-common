@@ -944,7 +944,7 @@ vendor/etc/thermal-engine.conf
 -vendor/lib64/libthermalclient.so
 
 # Time services
--vendor/app/TimeService/TimeService.apk;PRESIGNED
+-vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
 vendor/lib/libtime_genoff.so
 vendor/lib64/libtime_genoff.so
