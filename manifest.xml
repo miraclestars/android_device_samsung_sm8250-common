@@ -828,12 +828,12 @@
     <hal format="hidl">
         <name>vendor.qti.hardware.servicetracker</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>1.2</version>
         <interface>
             <name>IServicetracker</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::IServicetracker/default</fqname>
+        <fqname>@1.2::IServicetracker/default</fqname>
     </hal>
     <hal format="hidl" override="true">
         <name>vendor.qti.hardware.soter</name>
