@@ -25,6 +25,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+import /vendor/etc/init/hw/init.qti.ufs.rc
 import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.msm.usb.configfs.rc
 import /vendor/etc/init/hw/init.qcom.test.rc
@@ -559,9 +560,6 @@ on property:persist.debug.trace=1
     mkdir /data/core 0777 root root
     write /proc/sys/kernel/core_pattern "/data/core/%E.%p.%e"
 
-on property:init.svc.wpa_supplicant=stopped
-    stop dhcpcd
-
 on property:vendor.bluetooth.dun.status=running
     start vendor.bt-dun
 
@@ -594,9 +592,6 @@ service qcom-c_main-sh /vendor/bin/init.class_main.sh
 on property:vold.decrypt=trigger_restart_framework
     start qcom-c_main-sh
     start wcnss-service
-
-on property:persist.env.fastdorm.enabled=true
-    setprop persist.radio.data_no_toggle 1
 
 service vendor.qrtr-ns /vendor/bin/qrtr-ns -f
     class core
