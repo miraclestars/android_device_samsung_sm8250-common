@@ -13,5 +13,5 @@ file_type_auto_trans(hal_fingerprint_default, vendor_data_file, biometrics_vendo
 allow hal_fingerprint_default biometrics_vendor_data_file:file create_file_perms;
 
 # /sys/class/fingerprint/
-allow hal_fingerprint_default sysfs_fingerprint:dir r_dir_perms;
-allow hal_fingerprint_default sysfs_fingerprint:file r_file_perms;
+allow hal_fingerprint_default vendor_sysfs_fingerprint:dir r_dir_perms;
+allow hal_fingerprint_default vendor_sysfs_fingerprint:file r_file_perms;

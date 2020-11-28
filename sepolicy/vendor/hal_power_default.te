@@ -1,5 +1,5 @@
 # /dev/cpu_dma_latency
-allow hal_power_default latency_device:chr_file rw_file_perms;
+allow hal_power_default vendor_latency_device:chr_file rw_file_perms;
 
 # /dev/stune/top-app/schedtune.boost
 allow hal_power_default cgroup:file rw_file_perms;
@@ -23,5 +23,5 @@ allow hal_power_default sysfs_touchscreen_writable:file rw_file_perms;
 # /sys/devices/system/cpu/cpu[0-9]/cpufreq/scaling_max_freq
 allow hal_power_default sysfs_devices_system_cpu:file rw_file_perms;
 
-allow hal_power_default sysfs_kgsl:file { open write };
-allow hal_power_default sysfs_devfreq:file { open write };
+allow hal_power_default vendor_sysfs_kgsl:file { open write };
+allow hal_power_default vendor_sysfs_devfreq:file { open write };

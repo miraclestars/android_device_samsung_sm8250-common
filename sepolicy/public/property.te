@@ -1,5 +1,2 @@
-### CAMERA
-type exported_camera_prop, property_type;
-
 ### RFKILL
 type rfkilldisabled_prop, property_type;

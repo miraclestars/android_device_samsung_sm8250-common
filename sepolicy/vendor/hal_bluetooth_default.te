@@ -6,7 +6,7 @@ set_prop(hal_bluetooth_default, wifi_log_prop)
 set_prop(hal_bluetooth_default, exported_bluetooth_prop)
 
 # /dev/ttySAC[0-9]
-allow hal_bluetooth_default bt_device:chr_file rw_file_perms;
+allow hal_bluetooth_default vendor_bt_device:chr_file rw_file_perms;
 
 # /mnt/vendor
 allow hal_bluetooth_default mnt_vendor_file:dir search;

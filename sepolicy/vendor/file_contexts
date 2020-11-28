@@ -18,7 +18,7 @@
 /data/vendor/gps(/.*)?                       u:object_r:gps_vendor_data_file:s0
 /data/vendor/log(/.*)?                       u:object_r:log_vendor_data_file:s0
 /data/vendor/log/cbd(/.*)?                   u:object_r:log_cbd_vendor_data_file:s0
-/data/vendor/secradio(/.*)?                  u:object_r:radio_vendor_data_file:s0
+/data/vendor/secradio(/.*)?                  u:object_r:vendor_radio_vendor_data_file:s0
 /data/vendor/thermal(/.*)?                   u:object_r:thermal_data_file:s0
 
 ### DEV
@@ -35,7 +35,7 @@
 /dev/ssp_sensorhub                           u:object_r:ssp_device:s0
 
 # bluetooth
-/dev/ttySAC[0-9]                             u:object_r:bt_device:s0
+/dev/ttySAC[0-9]                             u:object_r:vendor_bt_device:s0
 
 ### epic
 /dev/mode                                    u:object_r:epic_device:s0
