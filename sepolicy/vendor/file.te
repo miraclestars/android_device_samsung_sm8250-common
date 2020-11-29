@@ -16,6 +16,7 @@ allow spu_file labeledfs:filesystem associate;
 type dsp_file, file_type, contextmount_type, vendor_file_type;
 
 ### DATA
+type acdbdelta_vendor_data_file, file_type, data_file_type;
 type biometrics_vendor_data_file, file_type, data_file_type;
 type conn_vendor_data_file, file_type, data_file_type;
 type gps_vendor_data_file, file_type, data_file_type;
