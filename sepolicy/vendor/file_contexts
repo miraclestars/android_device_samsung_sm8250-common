@@ -43,6 +43,9 @@
 
 ### Fingerprint sensor
 /dev/esfp[0-9]                               u:object_r:fp_sensor_device:s0
+/dev/qbt2000_fd                              u:object_r:qbt_device:s0
+/dev/qbt2000_ipc                             u:object_r:qbt_device:s0
+/dev/qbtspi                                  u:object_r:qbt_device:s0
 
 ### gnss/gps
 /dev/bbd_control                             u:object_r:bbd_device:s0
