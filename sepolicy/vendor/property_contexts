@@ -3,7 +3,6 @@ camera.on                                    u:object_r:vendor_camera_prop:s0
 persist.camera.                              u:object_r:vendor_camera_prop:s0
 persist.debug.set.fixedfps                   u:object_r:vendor_camera_prop:s0
 persist.debug.sf.showfps                     u:object_r:vendor_camera_prop:s0
-persist.vendor.camera.                       u:object_r:vendor_camera_prop:s0
 ro.camera.                                   u:object_r:vendor_camera_prop:s0
 ro.vendor.camera.                            u:object_r:vendor_camera_prop:s0
 vendor.camera.                               u:object_r:vendor_camera_prop:s0
