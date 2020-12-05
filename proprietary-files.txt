@@ -940,7 +940,9 @@ vendor/lib64/vendor.qti.hardware.scve.panorama@1.0.so
 # Thermal
 vendor/bin/thermal-engine
 vendor/etc/thermal-engine.conf
+vendor/lib/hw/thermal.kona.so
 -vendor/lib/libthermalclient.so
+vendor/lib64/hw/thermal.kona.so
 -vendor/lib64/libthermalclient.so
 
 # Time services
