@@ -155,9 +155,6 @@ TARGET_KERNEL_SOURCE := kernel/samsung/sm8250
 # Keystore
 TARGET_KEYMASTER_VARIANT := samsung
 
-# Media
-TARGET_PROVIDES_LIBPLATFORMCONFIG := true
-
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 
