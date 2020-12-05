@@ -4,6 +4,8 @@
  * Copyright (C) 2020 The LineageOS Project
 -->
 <resources>
+    <!-- Preferred refresh rate at keyguard, if supported by the display -->
+    <integer name="config_keyguardRefreshRate">120</integer>
     <bool name="doze_display_state_supported">true</bool>
     <bool name="doze_suspend_display_state_supported">true</bool>
 </resources>
