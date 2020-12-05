@@ -28,8 +28,4 @@
 #
 #
 
-on property:sys.boot_completed=1
-# FeliCaLock
-    mkdir /efs/sec_efs/FeliCaLock 0775 system vendor_felicalock
-    chmod 0775 /efs/sec_efs/FeliCaLock
-    chown system:vendor_felicalock /efs/sec_efs/FeliCaLock
+
