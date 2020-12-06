@@ -7,3 +7,4 @@ allow init hwservicemanager:binder transfer;
 allow init platform_app:binder call;
 allow init vendor_sysfs_battery_supply:lnk_file read;
 allow init sysfs_sec_touchscreen:file { open write };
+allow init sysfs_vibrator:lnk_file { open read };
