@@ -59,3 +59,6 @@ allow hal_sensors_default sysfs_sec_touchscreen:lnk_file r_file_perms;
 # /sys/class/sec/tsp/ear_detect_enable
 # /sys/class/sec/tsp/cmd
 allow hal_sensors_default sysfs_touchscreen_writable:file rw_file_perms;
+
+# Allow hal_sensors_default to write sysfs file
+allow hal_sensors_default sysfs:file { read write };
