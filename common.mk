@@ -70,11 +70,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
 
 PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-service \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.audio.common@2.0-util \
     android.hardware.audio.common@5.0-util \
+    android.hardware.audio.service \
     android.hardware.soundtrigger@2.2-impl \
     audio.a2dp.default \
     audio.primary.default \
