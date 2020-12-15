@@ -148,6 +148,9 @@ BOARD_MKBOOTIMG_ARGS += \
      --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) \
      --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
 
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    DTC=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc
+
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_SOURCE := kernel/samsung/sm8250
