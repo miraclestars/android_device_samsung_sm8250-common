@@ -1,0 +1,16 @@
+### CAMERA
+persist.camera.                              u:object_r:vendor_camera_prop:s0
+
+### CACHE STATUS
+persist.cache_status_64                      u:object_r:cache_status_prop:s0
+persist.cache_status_32                      u:object_r:cache_status_prop:s0
+persist.cache_integrity_64                   u:object_r:cache_status_prop:s0
+persist.cache_integrity_32                   u:object_r:cache_status_prop:s0
+
+### cbd
+vendor.cbd.                                  u:object_r:vendor_cbd_prop:s0
+persist.vendor.cbd.                          u:object_r:vendor_radio_prop:s0
+
+### radio
+ro.multisim.                                 u:object_r:vendor_radio_prop:s0
+ro.vendor.multisim.                          u:object_r:vendor_radio_prop:s0

@@ -1,0 +1,2 @@
+type cache_status_prop, property_type;
+type vendor_cbd_prop, property_type;

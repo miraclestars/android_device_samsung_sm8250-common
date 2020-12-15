@@ -1,0 +1,8 @@
+allow hal_lineage_touch_default {
+    sysfs_sec_touchscreen
+    sysfs_sec_touchkey
+}:dir search;
+
+allow hal_lineage_touch_default {
+    sysfs_sec_touchscreen
+}:file rw_file_perms;

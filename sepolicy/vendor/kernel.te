@@ -1,0 +1,7 @@
+# /vendor/firmware/
+allow kernel vendor_firmware_file:dir r_dir_perms;
+allow kernel vendor_firmware_file:file r_file_perms;
+
+allow kernel sysfs_sec_key:dir { search };
+allow kernel sysfs_sec_key:file { open read };
+allow kernel self:capability kill;
