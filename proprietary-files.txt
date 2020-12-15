@@ -30,8 +30,8 @@ vendor/lib/rfsa/adsp/libsns_device_mode_skel.so
 vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
 
 # ANT+ (system)
--lib/libantradio.so:system_ext/lib/libantradio.so
--lib64/libantradio.so:system_ext/lib64/libantradio.so
+-system/lib/libantradio.so:system_ext/lib/libantradio.so
+-system/lib64/libantradio.so:system_ext/lib64/libantradio.so
 product/lib/com.qualcomm.qti.ant@1.0.so
 product/lib64/com.qualcomm.qti.ant@1.0.so
 
@@ -84,7 +84,7 @@ vendor/lib/libbthost_if.so
 vendor/lib64/libbthost_if.so
 
 # Bluetooth (aptX)
-lib64/libaptX_encoder.so:product/lib64/libaptX_encoder.so
+system/lib64/libaptX_encoder.so:product/lib64/libaptX_encoder.so
 
 # Camera
 vendor/lib/camera/com.qti.eeprom.truly_cmb433.so
@@ -314,7 +314,7 @@ vendor/lib64/vendor.display.postproc@1.0.so
 # DPM
 product/framework/com.qti.dpmframework.jar
 product/framework/dpmapi.jar
-framework/tcmclient.jar
+system/framework/tcmclient.jar
 vendor/lib/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 
@@ -368,8 +368,8 @@ vendor/lib64/libStDrvInt.so
 vendor/lib64/libtzdrmgenprov.so
 
 # Fingerprint
-etc/permissions/com.sec.feature.fingerprint_manager_service.xml
--priv-app/BiometricSetting/BiometricSetting.apk
+system/etc/permissions/com.sec.feature.fingerprint_manager_service.xml
+-system/priv-app/BiometricSetting/BiometricSetting.apk
 vendor/bin/hw/vendor.samsung.hardware.biometrics.fingerprint@3.0-service
 vendor/etc/init/vendor.samsung.hardware.biometrics.fingerprint@3.0-service.rc
 vendor/lib/libbauthserver.so
@@ -594,8 +594,8 @@ vendor/lib64/libnpu.so
 vendor/lib64/libopenvx.so
 
 # Media
-lib/libmmosal.so
-lib64/libmmosal.so
+system/lib/libmmosal.so
+system/lib64/libmmosal.so
 product/lib/vendor.qti.hardware.vpp@1.1.so
 product/lib64/vendor.qti.hardware.vpp@1.1.so
 vendor/etc/configstore/vpp.configstore.xml
@@ -673,14 +673,14 @@ vendor/etc/init/android.hardware.neuralnetworks@1.2-service-qti.rc
 vendor/lib64/libhexagon_nn_stub.so
 
 # NFC
--app/NfcFn/NfcFn.apk
-etc/felica_access.xml
-etc/libnfc-nci.conf
-etc/nfcee_access.xml
-etc/permissions/com.publicnfc.xml
-framework/com.publicnfc.jar
-lib64/libnfc-fn.so
-lib64/libnfc_fn_jni.so
+-system/app/NfcFn/NfcFn.apk
+system/etc/felica_access.xml
+system/etc/libnfc-nci.conf
+system/etc/nfcee_access.xml
+system/etc/permissions/com.publicnfc.xml
+system/framework/com.publicnfc.jar
+system/lib64/libnfc-fn.so
+system/lib64/libnfc_fn_jni.so
 vendor/bin/hw/sec.android.hardware.nfc@1.2-service
 vendor/etc/init/sec.android.hardware.nfc@1.2-service.rc
 vendor/etc/permissions/android.hardware.nfc.uicc.xml
@@ -763,8 +763,8 @@ vendor/lib/libGPTEE_vendor.so
 vendor/lib64/libGPTEE_vendor.so
 
 # Radio
-etc/permissions/privapp-permissions-qti.xml
-etc/sysconfig/qti_whitelist.xml
+system/etc/permissions/privapp-permissions-qti.xml
+system/etc/sysconfig/qti_whitelist.xml
 product/framework/embmslibrary.jar
 vendor/bin/adpl
 vendor/bin/ATFWD-daemon
@@ -836,7 +836,7 @@ product/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
 product/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml
 product/etc/permissions/com.qualcomm.qti.imscmservice-V2.2-java.xml
 product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml
-etc/permissions/com.qualcomm.qti.imscmservice.xml
+system/etc/permissions/com.qualcomm.qti.imscmservice.xml
 product/framework/com.qualcomm.qti.imscmservice-V2.0-java.jar
 product/framework/com.qualcomm.qti.imscmservice-V2.1-java.jar
 product/framework/com.qualcomm.qti.imscmservice-V2.2-java.jar
