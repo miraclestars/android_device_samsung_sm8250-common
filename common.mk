@@ -552,7 +552,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.3-service.samsung \
     android.hardware.vibrator@1.0-service.samsung-haptic \
-    vendor.qti.hardware.vibrator@1.2-service
+    vendor.qti.hardware.vibrator.service
 
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 29
