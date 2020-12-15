@@ -1,0 +1,176 @@
+
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+#
+import /vendor/etc/init/init.sensors.spu.rc
+
+on boot
+# SSWAP
+    write /proc/sys/vm/swappiness 130
+
+on post-fs-data
+# Samsung Pay
+    mkdir /efs/pfw_data 0760 vendor_spay vendor_spay
+
+# MST/NFC Switch
+    chown vendor_spay system /dev/mst_ctrl
+    chmod 0660 /dev/mst_ctrl
+
+# Cirrus Amp Calibration
+    chown system audio /sys/class/cirrus/cirrus_cal/status
+    chown system audio /sys/class/cirrus/cirrus_cal/rdc
+    chown system audio /sys/class/cirrus/cirrus_cal/rdc_r
+    chown system audio /sys/class/cirrus/cirrus_cal/temp
+    chown system audio /sys/class/cirrus/cirrus_cal/temp_r
+    chown system audio /sys/class/cirrus/cirrus_cal/v_status
+    chown system audio /sys/class/cirrus/cirrus_cal/v_validation
+    chown system audio /sys/class/cirrus/cirrus_cal/v_validation_r
+    chown system audio /sys/class/cirrus/cirrus_cal/vsc
+    chown system audio /sys/class/cirrus/cirrus_cal/vsc_r
+    chown system audio /sys/class/cirrus/cirrus_cal/isc
+    chown system audio /sys/class/cirrus/cirrus_cal/isc_r
+    mkdir /efs/cirrus 0770 audioserver audio
+    chown audioserver audio /efs/cirrus/temp_cal
+    chown audioserver audio /efs/cirrus/rdc_cal
+    chown audioserver audio /efs/cirrus/rdc_cal_r
+    chown audioserver audio /efs/cirrus/vsc_cal
+    chown audioserver audio /efs/cirrus/vsc_cal_r
+    chown audioserver audio /efs/cirrus/isc_cal
+    chown audioserver audio /efs/cirrus/isc_cal_r
+    chmod 0660 /efs/cirrus/temp_cal
+    chmod 0660 /efs/cirrus/rdc_cal
+    chmod 0660 /efs/cirrus/rdc_cal_r
+    chmod 0660 /efs/cirrus/vsc_cal
+    chmod 0660 /efs/cirrus/vsc_cal_r
+    chmod 0660 /efs/cirrus/isc_cal
+    chmod 0660 /efs/cirrus/isc_cal_r
+
+# Cirrus Amp power
+    chown system audio /sys/class/cirrus/cirrus_pwr/status
+    chown system audio /sys/class/cirrus/cirrus_pwr/value
+    chown system audio /sys/class/cirrus/cirrus_pwr/value_r
+    chown system audio /sys/class/cirrus/cirrus_pwr/spk_t
+    chown system audio /sys/class/cirrus/cirrus_pwr/spk_t_r
+    chown system audio /sys/class/cirrus/cirrus_pwr/env_temp
+    chown system audio /sys/class/cirrus/cirrus_pwr/env_temp_r
+
+# Cirrus Amp Bigdata
+    chown system audio /sys/class/audio/amp/r_temperature_max
+    chown system audio /sys/class/audio/amp/r_temperature_overcount
+    chown system audio /sys/class/audio/amp/r_excursion_max
+    chown system audio /sys/class/audio/amp/r_excursion_overcount
+    chown system audio /sys/class/audio/amp/l_temperature_max
+    chown system audio /sys/class/audio/amp/l_temperature_overcount
+    chown system audio /sys/class/audio/amp/l_excursion_max
+    chown system audio /sys/class/audio/amp/l_excursion_overcount
+
+# setup cgroup freezer for freecess
+    mkdir /dev/freezer
+    mount cgroup none /dev/freezer freezer
+    mkdir /dev/freezer/frozen
+    mkdir /dev/freezer/thaw
+    write /dev/freezer/frozen/freezer.state FROZEN
+    write /dev/freezer/thaw/freezer.state THAWED
+
+# MARs for freecess
+    chown system system /dev/freezer
+    chown system system /dev/freezer/frozen
+    chown system system /dev/freezer/frozen/tasks
+    chown system system /dev/freezer/frozen/cgroup.procs
+    chown system system /dev/freezer/frozen/freezer.state
+    chown system system /dev/freezer/thaw
+    chown system system /dev/freezer/thaw/tasks
+    chown system system /dev/freezer/thaw/cgroup.procs
+
+# MARs for freecess
+    chmod 0644 /dev/freezer/frozen/tasks
+    chmod 0644 /dev/freezer/frozen/cgroup.procs
+    chmod 0644 /dev/freezer/frozen/freezer.state
+    chmod 0644 /dev/freezer/thaw/tasks
+    chmod 0644 /dev/freezer/thaw/cgroup.procs
+
+# Create carrier folder for HiddenMenu
+on post-fs
+     mkdir /efs/carrier 0755 system system	
+
+# Create mb_po folder for Activation TA
+    mkdir /efs/mb_po 0700 system system
+
+# setup cgroup freezer
+    mkdir /dev/freezer
+    mount cgroup none /dev/freezer freezer
+
+#olaf dex2oat freezer
+    mkdir /dev/freezer/olaf
+    write /dev/freezer/olaf/freezer.state THAWED
+    chown system system /dev/freezer/olaf
+    chown system system /dev/freezer/olaf/tasks
+    chown system system /dev/freezer/olaf/cgroup.procs
+    chown system system /dev/freezer/olaf/freezer.state
+    chmod 0644 /dev/freezer/olaf/tasks
+    chmod 0644 /dev/freezer/olaf/cgroup.procs
+    chmod 0644 /dev/freezer/olaf/freezer.state
+
+# Slowdown freezer
+    mkdir /dev/freezer/abnormal
+    write /dev/freezer/abnormal/freezer.state THAWED
+    chown system system /dev/freezer/abnormal
+    chown system system /dev/freezer/abnormal/tasks
+    chown system system /dev/freezer/abnormal/cgroup.procs
+    chown system system /dev/freezer/abnormal/freezer.state
+    chmod 0644 /dev/freezer/abnormal/tasks
+    chmod 0644 /dev/freezer/abnormal/cgroup.procs
+    chmod 0644 /dev/freezer/abnormal/freezer.state
+
+# Pageboostd
+on property:sys.boot_completed=1
+    start pageboostd
+    start vramdiskd
+
+service pageboostd /system/bin/pageboostd
+    class main
+    user system
+    group system mount radio net_bt sdcard_rw shell media media_rw
+    socket pageboostd seqpacket 0660 system system
+    disabled
+
+service vramdiskd /system/bin/vramdiskd
+    class core
+    user system
+    group system install mount radio net_bt sdcard_rw shell media media_rw
+    capabilities SYS_RESOURCE
+    socket vramdiskd seqpacket 0660 system system
+    disabled
+
+# SSWAP
+service swapon /sbin/sswap -s -z -f 2560
+    class core
+    user root
+    group root
+    seclabel u:r:sswap:s0
+    oneshot

@@ -1,0 +1,8 @@
+# Status of softsim
+persist.sys.softsim.status=default,default
+persist.sys.softsim.netmode=3g
+persist.sys.softsim.type=default
+
+ro.kernel.qemu=0
+net.bt.name=Android
+ro.vendor.qti.va_aosp.support=1
