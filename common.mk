@@ -443,7 +443,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.3-radio-service.samsung \
     libprotobuf-cpp-full \
-    librmnetctl \
+    librmnetctl
+
+PRODUCT_HOST_PACKAGES += \
     vendor.samsung.hardware.radio@1.2
 
 # Samsung App
