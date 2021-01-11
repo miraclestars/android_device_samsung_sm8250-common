@@ -1,0 +1,9 @@
+on boot
+
+on post-fs-data
+# NFC: create /efs/sec_efs/nfc and /efs/nfc for nv storage
+    mkdir /efs/sec_efs/nfc 0700 nfc nfc
+    mkdir /efs/nfc 0700 nfc nfc
+
+# NFC KEY
+    mkdir /data/vendor/nfc 0770 nfc nfc

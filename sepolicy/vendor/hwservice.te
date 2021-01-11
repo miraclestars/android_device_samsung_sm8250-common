@@ -1,0 +1,4 @@
+type hal_vendor_fingerprint_hwservice, hwservice_manager_type;
+type hal_converter_hwservice, hwservice_manager_type;
+type hal_miscpower_hwservice, hwservice_manager_type;
+type hal_sec_inputdev_hwservice, hwservice_manager_type;

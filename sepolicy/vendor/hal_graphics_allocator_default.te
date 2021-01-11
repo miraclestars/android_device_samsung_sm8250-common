@@ -1,0 +1,1 @@
+allow hal_graphics_allocator_default hal_face_default:binder transfer;

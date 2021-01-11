@@ -1,0 +1,10 @@
+allow init vendor_configs_file:dir mounton;
+allow init vendor_configs_file:file mounton;
+allow init vendor_hal_file:dir mounton;
+allow init vendor_overlay_file:dir mounton;
+allow init vendor_file:file mounton;
+allow init hwservicemanager:binder transfer;
+allow init platform_app:binder call;
+allow init vendor_sysfs_battery_supply:lnk_file read;
+allow init sysfs_sec_touchscreen:file { open write };
+allow init sysfs_vibrator:lnk_file { open read };

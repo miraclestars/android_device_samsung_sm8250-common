@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright (C) 2020 The LineageOS Project
+**
+** SPDX-License-Identifier: Apache-2.0
+*/
+-->
+
+<!-- These resources are around just to allow their values to be customized
+     for different hardware and product builds. -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- MDNIE -->
+    <string name="mdnie_scenario_sysfs_file" translatable="false">"/sys/class/mdnie/mdnie/scenario"</string>
+    <string name="mdnie_accessibility_sysfs_file" translatable="false">"/sys/class/mdnie/mdnie/accessibility"</string>
+</resources>

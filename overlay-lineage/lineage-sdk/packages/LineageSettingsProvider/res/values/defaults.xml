@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright (C) 2020 The LineageOS Project
+**
+** SPDX-License-Identifier: Apache-2.0
+*/
+-->
+<resources>
+    <!-- Default clock position
+         * 0: show the clock in the right position (LTR)
+         * 1: show the clock in the center
+         * 2: show the clock in the left position (LTR)
+    -->
+    <integer name="def_clock_position">2</integer>
+</resources>

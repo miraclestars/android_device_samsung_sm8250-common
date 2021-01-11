@@ -1,0 +1,39 @@
+### Bluetooth
+persist.vendor.bluetooth.a2dp.               u:object_r:vendor_bluetooth_prop:s0
+
+### CAMERA
+camera.on                                    u:object_r:vendor_camera_prop:s0
+persist.camera.                              u:object_r:vendor_camera_prop:s0
+persist.debug.set.fixedfps                   u:object_r:vendor_camera_prop:s0
+persist.debug.sf.showfps                     u:object_r:vendor_camera_prop:s0
+ro.camera.                                   u:object_r:vendor_camera_prop:s0
+ro.vendor.camera.                            u:object_r:vendor_camera_prop:s0
+vendor.camera.                               u:object_r:vendor_camera_prop:s0
+
+### CACHE STATUS
+persist.cache_status_64                      u:object_r:cache_status_prop:s0
+persist.cache_status_32                      u:object_r:cache_status_prop:s0
+persist.cache_integrity_64                   u:object_r:cache_status_prop:s0
+persist.cache_integrity_32                   u:object_r:cache_status_prop:s0
+
+### cbd
+vendor.cbd.                                  u:object_r:vendor_cbd_prop:s0
+persist.vendor.cbd.                          u:object_r:vendor_radio_prop:s0
+
+### fastcharge
+persist.vendor.sec.fastchg_enabled           u:object_r:vendor_fastcharge_prop:s0
+
+### Firmware
+ro.build.expect.                             u:object_r:exported_default_prop:s0
+
+### NFC
+vendor.nfc.fw.                               u:object_r:vendor_nfc_prop:s0
+
+### radio
+ro.multisim.                                 u:object_r:vendor_radio_prop:s0
+ro.vendor.multisim.                          u:object_r:vendor_radio_prop:s0
+
+# Thermal
+persist.sys.thermal.                         u:object_r:thermal_engine_prop:s0
+sys.thermal.                                 u:object_r:thermal_engine_prop:s0
+vendor.sys.thermal.                          u:object_r:thermal_engine_prop:s0

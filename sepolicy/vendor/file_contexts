@@ -1,0 +1,167 @@
+### File
+/carrier(/.*)?                               u:object_r:carrier_file:s0
+/dqmdbg(/.*)?                                u:object_r:dqmdbgblk_file:s0
+/keydata(/.*)?                               u:object_r:keydata_data_file:s0
+/keyrefuge(/.*)?                             u:object_r:keyrefuge_data_file:s0
+/optics(/.*)?                                u:object_r:vendor_file:s0
+/prism(/.*)?                                 u:object_r:system_file:s0
+/spu(/.*)?                                   u:object_r:spu_file:s0
+/firmware(/.*)?                              u:object_r:firmware_file:s0
+/firmware-modem(/.*)?                        u:object_r:firmware_file:s0
+/bt_firmware(/.*)?                           u:object_r:bt_firmware_file:s0
+/dsp(/.*)?                                   u:object_r:dsp_file:s0
+/persist(/.*)?                               u:object_r:mnt_vendor_file:s0
+
+### DATA
+/data/vendor/audio/acdbdata/delta(/.*)?      u:object_r:acdbdelta_vendor_data_file:s0
+/data/vendor/biometrics(/.*)?                u:object_r:biometrics_vendor_data_file:s0
+/data/vendor/conn(/.*)?                      u:object_r:conn_vendor_data_file:s0
+/data/vendor/gps(/.*)?                       u:object_r:gps_vendor_data_file:s0
+/data/vendor/log(/.*)?                       u:object_r:log_vendor_data_file:s0
+/data/vendor/log/cbd(/.*)?                   u:object_r:log_cbd_vendor_data_file:s0
+/data/vendor/secradio(/.*)?                  u:object_r:vendor_radio_vendor_data_file:s0
+/data/vendor/thermal(/.*)?                   u:object_r:thermal_data_file:s0
+/data/vendor/mac_addr(/.*)?                  u:object_r:vendor_wifi_vendor_data_file:s0
+
+### DEV
+/dev/block/platform/soc/1d84000.ufshc/by-name/dqmdbg         u:object_r:dqmdbg_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/keydata        u:object_r:keydata_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/keyrefuge      u:object_r:keyrefuge_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/persistent     u:object_r:frp_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/radio          u:object_r:radio_block_device:s0
+
+/dev/batch_io                                u:object_r:io_device:s0
+/dev/sec-nfc                                 u:object_r:nfc_device:s0
+/dev/pn547                                   u:object_r:nfc_device:s0
+/dev/p61                                     u:object_r:nfc_device:s0
+/dev/ssp_sensorhub                           u:object_r:ssp_device:s0
+
+# bluetooth
+/dev/ttySAC[0-9]                             u:object_r:vendor_bt_device:s0
+
+### Elliptic
+/dev/elliptic[0-9]                           u:object_r:ultrasound_device:s0
+/dev/mius(.*)?                               u:object_r:ultrasound_device:s0
+
+### epic
+/dev/mode                                    u:object_r:epic_device:s0
+/dev/socket/epic                             u:object_r:epicd_socket:s0
+
+### Fingerprint sensor
+/dev/esfp[0-9]                               u:object_r:fp_sensor_device:s0
+/dev/qbt2000_fd                              u:object_r:qbt_device:s0
+/dev/qbt2000_ipc                             u:object_r:qbt_device:s0
+/dev/qbtspi                                  u:object_r:qbt_device:s0
+
+### gnss/gps
+/dev/bbd_control                             u:object_r:bbd_device:s0
+/dev/bbd_packet                              u:object_r:bbd_device:s0
+/dev/bbd_patch                               u:object_r:bbd_device:s0
+/dev/bbd_reliable                            u:object_r:bbd_device:s0
+/dev/bbd_sensor                              u:object_r:bbd_device:s0
+/dev/bbd_sio                                 u:object_r:bbd_device:s0
+/dev/bbd_urgent_patch                        u:object_r:bbd_device:s0
+/dev/ttyBCM[0-9]*                            u:object_r:bbd_device:s0
+
+### IR
+/dev/ir_spi                                  u:object_r:lirc_device:s0
+/dev/lirc[0-9]                               u:object_r:lirc_device:s0
+/dev/spidev[0-9]\.1                          u:object_r:lirc_device:s0
+
+### qos
+/dev/bus_throughput                          u:object_r:pm_qos_device:s0
+/dev/bus_throughput_max                      u:object_r:pm_qos_device:s0
+/dev/cluster0_freq_max                       u:object_r:pm_qos_device:s0
+/dev/cluster0_freq_min                       u:object_r:pm_qos_device:s0
+/dev/cluster1_freq_max                       u:object_r:pm_qos_device:s0
+/dev/cluster1_freq_min                       u:object_r:pm_qos_device:s0
+/dev/cluster2_freq_max                       u:object_r:pm_qos_device:s0
+/dev/cluster2_freq_min                       u:object_r:pm_qos_device:s0
+/dev/cpu_online_max                          u:object_r:pm_qos_device:s0
+/dev/cpu_online_min                          u:object_r:pm_qos_device:s0
+/dev/device_throughput                       u:object_r:pm_qos_device:s0
+/dev/device_throughput_max                   u:object_r:pm_qos_device:s0
+/dev/gpu_freq_max                            u:object_r:pm_qos_device:s0
+/dev/gpu_freq_min                            u:object_r:pm_qos_device:s0
+/dev/mfc_throughput                          u:object_r:pm_qos_device:s0
+/dev/mfc_throughput_max                      u:object_r:pm_qos_device:s0
+/dev/network_throughput                      u:object_r:radio_qos_device:s0
+/dev/npu_throughput                          u:object_r:pm_qos_device:s0
+/dev/npu_throughput_max                      u:object_r:pm_qos_device:s0
+
+### radio
+# DRB
+/dev/drb                                     u:object_r:drb_device:s0
+
+# UMTS
+/dev/umts_boot0                              u:object_r:vendor_radio_device:s0
+/dev/umts_cass                               u:object_r:vendor_radio_device:s0
+/dev/umts_ipc[0-1]                           u:object_r:vendor_radio_device:s0
+/dev/umts_dm0                                u:object_r:vendor_radio_device:s0
+/dev/umts_rfs0                               u:object_r:vendor_radio_device:s0
+/dev/umts_router                             u:object_r:vendor_radio_device:s0
+
+### EFS
+/efs/Battery(/.*)?                           u:object_r:battery_efs_file:s0
+/efs/DAK(/.*)?                               u:object_r:prov_efs_file:s0
+/efs/afc(/.*)?                               u:object_r:sec_efs_file:s0
+/efs/bluetooth(/.*)?                         u:object_r:bluetooth_efs_file:s0
+/efs/cpk(/.*)?                               u:object_r:cpk_efs_file:s0
+/efs/imei(/.*)?                              u:object_r:imei_efs_file:s0
+/efs/nfc(/.*)?                               u:object_r:nfc_efs_file:s0
+/efs/nv_data\.bin(.*)                        u:object_r:bin_nv_data_efs_file:s0
+/efs/pfw_data(/.*)?                          u:object_r:pfw_efs_file:s0
+/efs/prov(/.*)?                              u:object_r:prov_efs_file:s0
+/efs/prov_data(/.*)?                         u:object_r:prov_efs_file:s0
+/efs/root(/.*)?                              u:object_r:app_efs_file:s0
+/efs/tee(/.*)?                               u:object_r:tee_efs_file:s0
+/efs/wifi(/.*)?                              u:object_r:wifi_efs_file:s0
+
+/mnt/vendor/efs(/.*)?                        u:object_r:efs_file:s0
+/mnt/vendor/efs/DAK(/.*)?                    u:object_r:prov_efs_file:s0
+/mnt/vendor/efs/afc(/.*)?                    u:object_r:sec_efs_file:s0
+/mnt/vendor/efs/bluetooth(/.*)?              u:object_r:bluetooth_efs_file:s0
+/mnt/vendor/efs/cpk(/.*)?                    u:object_r:cpk_efs_file:s0
+/mnt/vendor/efs/imei(/.*)?                   u:object_r:imei_efs_file:s0
+/mnt/vendor/efs/nv_data\.bin(.*)             u:object_r:bin_nv_data_efs_file:s0
+/mnt/vendor/efs/pfw_data(/.*)?               u:object_r:pfw_efs_file:s0
+/mnt/vendor/efs/prov(/.*)?                   u:object_r:prov_efs_file:s0
+/mnt/vendor/efs/prov_data(/.*)?              u:object_r:prov_efs_file:s0
+/mnt/vendor/efs/root(/.*)?                   u:object_r:app_efs_file:s0
+/mnt/vendor/efs/tee(/.*)?                    u:object_r:tee_efs_file:s0
+/mnt/vendor/efs/wifi(/.*)?                   u:object_r:wifi_efs_file:s0
+
+### Sys files
+/sys/module/fsc(/.*)?                        u:object_r:sysfs_fsc:s0
+
+### VENDOR
+/(vendor|system/vendor)/bin/cbd                  u:object_r:cbd_exec:s0
+/(vendor|system/vendor)/bin/secril_config_svc    u:object_r:secril_config_svc_exec:s0
+
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@[0-9]\.[0-9]-service\.samsung            u:object_r:hal_fingerprint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.ir@[0-9]\.[0-9]-service\.samsung                                 u:object_r:hal_ir_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@[0-9]\.[0-9]-service\.samsung                          u:object_r:hal_keymaster_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@[0-9]\.[0-9]-service\.samsung                              u:object_r:hal_light_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power@[0-9]\.[0-9]-service\.samsung-libperfmgr                   u:object_r:hal_power_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.radio@[0-9]\.[0-9]-radio-service\.samsung                        u:object_r:hal_radio_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.sensors@[0-9]\.[0-9]-service\.samsung-multihal                   u:object_r:hal_sensors_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@[0-9]\.[0-9]-service\.samsung                            u:object_r:hal_thermal_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@[0-9]\.[0-9]-service\.samsung                           u:object_r:hal_vibrator_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.biometrics\.fingerprint\.inscreen@[0-9]\.[0-9]-service.samsung     u:object_r:hal_lineage_fod_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.fastcharge@[0-9]\.[0-9]-service\.samsung                           u:object_r:hal_lineage_fastcharge_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@[0-9]\.[0-9]-service\.samsung-qcom                     u:object_r:hal_lineage_livedisplay_sysfs_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.powershare@[0-9]\.[0-9]-service\.samsung                           u:object_r:hal_lineage_powershare_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@[0-9]\.[0-9]-service\.samsung                                u:object_r:hal_lineage_touch_default_exec:s0
+
+/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.biometrics\.face@[0-9]\.[0-9]-service                    u:object_r:vendor_biometricsface_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.biometrics\.fingerprint@[0-9]\.[0-9]-service             u:object_r:hal_fingerprint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.camera\.provider@[0-9]\.[0-9]-service_64                 u:object_r:hal_camera_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.light-service                                            u:object_r:hal_light_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.media\.converter@[0-9]\.[0-9]-service                    u:object_r:hal_converter_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.miscpower@[0-9]\.[0-9]-service                           u:object_r:hal_power_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.sysinput@[0-9]\.[0-9]-service                            u:object_r:hal_sec_inputdev_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.thermal@[0-9]\.[0-9]-service                             u:object_r:hal_thermal_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.vibrator@[0-9]\.[0-2]-service                            u:object_r:hal_vibrator_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.wifi@[0-9]\.[0-9]-service                                u:object_r:hal_wifi_default_exec:s0
+
+/vendor/bin/hw/sec\.android\.hardware\.nfc@[0-9]\.[0-9]-service                                                    u:object_r:hal_nfc_default_exec:s0

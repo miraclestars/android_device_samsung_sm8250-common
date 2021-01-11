@@ -1,0 +1,6 @@
+# /data/vendor/log
+allow hal_wifi_supplicant_default log_vendor_data_file:dir r_dir_perms;
+
+# /data/vendor/wifi
+allow hal_wifi_supplicant_default vendor_wifi_vendor_data_file:dir rw_dir_perms;
+allow hal_wifi_supplicant_default vendor_wifi_vendor_data_file:file rw_file_perms;

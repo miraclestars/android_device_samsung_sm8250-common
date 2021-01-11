@@ -1,0 +1,20 @@
+add_hwservice(hal_fingerprint_default, hal_vendor_fingerprint_hwservice)
+
+# /dev/esfp[0-9]
+allow hal_fingerprint_default fp_sensor_device:chr_file rw_file_perms;
+
+# /dev/qbt
+allow hal_fingerprint_default qbt_device:chr_file rw_file_perms;
+
+# /data/vendor/ -> biometrics
+file_type_auto_trans(hal_fingerprint_default, vendor_data_file, biometrics_vendor_data_file)
+
+# /data/vendor/biometrics/*
+allow hal_fingerprint_default biometrics_vendor_data_file:file create_file_perms;
+
+# /sys/class/fingerprint/
+allow hal_fingerprint_default vendor_sysfs_fingerprint:dir r_dir_perms;
+allow hal_fingerprint_default vendor_sysfs_fingerprint:file r_file_perms;
+
+# Allow hal_fingerprint_default to search
+allow hal_fingerprint_default vendor_sysfs_battery_supply:dir search;

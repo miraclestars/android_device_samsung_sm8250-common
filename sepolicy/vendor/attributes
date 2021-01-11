@@ -1,0 +1,8 @@
+# HALs
+attribute hal_converter;
+attribute hal_converter_client;
+attribute hal_converter_server;
+
+attribute hal_sec_inputdev;
+attribute hal_sec_inputdev_client;
+attribute hal_sec_inputdev_server;
