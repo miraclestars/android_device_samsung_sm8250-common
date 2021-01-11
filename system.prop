@@ -1,0 +1,13 @@
+#Netflix custom property
+ro.netflix.bsp_rev=Q8250-19134-1
+
+#Status of softsim
+persist.sys.softsim.status=default,default
+persist.sys.softsim.netmode=4g
+persist.sys.softsim.type=default
+
+ro.treble.enabled=true
+ro.kernel.qemu=0
+net.bt.name=Android
+ro.vendor.qti.va_aosp.support=1
+ro.crypto.dm_default_key.options_format.version=2

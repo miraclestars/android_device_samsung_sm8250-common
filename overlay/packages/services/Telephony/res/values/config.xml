@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright (C) 2020 The LineageOS Project
+**
+** SPDX-License-Identifier: Apache-2.0
+*/
+-->
+
+<!-- Phone app resources that may need to be customized
+     for different hardware or product builds. -->
+<resources>
+    <!-- Determine whether calls to mute the microphone in PhoneUtils
+         are routed through the android.media.AudioManager class (true) or through
+         the com.android.internal.telephony.Phone interface (false). -->
+    <bool name="send_mic_mute_to_AudioManager">true</bool>
+
+    <!-- Show enabled lte option for lte device -->
+    <bool name="config_enabled_lte" translatable="false">true</bool>
+
+    <!-- String indicating the package name of the device ImsService implementation for MMTEL. -->
+    <string name="config_ims_mmtel_package" translatable="false">org.codeaurora.ims</string>
+
+    <!-- String indicating the package name of the device ImsService implementation for RCS. -->
+    <string name="config_ims_rcs_package" translatable="false">org.codeaurora.ims</string>
+</resources>

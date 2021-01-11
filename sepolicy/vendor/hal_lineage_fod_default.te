@@ -1,0 +1,11 @@
+binder_call(hal_lineage_fod_default, hal_fingerprint_default)
+
+allow hal_lineage_fod_default hal_vendor_fingerprint_hwservice:hwservice_manager find;
+
+# /sys/class/backlight/panel/brightness
+allow hal_lineage_fod_default sysfs_backlight_writable:file rw_file_perms;
+
+# /sys/class/sec/tsp/cmd
+allow hal_lineage_fod_default sysfs_sec_touchscreen:dir { search };
+allow hal_lineage_fod_default sysfs_sec_touchscreen:dir r_dir_perms;
+allow hal_lineage_fod_default sysfs_touchscreen_writable:file rw_file_perms;

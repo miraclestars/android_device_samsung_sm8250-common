@@ -1,0 +1,14 @@
+allow vendor_thermal-engine thermal_data_file:dir rw_dir_perms;
+allow vendor_thermal-engine thermal_data_file:file create_file_perms;
+
+allow vendor_thermal-engine self:capability { chown fowner };
+
+r_dir_file(vendor_thermal-engine, sysfs)
+r_dir_file(vendor_thermal-engine, sysfs_batteryinfo)
+r_dir_file(vendor_thermal-engine, vendor_sysfs_devfreq)
+r_dir_file(vendor_thermal-engine, sysfs_graphics)
+r_dir_file(vendor_thermal-engine, sysfs_thermal)
+
+set_prop(vendor_thermal-engine, thermal_engine_prop)
+
+dontaudit vendor_thermal-engine self:capability dac_override;

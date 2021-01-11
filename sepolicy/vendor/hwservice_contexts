@@ -1,0 +1,10 @@
+vendor.samsung.hardware.biometrics.face::ISehBiometricsFace                     u:object_r:hal_face_hwservice:s0
+vendor.samsung.hardware.biometrics.fingerprint::ISecBiometricsFingerprint       u:object_r:hal_vendor_fingerprint_hwservice:s0
+vendor.samsung.hardware.camera.provider::ISehCameraProvider                     u:object_r:hal_camera_hwservice:s0
+vendor.samsung.hardware.light::ISehLight                                        u:object_r:hal_light_hwservice:s0
+vendor.samsung.hardware.media.converter::ISehColorConverterStore                u:object_r:hal_converter_hwservice:s0
+vendor.samsung.hardware.miscpower::ISehMiscPower                                u:object_r:hal_miscpower_hwservice:s0
+vendor.samsung.hardware.sysinput::ISehSysInputDev                               u:object_r:hal_sec_inputdev_hwservice:s0
+vendor.samsung.hardware.thermal::ISehThermal                                    u:object_r:hal_thermal_hwservice:s0
+vendor.samsung.hardware.vibrator::ISehVibrator                                  u:object_r:hal_vibrator_hwservice:s0
+vendor.samsung.hardware.wifi::ISehWifi                                          u:object_r:hal_wifi_hwservice:s0

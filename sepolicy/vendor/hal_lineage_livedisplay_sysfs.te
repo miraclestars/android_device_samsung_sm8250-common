@@ -1,0 +1,20 @@
+# Allow LiveDisplay to use vendor-binder service
+vndbinder_use(hal_lineage_livedisplay_sysfs)
+
+# Allow LiveDisplay to store files under /data/vendor/display and access them
+allow hal_lineage_livedisplay_sysfs vendor_display_vendor_data_file:dir rw_dir_perms;
+allow hal_lineage_livedisplay_sysfs vendor_display_vendor_data_file:file create_file_perms;
+
+# Allow LiveDisplay to read and write to files in vendor_sysfs_graphics, sysfs_mdnie
+allow hal_lineage_livedisplay_sysfs {
+    vendor_sysfs_graphics
+    sysfs_mdnie
+}:dir search;
+
+allow hal_lineage_livedisplay_sysfs {
+    vendor_sysfs_graphics
+    sysfs_mdnie
+}:file rw_file_perms;
+
+# Allow LiveDisplay to set vendor display props
+set_prop(hal_lineage_livedisplay_sysfs, vendor_display_prop);

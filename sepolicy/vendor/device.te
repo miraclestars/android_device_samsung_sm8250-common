@@ -1,0 +1,17 @@
+type dqmdbg_block_device, dev_type;
+type keydata_block_device, dev_type;
+type keyrefuge_block_device, dev_type;
+type radio_block_device, dev_type;
+
+type bbd_device, dev_type;
+type drb_device, dev_type;
+type epic_device, dev_type;
+type fp_sensor_device, dev_type;
+type io_device, dev_type;
+type lirc_device, dev_type;
+type pm_qos_device, dev_type;
+type qbt_device, dev_type;
+type radio_qos_device, dev_type;
+type ssp_device, dev_type;
+type ultrasound_device, dev_type;
+type vendor_radio_device, dev_type;

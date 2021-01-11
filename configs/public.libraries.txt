@@ -1,0 +1,11 @@
+libDualCamBokehCapture.camera.samsung.so
+libLocalTM_wrapper.camera.samsung.so
+libOpenCL.so
+libadsprpc.so
+libcdsprpc.so
+libfastcvopt.so
+libqti-perfd-client.so
+libsdsprpc.so
+libswldc_capture_core.camera.samsung.so
+libprotobuf-cpp-full.so
+libprotobuf-cpp-lite.so

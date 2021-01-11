@@ -1,0 +1,2 @@
+# Ignore harmless denials
+dontaudit { gmscore_app } { bt_firmware_file firmware_file dsp_file }:filesystem getattr;

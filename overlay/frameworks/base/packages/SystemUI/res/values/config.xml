@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright (C) 2020 The LineageOS Project
+**
+** SPDX-License-Identifier: Apache-2.0
+*/
+-->
+
+<resources>
+    <!-- Doze: does this device support STATE_DOZE?
+         The display is dozing in a low power state; it is still on but is
+         optimized for showing system-provided content while the device is
+         non-interactive. -->
+    <bool name="doze_display_state_supported">true</bool>
+
+    <!-- Color of the FOD view -->
+    <color name="config_fodColor">#00ffffff</color>
+</resources>
