@@ -121,7 +121,7 @@
                 <route type="mix" sink="USB Headset Out"
                        sources="primary-out,fast" />
                 <route type="mix" sink="primary-in"
-                       sources="Built-In Mic,Built-In Back Mic,Wired Headset Mic,Bt Sco Headset Mic,Aux Device In,Voice Call Mic,FM Mic,USB Device In,USB Headset In"/>
+                       sources="Built-In Mic,Wired Headset Mic,Bt Sco Headset Mic,Aux Device In,Voice Call Mic,FM Mic,USB Device In,USB Headset In"/>
             </routes>
 
         </module>
