@@ -410,8 +410,12 @@ system_ext/framework/dpmapi.jar
 system/framework/tcmclient.jar
 
 # DRM
+system/lib/vendor.samsung.hardware.security.widevine.keyprov@1.0.so
+system/lib64/vendor.samsung.hardware.security.widevine.keyprov@1.0.so
 vendor/bin/hw/android.hardware.drm@1.3-service.widevine
+vendor/bin/vendor.samsung.hardware.security.widevine.keyprov@1.0-service
 vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc
+vendor/etc/init/vendor.samsung.hardware.security.widevine.keyprov@1.0-service.rc
 -vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/libbase64.so
@@ -453,6 +457,7 @@ vendor/lib64/libspl.so
 vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
 vendor/lib64/libtzdrmgenprov.so
+vendor/lib64/vendor.samsung.hardware.security.widevine.keyprov@1.0.so
 
 # Fingerprint
 system/etc/permissions/com.sec.feature.fingerprint_manager_service.xml
