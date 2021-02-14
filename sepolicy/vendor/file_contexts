@@ -163,5 +163,6 @@
 /(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.thermal@[0-9]\.[0-9]-service                             u:object_r:hal_thermal_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.vibrator@[0-9]\.[0-2]-service                            u:object_r:hal_vibrator_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.wifi@[0-9]\.[0-9]-service                                u:object_r:hal_wifi_default_exec:s0
+/(vendor|system/vendor)/bin/vendor\.samsung\.hardware\.security\.widevine\.keyprov@[0-9]\.[0-9]-service            u:object_r:vendor_hal_drm_widevine_exec:s0
 
 /vendor/bin/hw/sec\.android\.hardware\.nfc@[0-9]\.[0-9]-service                                                    u:object_r:hal_nfc_default_exec:s0

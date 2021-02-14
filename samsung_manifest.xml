@@ -127,6 +127,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>vendor.samsung.hardware.security.widevine.keyprov</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ISehWidevineKeyProvisioning</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.samsung.hardware.snap</name>
         <transport>hwbinder</transport>
         <version>1.1</version>
