@@ -162,6 +162,7 @@ debug.sf.latch_unsignaled=1
 graphics.gpu.profiler.support=true
 persist.demo.hdmirotationlock=false
 persist.sys.sf.color_saturation=1.0
+ro.gfx.driver.0=com.samsung.gamedriver.sm8250
 ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.kona.api30
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
