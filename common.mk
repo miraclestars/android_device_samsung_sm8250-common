@@ -10,6 +10,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Include GSI keys
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
+# Project ID Quota
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/samsung/sm8250-common/sm8250-common-vendor.mk)
 
