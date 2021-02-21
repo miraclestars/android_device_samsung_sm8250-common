@@ -187,6 +187,9 @@ drm.service.enabled=true
 # MM modules
 vendor.mm.enable.qcom_parser=16777215
 
+# OTG
+persist.sys.oem.otg_support=true
+
 # PASR HAL
 vendor.power.pasr.enabled=true
 
