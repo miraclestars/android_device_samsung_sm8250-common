@@ -1,3 +1,4 @@
+get_prop(hal_lineage_fastcharge, vendor_fastcharge_prop)
 set_prop(hal_lineage_fastcharge, vendor_fastcharge_prop)
 
 allow hal_lineage_fastcharge_default sysfs_sec_switch:dir search;
