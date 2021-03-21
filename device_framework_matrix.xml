@@ -69,9 +69,8 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="true">
+    <hal format="aidl" optional="true">
         <name>android.hardware.power</name>
-        <version>1.3</version>
         <interface>
             <name>IPower</name>
             <instance>default</instance>
@@ -255,6 +254,13 @@
         </interface>
         <interface>
             <name>ISunlightEnhancement</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.lineage.power</name>
+        <interface>
+            <name>IPower</name>
             <instance>default</instance>
         </interface>
     </hal>
