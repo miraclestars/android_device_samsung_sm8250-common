@@ -159,6 +159,9 @@ ro.frp.pst=/dev/block/persistent
 # Gatekeeper
 vendor.gatekeeper.disable_spu=true
 
+# GBoard Spacing
+ro.com.google.ime.kb_pad_port_b=1
+
 # GPS
 persist.backup.ntpServer=0.pool.ntp.org
 
