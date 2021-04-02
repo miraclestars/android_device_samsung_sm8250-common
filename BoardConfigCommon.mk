@@ -149,7 +149,6 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 ### Dynamic Partitions
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_ext vendor
-BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 8553234432
 BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
 
 ifneq ($(WITH_GMS),true)
