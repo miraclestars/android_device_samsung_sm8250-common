@@ -6,6 +6,7 @@
 ** SPDX-License-Identifier: Apache-2.0
 */
 -->
+
 <resources>
     <!-- Default value for proximity check on screen wake
      NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)-->
@@ -52,4 +53,7 @@
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
     <integer name="config_deviceHardwareWakeKeys">64</integer>
+
+    <!-- Whether device has a notch -->
+    <bool name="config_haveNotch">true</bool>
 </resources>
