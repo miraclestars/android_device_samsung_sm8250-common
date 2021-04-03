@@ -35,6 +35,7 @@ vendor.nfc.fw.                               u:object_r:vendor_nfc_prop:s0
 ### radio
 ro.multisim.                                 u:object_r:vendor_radio_prop:s0
 ro.vendor.multisim.                          u:object_r:vendor_radio_prop:s0
+ro.vendor.radio.                             u:object_r:vendor_radio_prop:s0
 
 # Thermal
 persist.sys.thermal.                         u:object_r:thermal_engine_prop:s0
