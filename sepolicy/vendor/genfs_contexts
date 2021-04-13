@@ -9,6 +9,8 @@ genfscon sysfs /class/input                                               u:obje
 genfscon sysfs /class/mdnie/mdnie                                         u:object_r:sysfs_mdnie:s0
 genfscon sysfs /class/misc/backlightnotification                          u:object_r:sysfs_backlight_writable:s0
 genfscon sysfs /class/power_supply                                        u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /class/power_supply/battery/wc_tx_en                       u:object_r:sysfs_battery_writable:s0
+genfscon sysfs /class/power_supply/battery/wc_tx_stop_capacity            u:object_r:sysfs_battery_writable:s0
 genfscon sysfs /class/rtc/rtc0                                            u:object_r:sysfs_rtc:s0
 genfscon sysfs /class/sec/gps                                             u:object_r:sysfs_sec_gps:s0
 genfscon sysfs /class/sec/sec_ir                                          u:object_r:sysfs_sec_ir:s0
@@ -27,6 +29,8 @@ genfscon sysfs /devices/platform/panel@0/backlight/panel/brightness       u:obje
 genfscon sysfs /devices/platform/panel@0/backlight/panel/max_brightness   u:object_r:sysfs_backlight_writable:s0
 genfscon sysfs /devices/platform/battery/power_supply                     u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/battery/power_supply/battery/lcd         u:object_r:sysfs_battery_writable:s0
+genfscon sysfs /devices/platform/battery/power_supply/battery/wc_tx_en    u:object_r:sysfs_battery_writable:s0
+genfscon sysfs /devices/platform/battery/power_supply/battery/wc_tx_stop_capacity    u:object_r:sysfs_battery_writable:s0
 genfscon sysfs /devices/platform/panel@0/lcd/panel                        u:object_r:sysfs_lcd_writable:s0
 
 genfscon sysfs /devices/virtual/fingerprint/fingerprint                   u:object_r:vendor_sysfs_fingerprint:s0
