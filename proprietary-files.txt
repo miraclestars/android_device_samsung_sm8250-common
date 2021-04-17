@@ -130,6 +130,8 @@ vendor/bin/hw/vendor.samsung.hardware.camera.provider@4.0-service_64
 vendor/bin/hw/vendor.samsung.hardware.snap@1.1-service
 vendor/etc/init/vendor.samsung.hardware.camera.provider@4.0-service_64.rc
 vendor/etc/init/vendor.samsung.hardware.snap@1.1-service.rc
+vendor/lib/hw/camera.qcom.so
+vendor/lib/hw/camera.unihal.default.so
 vendor/lib/com.qti.feature2.anchorsync.so
 vendor/lib/com.qti.feature2.demux.so
 vendor/lib/com.qti.feature2.frameselect.so
@@ -194,6 +196,8 @@ vendor/lib/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
 vendor/lib/vendor.samsung.hardware.camera.provider@4.0.so
 vendor/lib/vendor.samsung.hardware.snap@1.0.so
 vendor/lib/vendor.samsung.hardware.snap@1.1.so
+vendor/lib64/hw/camera.qcom.so
+vendor/lib64/hw/camera.unihal.default.so
 vendor/lib64/com.qti.feature2.anchorsync.so
 vendor/lib64/com.qti.feature2.demux.so
 vendor/lib64/com.qti.feature2.frameselect.so
