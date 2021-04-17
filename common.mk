@@ -252,6 +252,7 @@ PRODUCT_PACKAGES += \
     libdisplayconfig.qti.vendor \
     libgralloc.qti \
     libqdMetaData \
+    libsdedrm \
     libsdmcore \
     libsdmutils \
     libtinyxml \
