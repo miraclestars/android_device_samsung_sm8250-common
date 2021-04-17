@@ -300,6 +300,7 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.samsung \
+    fingerprint.default \
     vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.samsung
 
 # Gatekeeper
@@ -558,6 +559,7 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.3-service.samsung \
+    vibrator.default \
     vendor.qti.hardware.vibrator.service
 
 # WiFi
