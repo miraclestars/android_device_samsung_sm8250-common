@@ -550,7 +550,8 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.2-service-qti
+    android.hardware.usb@1.2-service-qti \
+    android.hardware.usb.gadget@1.0-service-qti
 
 # Vendor libstdc++
 PRODUCT_PACKAGES += \
