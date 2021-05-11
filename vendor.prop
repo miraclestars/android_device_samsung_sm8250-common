@@ -98,7 +98,6 @@ ro.camera.notify_nfc=1
 
 # Charger
 ro.charger.disable_init_blank=true
-ro.charger.enable_suspend=true
 
 # CNE
 persist.vendor.cne.feature=0
