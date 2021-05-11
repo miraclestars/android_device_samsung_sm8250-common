@@ -1,0 +1,10 @@
+# FOD
+persist.sys.fod.pos.x=435
+persist.sys.fod.pos.y=2025
+persist.sys.fod.size=210
+
+# Charging
+ro.charger.enable_suspend=true
+
+# Sensors
+persist.vendor.sensors.enable.mag_filter=true
