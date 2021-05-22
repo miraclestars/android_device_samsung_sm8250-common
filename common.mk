@@ -401,7 +401,7 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.2-service \
+    android.hardware.nfc@1.2-service.samsung \
     android.hardware.secure_element@1.0:64 \
     android.hardware.secure_element@1.1:64 \
     android.hardware.secure_element@1.2:64 \
@@ -513,6 +513,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/samsung/aidl/power-libperfmgr \
     hardware/samsung/hidl/fastcharge \
+    hardware/samsung/nfc \
     hardware/samsung
 
 # System Helper
