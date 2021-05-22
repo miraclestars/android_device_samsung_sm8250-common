@@ -1,0 +1,7 @@
+allow vendor_init tmpfs:dir { write add_name };
+allow vendor_init tmpfs:lnk_file create;
+allow vendor_init proc_dirty:file {  write getattr };
+allow vendor_init cgroup:file { getattr };
+allow vendor_init vendor_camera_prop:property_service set;
+
+get_prop(vendor_init, vendor_radio_prop);
