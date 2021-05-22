@@ -796,13 +796,9 @@ vendor/lib64/libhexagon_nn_stub.so
 # NFC
 system/etc/libnfc-nci.conf
 system/etc/nfcee_access.xml
-system/etc/nfc_key
-vendor/bin/hw/sec.android.hardware.nfc@1.2-service
-vendor/etc/init/sec.android.hardware.nfc@1.2-service.rc
 vendor/etc/libnfc-sec-vendor.conf
 vendor/etc/sec_senn82ab_rfreg.bin
 vendor/firmware/sec_senn82ab_firmware.bin
-vendor/lib64/vendor.samsung.hardware.nfc@2.0.so
 
 # NPU
 vendor/bin/npu_launcher
