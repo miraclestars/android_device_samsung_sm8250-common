@@ -15,8 +15,8 @@ allow rild gpsd:file r_file_perms;
 allow rild system_data_file:dir getattr;
 
 # /data/vendor/log
-allow rild log_vendor_data_file:dir rw_dir_perms;
-allow rild log_vendor_data_file:file create_file_perms;
+allow rild vendor_log_file:dir rw_dir_perms;
+allow rild vendor_log_file:file create_file_perms;
 
 # /dev/block/platform/.+/by-name/radio
 allow rild radio_block_device:blk_file r_file_perms;

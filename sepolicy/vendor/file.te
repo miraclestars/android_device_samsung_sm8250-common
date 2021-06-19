@@ -20,7 +20,6 @@ type acdbdelta_vendor_data_file, file_type, data_file_type;
 type biometrics_vendor_data_file, file_type, data_file_type;
 type conn_vendor_data_file, file_type, data_file_type;
 type gps_vendor_data_file, file_type, data_file_type;
-type log_vendor_data_file, file_type, data_file_type;
 type log_cbd_vendor_data_file, file_type, data_file_type;
 type thermal_data_file, file_type, data_file_type;
 
