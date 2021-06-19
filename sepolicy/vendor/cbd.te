@@ -10,7 +10,7 @@ init_daemon_domain(cbd)
 allow cbd block_device:dir search;
 
 # /data/vendor/log
-allow cbd log_vendor_data_file:dir search;
+allow cbd vendor_log_file:dir search;
 
 # /data/vendor/log/cbd
 allow cbd log_cbd_vendor_data_file:dir create_dir_perms;

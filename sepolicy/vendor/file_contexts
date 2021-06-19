@@ -17,7 +17,6 @@
 /data/vendor/biometrics(/.*)?                u:object_r:biometrics_vendor_data_file:s0
 /data/vendor/conn(/.*)?                      u:object_r:conn_vendor_data_file:s0
 /data/vendor/gps(/.*)?                       u:object_r:gps_vendor_data_file:s0
-/data/vendor/log(/.*)?                       u:object_r:log_vendor_data_file:s0
 /data/vendor/log/cbd(/.*)?                   u:object_r:log_cbd_vendor_data_file:s0
 /data/vendor/secradio(/.*)?                  u:object_r:vendor_radio_vendor_data_file:s0
 /data/vendor/thermal(/.*)?                   u:object_r:thermal_data_file:s0
