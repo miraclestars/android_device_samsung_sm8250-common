@@ -415,9 +415,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.1.vendor:64 \
     vendor.qti.hardware.perf@2.2.vendor:64
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
-
 # PowerShare
 PRODUCT_PACKAGES += \
     vendor.lineage.powershare@1.0-service.samsung
