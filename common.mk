@@ -389,6 +389,10 @@ PRODUCT_COPY_FILES += \
 
 # OMX
 PRODUCT_PACKAGES += \
+    android.hardware.media@1.0 \
+    android.hardware.media.bufferpool@2.0 \
+    android.hardware.media.c2@1.0 \
+    android.hardware.media.c2@1.1 \
     android.hardware.media.omx@1.0-service \
     libc2dcolorconvert \
     libcodec2_hidl@1.0.vendor \
