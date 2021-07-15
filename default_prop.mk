@@ -1,6 +1,6 @@
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=adb,mtp,conn_gadget \
-    ro.adb.secure=1 \
+    ro.adb.secure=0 \
     ro.oem_unlock_supported=1 \
     ro.radio.noril=no \
     ro.vendor.multisim.simslotcount=1 \
