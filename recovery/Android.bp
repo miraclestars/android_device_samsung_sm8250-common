@@ -15,7 +15,7 @@
 //
 
 cc_library_static {
-    name: "librecovery_updater_samsung_sm7125",
+    name: "librecovery_updater_samsung_sm8250",
     srcs: [
         "recovery_updater.cpp",
     ],

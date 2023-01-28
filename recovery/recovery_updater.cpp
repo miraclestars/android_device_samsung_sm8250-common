@@ -46,6 +46,6 @@ Value *VerifyBootloader(const char *name, State *state,
   return StringValue(std::to_string(ret));
 }
 
-void Register_librecovery_updater_samsung_sm7125() {
-  RegisterFunction("samsung_sm7125.verify_bootloader_min", VerifyBootloader);
+void Register_librecovery_updater_samsung_sm8250() {
+  RegisterFunction("samsung_sm8250.verify_bootloader_min", VerifyBootloader);
 }

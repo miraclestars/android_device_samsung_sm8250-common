@@ -14,27 +14,27 @@
 // limitations under the License.
 
 soong_config_module_type {
-    name: "samsung_sm7125_model",
+    name: "samsung_sm8250_model",
     module_type: "cc_defaults",
-    config_namespace: "samsung_sm7125CameraVars",
-    value_variables: ["samsung_sm7125_model"],
+    config_namespace: "samsung_sm8250CameraVars",
+    value_variables: ["samsung_sm8250_model"],
     properties: ["cppflags"],
 }
 
-samsung_sm7125_model {
-    name: "samsung_sm7125_model_defaults",
+samsung_sm8250_model {
+    name: "samsung_sm8250_model_defaults",
     soong_config_variables: {
-        samsung_sm7125_model: {
-            cppflags: ["-DSAMSUNG_SM7125_MODEL_%s"],
+        samsung_sm8250_model: {
+            cppflags: ["-DSAMSUNG_SM8250_MODEL_%s"],
         },
     },
 }
 
 cc_binary {
-    name: "android.hardware.camera.provider@2.6-service.sm7125",
+    name: "android.hardware.camera.provider@2.6-service.sm8250",
     defaults: [
         "hidl_defaults",
-        "samsung_sm7125_model_defaults",
+        "samsung_sm8250_model_defaults",
     ],
     compile_multilib: "both",
     proprietary: true,
@@ -43,7 +43,7 @@ cc_binary {
         "SamsungCameraProvider.cpp",
         "service.cpp"
     ],
-    init_rc: ["android.hardware.camera.provider@2.6-service.sm7125.rc"],
+    init_rc: ["android.hardware.camera.provider@2.6-service.sm8250.rc"],
     shared_libs: [
         "android.hardware.camera.provider@2.4",
         "android.hardware.camera.provider@2.4-legacy",

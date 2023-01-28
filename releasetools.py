@@ -38,7 +38,7 @@ def OTA_Assertions(info):
   m = re.search(r'require\s+version-bootloader-min\s*=\s*(\S+)', android_info.decode('utf-8'))
   if m:
     bootloader_version = m.group(1)
-    cmd = ('assert(samsung_sm7125.verify_bootloader_min("{}") == "1" || abort("ERROR: This package requires Android 13 based firmware. Please upgrade firmware and retry!"););').format(bootloader_version)
+    cmd = ('assert(samsung_sm8250.verify_bootloader_min("{}") == "1" || abort("ERROR: This package requires Android 13 based firmware. Please upgrade firmware and retry!"););').format(bootloader_version)
     info.script.AppendExtra(cmd)
   return
 

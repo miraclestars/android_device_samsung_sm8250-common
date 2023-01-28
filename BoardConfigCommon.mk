@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-COMMON_PATH := device/samsung/sm7125-common
+COMMON_PATH := device/samsung/sm8250-common
 
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
@@ -63,9 +63,9 @@ TARGET_BOOTLOADER_BOARD_NAME := atoll
 TARGET_NO_BOOTLOADER := true
 
 # Camera
-SOONG_CONFIG_NAMESPACES += samsung_sm7125CameraVars
-SOONG_CONFIG_samsung_sm7125CameraVars += samsung_sm7125_model
-SOONG_CONFIG_samsung_sm7125CameraVars_samsung_sm7125_model := $(TARGET_DEVICE)
+SOONG_CONFIG_NAMESPACES += samsung_sm8250CameraVars
+SOONG_CONFIG_samsung_sm8250CameraVars += samsung_sm8250_model
+SOONG_CONFIG_samsung_sm8250CameraVars_samsung_sm8250_model := $(TARGET_DEVICE)
 
 # Display
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2000U | 0x400000000LL
@@ -84,7 +84,7 @@ BOARD_HAS_QCA_FM_SOC := cherokee
 BOARD_HAVE_QCOM_FM := true
 
 # FOD
-TARGET_SURFACEFLINGER_UDFPS_LIB := //$(COMMON_PATH):libudfps_extension.sm7125
+TARGET_SURFACEFLINGER_UDFPS_LIB := //$(COMMON_PATH):libudfps_extension.sm8250
 TARGET_USES_FOD_ZPOS := true
 
 # HIDL manifests
@@ -95,12 +95,12 @@ DEVICE_MANIFEST_FILE := $(COMMON_PATH)/configs/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/compatibility_matrix.xml
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_sm7125
+TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_sm8250
 
 # Kernel: config
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/samsung/sm7125
+TARGET_KERNEL_SOURCE := kernel/samsung/sm8250
 TARGET_LINUX_KERNEL_VERSION := 4.14
 
 # Kernel: flags
@@ -188,7 +188,7 @@ TARGET_USES_MKE2FS := true
 TARGET_BOARD_INFO_FILE := $(COMMON_PATH)/board-info.txt
 
 # Releasetools
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_samsung_sm7125
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_samsung_sm8250
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
 
 # RIL

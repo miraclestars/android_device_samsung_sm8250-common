@@ -5,10 +5,10 @@
 //
 
 cc_binary {
-    name: "android.hardware.vibrator-service.samsung.sm7125",
+    name: "android.hardware.vibrator-service.samsung.sm8250",
     relative_install_path: "hw",
-    init_rc: ["android.hardware.vibrator-service.samsung.sm7125.rc"],
-    vintf_fragments: ["android.hardware.vibrator-service.samsung.sm7125.xml"],
+    init_rc: ["android.hardware.vibrator-service.samsung.sm8250.rc"],
+    vintf_fragments: ["android.hardware.vibrator-service.samsung.sm8250.xml"],
     srcs: [
         "Vibrator.cpp",
         "service.cpp",

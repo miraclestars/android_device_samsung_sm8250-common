@@ -98,7 +98,7 @@ ro.camera.notify_nfc=1
 
 # Chipset
 ro.soc.manufacturer=Qualcomm
-ro.soc.model=SM7125
+ro.soc.model=SM8250
 
 # Crypto
 ro.crypto.metadata_init_delete_all_keys.enabled=false

@@ -13,9 +13,9 @@
 // limitations under the License.
 
 cc_binary {
-    name: "vendor.lineage.livedisplay@2.0-service.samsung-qcom.sm7125",
+    name: "vendor.lineage.livedisplay@2.0-service.samsung-qcom.sm8250",
     defaults: ["hidl_defaults"],
-    init_rc: ["vendor.lineage.livedisplay@2.0-service.samsung-qcom.sm7125.rc"],
+    init_rc: ["vendor.lineage.livedisplay@2.0-service.samsung-qcom.sm8250.rc"],
     relative_install_path: "hw",
     srcs: [
         "AdaptiveBacklight.cpp",

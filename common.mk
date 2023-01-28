@@ -14,10 +14,10 @@
 # limitations under the License.
 #
 
-COMMON_PATH := device/samsung/sm7125-common
+COMMON_PATH := device/samsung/sm8250-common
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/samsung/sm7125-common/sm7125-common-vendor.mk)
+$(call inherit-product, vendor/samsung/sm8250-common/sm8250-common-vendor.mk)
 
 # AdvancedDisplay (MDNIE)
 PRODUCT_PACKAGES += \
@@ -28,7 +28,7 @@ PRODUCT_COMPRESSED_APEX := false
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@6.0-impl.sm7125 \
+    android.hardware.audio@6.0-impl.sm8250 \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.audio.service \
     android.hardware.bluetooth.audio-impl \
@@ -77,7 +77,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-legacy \
     android.hardware.camera.provider@2.5-legacy \
     android.hardware.camera.provider@2.6.vendor \
-    android.hardware.camera.provider@2.6-service.sm7125 \
+    android.hardware.camera.provider@2.6-service.sm8250 \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
     camera.device@3.3-impl \
@@ -140,8 +140,8 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service-samsung.sm7125 \
-    SamsungUdfpsHandler.sm7125
+    android.hardware.biometrics.fingerprint@2.3-service-samsung.sm8250 \
+    SamsungUdfpsHandler.sm8250
 
 # FlipFlap
 PRODUCT_PACKAGES += \
@@ -234,7 +234,7 @@ PRODUCT_PACKAGES += \
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.samsung-qcom.sm7125
+    vendor.lineage.livedisplay@2.0-service.samsung-qcom.sm8250
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -414,7 +414,7 @@ PRODUCT_PACKAGES += \
 
 # Touch features
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.samsung.sm7125
+    vendor.lineage.touch@1.0-service.samsung.sm8250
 
 # Trust HAL
 PRODUCT_PACKAGES += \
@@ -430,7 +430,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.samsung.sm7125
+    android.hardware.vibrator-service.samsung.sm8250
 
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 30

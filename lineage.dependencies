@@ -1,7 +1,7 @@
 [
   {
-    "repository": "android_kernel_samsung_sm7125",
-    "target_path": "kernel/samsung/sm7125"
+    "repository": "android_kernel_samsung_sm8250",
+    "target_path": "kernel/samsung/sm8250"
   },
   {
     "repository": "android_hardware_samsung",
