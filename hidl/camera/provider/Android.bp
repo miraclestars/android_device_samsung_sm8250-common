@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2022 The LineageOS Project
+// Copyright (C) 2023 The LineageOS Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,37 +13,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-soong_config_module_type {
-    name: "samsung_sm8250_model",
-    module_type: "cc_defaults",
-    config_namespace: "samsung_sm8250CameraVars",
-    value_variables: ["samsung_sm8250_model"],
-    properties: ["cppflags"],
-}
-
-samsung_sm8250_model {
-    name: "samsung_sm8250_model_defaults",
-    soong_config_variables: {
-        samsung_sm8250_model: {
-            cppflags: ["-DSAMSUNG_SM8250_MODEL_%s"],
-        },
-    },
-}
 
 cc_binary {
-    name: "android.hardware.camera.provider@2.6-service.sm8250",
+    name: "android.hardware.camera.provider@2.6-service_64.samsung-sm8250",
     defaults: [
         "hidl_defaults",
-        "samsung_sm8250_model_defaults",
     ],
-    compile_multilib: "both",
+    compile_multilib: "64",
     proprietary: true,
     relative_install_path: "hw",
     srcs: [
         "SamsungCameraProvider.cpp",
         "service.cpp"
     ],
-    init_rc: ["android.hardware.camera.provider@2.6-service.sm8250.rc"],
+    init_rc: ["android.hardware.camera.provider@2.6-service_64.samsung-sm8250.rc"],
     shared_libs: [
         "android.hardware.camera.provider@2.4",
         "android.hardware.camera.provider@2.4-legacy",

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 The LineageOS Project
+ * Copyright (C) 2023 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,14 +26,14 @@ using ::android::OK;
 const int kMaxCameraIdLen = 16;
 
 SamsungCameraProvider::SamsungCameraProvider() : LegacyCameraProviderImpl_2_5() {
-
-#ifdef SAMSUNG_SM7125_MODEL_a72q
-    // tele
+    // ID=50 is telephoto
+    //we can try theese
+    //&&{0, 1, 2, 20, 21, 23, 3, 4, 52, })
+    mExtraIDs.push_back(20);
+    mExtraIDs.push_back(21);
+    mExtraIDs.push_back(23);
+    mExtraIDs.push_back(50);
     mExtraIDs.push_back(52);
-#endif
-
-    // macro
-    mExtraIDs.push_back(54);
 
     if (!mInitFailed) {
         for (int i : mExtraIDs) {

@@ -1,6 +1,6 @@
 /*
  * Copyright 2019 The Android Open Source Project
- * Copyright 2021 The LineageOS Project
+ * Copyright 2023 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.camera.provider@2.6-service.samsung"
+#define LOG_TAG "android.hardware.camera.provider@2.6-service_64.samsung.sm8250"
 
 #include <android/hardware/camera/provider/2.6/ICameraProvider.h>
 #include <binder/ProcessState.h>

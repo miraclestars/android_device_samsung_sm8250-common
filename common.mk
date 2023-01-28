@@ -77,7 +77,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-legacy \
     android.hardware.camera.provider@2.5-legacy \
     android.hardware.camera.provider@2.6.vendor \
-    android.hardware.camera.provider@2.6-service.sm8250 \
+    android.hardware.camera.provider@2.6-service_64.samsung-sm8250 \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
     camera.device@3.3-impl \
