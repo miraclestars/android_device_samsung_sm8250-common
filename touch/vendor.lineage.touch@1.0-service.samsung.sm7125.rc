@@ -1,0 +1,8 @@
+on early-init
+    chown system radio /sys/class/sec/tsp/cmd
+    chmod 0664 /sys/class/sec/tsp/cmd
+
+service vendor.touch-hal-1-0 /vendor/bin/hw/vendor.lineage.touch@1.0-service.samsung.sm7125
+    class hal
+    user system
+    group system

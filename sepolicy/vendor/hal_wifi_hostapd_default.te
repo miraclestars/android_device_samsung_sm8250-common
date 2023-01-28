@@ -1,0 +1,2 @@
+# /data/vendor/wifi/hostapd/hostapd_wlan0.conf
+r_dir_file(hal_wifi_hostapd_default, vendor_wifi_vendor_data_file)
