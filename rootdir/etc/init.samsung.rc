@@ -1,4 +1,4 @@
-# Copyright (c) 2013-2018,2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -35,212 +35,108 @@ on early-init
     mkdir /mnt/vendor/efs 0771 radio system
     mkdir /mnt/vendor/persist 0771 root system
 
-    mkdir /efs/taas 0770 system system
-    mkdir /mnt/vendor/efs/taas 0770 system system
-    chown system system /dev/tspio
-    chown system system /dev/tsp_data
-    chown system system /sys/class/sec/tsp/input/enabled
-    chown system system /sys/class/sec/tsp1/input/enabled
-    chown system system /sys/class/sec/tsp2/input/enabled
-    chown system system /sys/class/sec/sec_epen/input/enabled
-    chown system system /sys/class/sec/tsp/enabled
-    chown system system /sys/class/sec/tsp1/enabled
-    chown system system /sys/class/sec/tsp2/enabled
-    chown system system /sys/class/sec/sec_epen/enabled
-
-    # pogo keyboard
-    chown system system /sys/class/sec/sec_keypad/fw_update
-
 on init
     symlink /dev/block/bootdevice/by-name/steady  /dev/block/steady
     symlink /dev/block/bootdevice/by-name/persistent  /dev/block/persistent
 
-    chown system radio /sys/class/sec/switch/afc_disable
-
-on early-boot
-
-    # Vibrator
-    chown system system /sys/class/timed_output/vibrator/intensity
-    chown system system /sys/class/timed_output/vibrator/force_touch_intensity
-    chown system system /sys/class/timed_output/vibrator/multi_freq
-    chown system system /sys/class/timed_output/vibrator/haptic_engine
-    chown system system /sys/class/timed_output/vibrator/cp_trigger_index
-    chown system system /sys/class/timed_output/vibrator/cp_trigger_queue
-    chown system system /sys/class/timed_output/vibrator/num_waves
-    chown system system /sys/class/timed_output/vibrator/motor_type
-    chown system system /sys/class/timed_output/vibrator/event_cmd
-    chown system system /sys/class/timed_output/vibrator/pattern_length
-    chown system system /sys/class/timed_output/vibrator/ext_control
-    chown system system /sys/class/timed_output/vibrator/vibe_state
-    chown system system /sys/class/timed_output/vibrator/intensities
-    chown system system /sys/class/timed_output/vibrator/haptic_intensities
-    chown system system /sys/class/timed_output/vibrator/fifo
-    chown system system /sys/class/timed_output/vibrator/hybrid_haptic_engine
-    chown system system /sys/class/timed_output/vibrator/use_sep_index
-
-    chown system system /sys/class/leds/vibrator/intensity
-    chown system system /sys/class/leds/vibrator/force_touch_intensity
-    chown system system /sys/class/leds/vibrator/multi_freq
-    chown system system /sys/class/leds/vibrator/haptic_engine
-    chown system system /sys/class/leds/vibrator/cp_trigger_index
-    chown system system /sys/class/leds/vibrator/cp_trigger_queue
-    chown system system /sys/class/leds/vibrator/num_waves
-    chown system system /sys/class/leds/vibrator/motor_type
-    chown system system /sys/class/leds/vibrator/event_cmd
-    chown system system /sys/class/leds/vibrator/pattern_length
-    chown system system /sys/class/leds/vibrator/ext_control
-    chown system system /sys/class/leds/vibrator/vibe_state
-    chown system system /sys/class/leds/vibrator/intensities
-    chown system system /sys/class/leds/vibrator/haptic_intensities
-    chown system system /sys/class/leds/vibrator/fifo
-    chown system system /sys/class/leds/vibrator/hybrid_haptic_engine
-
-    chown system system /sys/class/sec_vib_inputff/control/use_sep_index
-
-    chmod 660 /sys/class/timed_output/vibrator/intensity
-    chmod 660 /sys/class/timed_output/vibrator/force_touch_intensity
-    chmod 660 /sys/class/timed_output/vibrator/multi_freq
-    chmod 660 /sys/class/timed_output/vibrator/haptic_engine
-    chmod 660 /sys/class/timed_output/vibrator/cp_trigger_index
-    chmod 660 /sys/class/timed_output/vibrator/cp_trigger_queue
-    chmod 660 /sys/class/timed_output/vibrator/num_waves
-    chmod 660 /sys/class/timed_output/vibrator/motor_type
-    chmod 660 /sys/class/timed_output/vibrator/event_cmd
-    chmod 660 /sys/class/timed_output/vibrator/pattern_length
-    chmod 660 /sys/class/timed_output/vibrator/ext_control
-    chmod 660 /sys/class/timed_output/vibrator/vibe_state
-    chmod 660 /sys/class/timed_output/vibrator/intensities
-    chmod 660 /sys/class/timed_output/vibrator/haptic_intensities
-    chmod 660 /sys/class/timed_output/vibrator/fifo
-    chmod 660 /sys/class/timed_output/vibrator/hybrid_haptic_engine
-
-    chmod 660 /sys/class/leds/vibrator/intensity
-    chmod 660 /sys/class/leds/vibrator/force_touch_intensity
-    chmod 660 /sys/class/leds/vibrator/multi_freq
-    chmod 660 /sys/class/leds/vibrator/haptic_engine
-    chmod 660 /sys/class/leds/vibrator/cp_trigger_index
-    chmod 660 /sys/class/leds/vibrator/cp_trigger_queue
-    chmod 660 /sys/class/leds/vibrator/num_waves
-    chmod 660 /sys/class/leds/vibrator/motor_type
-    chmod 660 /sys/class/leds/vibrator/event_cmd
-    chmod 660 /sys/class/leds/vibrator/pattern_length
-    chmod 660 /sys/class/leds/vibrator/ext_control
-    chmod 660 /sys/class/leds/vibrator/vibe_state
-    chmod 660 /sys/class/leds/vibrator/intensities
-    chmod 660 /sys/class/leds/vibrator/haptic_intensities
-    chmod 660 /sys/class/leds/vibrator/fifo
-    chmod 660 /sys/class/leds/vibrator/hybrid_haptic_engine
+# Change backlog queue size
+    write /proc/sys/net/core/netdev_max_backlog 100000
 
 # Create carrier folder for HiddenMenu
 on post-fs
     mkdir /efs/carrier 0755 system system
     restorecon_recursive /efs
 
-	restorecon_recursive /mnt/vendor/efs
-	chown radio system /mnt/vendor/efs
-	chmod 0771 /mnt/vendor/efs
+    restorecon_recursive /mnt/vendor/efs
+    chown radio system /mnt/vendor/efs
+    chmod 0771 /mnt/vendor/efs
 
-	chown system radio /efs
-	chmod 0771 /efs
-	restorecon /efs
+    chown system radio /efs
+    chmod 0771 /efs
+    restorecon /efs
 
-    # carrier partition
+on post-fs-data
+# carrier partition
     chown system system /carrier
     chmod 0771 /carrier
     restorecon /carrier
 
-# Meta event
-    chown system radio /sys/class/sensors/sensor_dev/flush
-
-# Fingerprint sensor
-    chmod 0660 /dev/goodix_fp
-    chown system system /dev/goodix_fp
-    chown system radio /sys/class/fingerprint/fingerprint/type_check
-    chown system radio /sys/class/fingerprint/fingerprint/name
-    chown system radio /sys/class/fingerprint/fingerprint/vendor
-    chown system radio /sys/class/fingerprint/fingerprint/adm
-    chown system radio /sys/class/fingerprint/fingerprint/bfs_values
-    chown system radio /sys/class/fingerprint/fingerprint/rb
-    mkdir /efs/biometrics 0770 system system
-    mkdir /efs/biometrics/meta 0770 system system
-
-    # spu partition
+# spu partition
     chown system system /spu
     chmod 0771 /spu
     restorecon /spu
+    
+    chown system system /dqmdbg
+    chmod 0770 /dqmdbg
+    restorecon /dqmdbg
 
-on boot
-    # Permissions for Touchscreen
+# FINGERPRINT
+    # fp_migration /data/biometrics /data/vendor/biometrics
+    mkdir /data/vendor/biometrics 0770 system system
+    mkdir /data/vendor/fpSnrTest 0770 system system
+    # restorecon_recursive /data/vendor/biometrics
+
+# argos
+    chown system system /dev/network_throughput
+
+on early-boot
+# Permissions for Touchscreen
     chown system radio /sys/class/sec/tsp/cmd
     chown system system /sys/class/sec/tsp/input/enabled
     chmod 0660 /sys/class/sec/tsp/input/enabled
-    chown system system /sys/class/sec/tsp/enabled
-    chmod 0660 /sys/class/sec/tsp/enabled
-    chown system system /sys/class/sec/tsp/input/fod_pressed
     chown root system /proc/tsp_msg
     chmod 0440 /proc/tsp_msg
-    chown system radio /sys/class/sec/tsp/pressure_enable
     chown system system /sys/class/sec/tsp/multi_count
     chown system system /sys/class/sec/tsp/wet_mode
     chown system system /sys/class/sec/tsp/noise_mode
     chown system system /sys/class/sec/tsp/comm_err_count
     chown system system /sys/class/sec/tsp/checksum
-    chown system system /sys/class/sec/tsp/holding_time
     chown system system /sys/class/sec/tsp/all_touch_count
     chown system system /sys/class/sec/tsp/z_value
     chown system system /sys/class/sec/tsp/sensitivity_mode
     chown system system /sys/class/sec/tsp/prox_power_off
-    chown system system /sys/class/sec/tsp/irq_recovery_count
     chown system system /sys/class/sec/tsp/ic_reset_count
     chown system system /sys/class/sec/tsp/mode_change_failed_count
-    chown system system /sys/class/sec/sec_key/key_pressed_count
     chown system system /dev/tspio
     chown system system /sys/class/sec/tsp/ear_detect_enable
-    chown system system /sys/class/sec/tsp/ta_mode
-    chown system system /sys/class/sec/tsp/virtual_prox
     chown system system /sys/class/sec/tsp/hw_param
-    chown system system /sys/class/sec/tsp/input/trusted_touch_enable
-    chown system system /sys/class/sec/tsp/input/trusted_touch_event
-    chown system system /sys/class/sec/tsp/input/trusted_touch_type
+    chown system system /sys/class/sec/tsp/dualscreen_policy
+    chown system system /sys/class/sec/tsp/virtual_prox
 
-    # Permissions for Touchscreen-1
+# Permissions for Touchscreen-1
     chown system radio /sys/class/sec/tsp1/cmd
     chown system system /sys/class/sec/tsp1/input/enabled
     chmod 0660 /sys/class/sec/tsp1/input/enabled
-    chown system system /sys/class/sec/tsp1/multi_count
-    chown system system /sys/class/sec/tsp1/wet_mode
-    chown system system /sys/class/sec/tsp1/noise_mode
-    chown system system /sys/class/sec/tsp1/comm_err_count
-    chown system system /sys/class/sec/tsp1/checksum
-    chown system system /sys/class/sec/tsp1/all_touch_count
-    chown system system /sys/class/sec/tsp1/z_value
     chown system system /sys/class/sec/tsp1/sensitivity_mode
     chown system system /sys/class/sec/tsp1/prox_power_off
-    chown system system /sys/class/sec/tsp1/ic_reset_count
-    chown system system /sys/class/sec/tsp1/mode_change_failed_count
+    chown system system /sys/class/sec/tsp1/hw_param
+    chown system system /sys/class/sec/tsp1/dualscreen_policy
 
-    # Permissions for Touchscreen-2
+# Permissions for Touchscreen-2
     chown system radio /sys/class/sec/tsp2/cmd
     chown system system /sys/class/sec/tsp2/input/enabled
     chmod 0660 /sys/class/sec/tsp2/input/enabled
-    chown system system /sys/class/sec/tsp2/multi_count
-    chown system system /sys/class/sec/tsp2/wet_mode
-    chown system system /sys/class/sec/tsp2/noise_mode
-    chown system system /sys/class/sec/tsp2/comm_err_count
-    chown system system /sys/class/sec/tsp2/checksum
-    chown system system /sys/class/sec/tsp2/all_touch_count
-    chown system system /sys/class/sec/tsp2/z_value
     chown system system /sys/class/sec/tsp2/sensitivity_mode
     chown system system /sys/class/sec/tsp2/prox_power_off
-    chown system system /sys/class/sec/tsp2/ic_reset_count
-    chown system system /sys/class/sec/tsp2/mode_change_failed_count
+    chown system system /sys/class/sec/tsp2/hw_param
+    chown system system /sys/class/sec/tsp2/dualscreen_policy
 
-    # Permissions for Wacom
+# Permission for Securetouch
+    chown system system /sys/class/sec/ss_touch/secure/secure_touch_enable
+    chown system system /sys/class/sec/tsp1/input/secure_touch_enable
+    chown system system /sys/class/sec/tsp2/input/secure_touch_enable
+
+    chown system radio /sys/class/sec/tsp1/cmd
+    chown system system /sys/class/sec/tsp1/input/enabled
+    chmod 0660 /sys/class/sec/tsp1/input/enabled
+    chown system radio /sys/class/sec/tsp2/cmd
+    chown system system /sys/class/sec/tsp2/input/enabled
+    chmod 0660 /sys/class/sec/tsp2/input/enabled
+
+# Permission for Wacom
     chown system radio /sys/class/sec/sec_epen/cmd
     chown system system /sys/class/sec/sec_epen/input/enabled
     chmod 0660 /sys/class/sec/sec_epen/input/enabled
-    chown system system /sys/class/sec/sec_epen/enabled
-    chmod 0660 /sys/class/sec/sec_epen/enabled
     chown system radio /sys/class/sec/sec_epen/epen_firm_update
     chown system radio /sys/class/sec/sec_epen/epen_reset
     chown system radio /sys/class/sec/sec_epen/epen_reset_result
@@ -249,293 +145,125 @@ on boot
     chown system radio /sys/class/sec/sec_epen/epen_saving_mode
     chown system radio /sys/class/sec/sec_epen/epen_wcharging_mode
     chown system radio /sys/class/sec/sec_epen/epen_ble_charging_mode
+    chown system radio /sys/class/sec/sec_epen/epen_fac_garage_mode
+    chown system radio /sys/class/sec/sec_epen/epen_fac_select_firmware
     chown system radio /sys/class/sec/sec_epen/keyboard_mode
     chown system radio /sys/class/sec/sec_epen/epen_disable_mode
     chown system radio /sys/class/sec/sec_epen/aod_enable
     chown system radio /sys/class/sec/sec_epen/aod_lcd_onoff_status
     chown system radio /sys/class/sec/sec_epen/screen_off_memo_enable
     chown system radio /sys/class/sec/sec_epen/dex_enable
-    chown system radio /sys/class/sec/sec_epen/epen_fac_garage_mode
-    chown system radio /sys/class/sec/sec_epen/epen_fac_select_firmware
-    chown system system /sys/class/sec/sec_epen/abnormal_reset_count
-    chown system system /sys/class/sec/sec_epen/i2c_fail_count
-    chown system system /sys/class/sec/sec_epen/pen_out_count
     chown system system /sys/class/sec/sec_epen/hw_param
+# pogo keyboard
+    chown system system /sys/class/sec/sec_keypad/fw_update
 
-    # Permission for Securetouch
-    chown system system /sys/class/sec/ss_touch/secure/secure_touch_enable
-    chown system system /sys/class/sec/ss_touch/secure/trusted_touch_enable
-    chown system system /sys/class/sec/ss_touch/secure/trusted_touch_event
-    chown system system /sys/class/sec/ss_touch/secure/trusted_touch_type
-    chown system system /sys/class/sec/tsp/input/secure_touch_enable
-    chown system system /sys/class/sec/tsp1/input/secure_touch_enable
-    chown system system /sys/class/sec/tsp2/input/secure_touch_enable
-    chown system system /sys/class/sec/tsp/input/trusted_touch_enable
-    chown system system /sys/class/sec/tsp/input/trusted_touch_event
-    chown system system /sys/class/sec/tsp/input/trusted_touch_type
-
-    # Key
-    chown system radio /sys/class/sec/sec_key/wakeup_keys
-    write /sys/class/sec/sec_key/wakeup_keys 116,172
-    chown system system /sys/class/sec/sec_key/key_pressed_count
-    chown system radio /sys/class/sec/sec_sidekey/cmd
-    chown system system /sys/class/sec/sec_sidekey/input/enabled
-    chmod 0660 /sys/class/sec/sec_sidekey/input/enabled
-
-    # Permission for Keyboard
-    chown system system /sys/class/sec/sec_keypad/enabled
-    chmod 0660 /sys/class/sec/sec_keypad/enabled
-
-    # TAAS
-    chown system system /mnt/vendor/efs/taas
-    chown system system /mnt/vendor/efs/taas/taas
-    chmod 0770 /mnt/vendor/efs/taas
-    chmod 0660 /mnt/vendor/efs/taas/taas
-
-    chown system system /mnt/vendor/efs/taas/taaslog
-    chmod 0660 /mnt/vendor/efs/taas/taaslog
-
-    chown system system /efs/taas/taaslog
-    chmod 0660 /efs/taas/taaslog
-
-    # Permission for nfc, eSE driver
+on boot
+# Permission for nfc, eSE driver
     chmod 0660 /dev/pn547
     chmod 0660 /dev/p61
     chown nfc nfc /dev/pn547
     chown system system /dev/p61
     chmod 0660 /dev/sec-nfc
+    chmod 0660 /dev/p3
     chown nfc nfc /dev/sec-nfc
+    chown system system /dev/p3
 
-    #Camera Start
+# DP AUX switch control
+    chmod 0660 /sys/class/dp_sec/dp_sbu_sw_sel
+    chown system system /sys/class/dp_sec/dp_sbu_sw_sel
 
-    #Camera SVC
-    chown system system /sys/devices/svc/Camera/SVC_front_module
-    chown system system /sys/devices/svc/Camera/SVC_rear_module
-    chown system system /sys/devices/svc/Camera/SVC_rear_module2
-    chown system system /sys/devices/svc/Camera/SVC_rear_module3
-    chown system system /sys/devices/svc/Camera/SVC_rear_module4
+# DP DEX control
+    chmod 0660 /sys/class/dp_sec/dex
+    chown system system /sys/class/dp_sec/dex
 
-    # Camera Dual
-    chown system system /sys/class/camera/dual/fallback
+# DP AUX dev control
+    chmod 0660 /dev/secdp_aux
+    chown system system /dev/secdp_aux
 
-    #Camera Rear
-    chown system system /sys/class/camera/rear/cam_ln_test
-    chown system system /sys/class/camera/rear/isp_core
-    chown system system /sys/class/camera/rear/rear2_afcal
-    chown system system /sys/class/camera/rear/rear2_camfw
-    chown system system /sys/class/camera/rear/rear2_camfw_full
-    chown system system /sys/class/camera/rear/rear2_caminfo
-    chown system system /sys/class/camera/rear/rear2_camtype
-    chown system system /sys/class/camera/rear/rear2_checkfw_factory
-    chown system system /sys/class/camera/rear/rear2_checkfw_user
-    chown system system /sys/class/camera/rear/rear2_dualcal
-    chown system system /sys/class/camera/rear/rear2_dualcal_extra
-    chown system system /sys/class/camera/rear/rear2_dualcal_size
-    chown system system /sys/class/camera/rear/rear2_hwparam
-    chown system system /sys/class/camera/rear/rear2_moduleid
-    chown system system /sys/class/camera/rear/rear2_moduleinfo
-    chown system system /sys/class/camera/rear/rear2_mtf_exif
-    chown system system /sys/class/camera/rear/rear2_sensorid_exif
-    chown system system /sys/class/camera/rear/rear2_tilt
-    chown system system /sys/class/camera/rear/rear3_afcal
-    chown system system /sys/class/camera/rear/rear3_camfw
-    chown system system /sys/class/camera/rear/rear3_camfw_full
-    chown system system /sys/class/camera/rear/rear3_caminfo
-    chown system system /sys/class/camera/rear/rear3_camtype
-    chown system system /sys/class/camera/rear/rear3_dualcal
-    chown system system /sys/class/camera/rear/rear3_dualcal_extra
-    chown system system /sys/class/camera/rear/rear3_dualcal_size
-    chown system system /sys/class/camera/rear/rear3_moduleinfo
-    chown system system /sys/class/camera/rear/rear3_hwparam
-    chown system system /sys/class/camera/rear/rear3_mtf_exif
-    chown system system /sys/class/camera/rear/rear3_paf_cal_check
-    chown system system /sys/class/camera/rear/rear3_sensorid_exif
-    chown system system /sys/class/camera/rear/rear3_tilt
-    chown system system /sys/class/camera/rear/rear_afcal
-    chown system system /sys/class/camera/rear/rear_calcheck
-    chown system system /sys/class/camera/rear/rear_camfw
-    chown system system /sys/class/camera/rear/rear_camfw_full
-    chown system system /sys/class/camera/rear/rear_camfw_load
-    chown system system /sys/class/camera/rear/rear_caminfo
-    chown system system /sys/class/camera/rear/rear_camtype
-    chown system system /sys/class/camera/rear/rear_checkfw_factory
-    chown system system /sys/class/camera/rear/rear_checkfw_user
-    chown system system /sys/class/camera/rear/rear_dualcal
-    chown system system /sys/class/camera/rear/rear_dualcal_extra
-    chown system system /sys/class/camera/rear/rear_dualcal_size
-    chown system system /sys/class/camera/rear/rear_f2_paf_cal_check
-    chown system system /sys/class/camera/rear/rear_f2_paf_offset_far
-    chown system system /sys/class/camera/rear/rear_f2_paf_offset_mid
-    chown system system /sys/class/camera/rear/rear_frs_test
-    chown system system /sys/class/camera/rear/rear_hwparam
-    chown system system /sys/class/camera/rear/rear_moduleid
-    chown system system /sys/class/camera/rear/rear_moduleinfo
-    chown system system /sys/class/camera/rear/rear_mtf2_exif
-    chown system system /sys/class/camera/rear/rear_mtf_exif
-    chown system system /sys/class/camera/rear/rear_paf_cal_check
-    chown system system /sys/class/camera/rear/rear_paf_offset_mid
-    chown system system /sys/class/camera/rear/rear_sensorid_exif
-    chown system system /sys/class/camera/rear/ssrm_camera_info
-    chown system system /sys/class/camera/rear/supported_cameraIds
-    chown system system /sys/class/camera/rear/rear_paf_offset_far
-    chown system system /sys/class/camera/rear/rear4_afcal
-    chown system system /sys/class/camera/rear/rear4_camfw
-    chown system system /sys/class/camera/rear/rear4_camfw_full
-    chown system system /sys/class/camera/rear/rear4_caminfo
-    chown system system /sys/class/camera/rear/rear4_camtype
-    chown system system /sys/class/camera/rear/rear4_checkfw_factory
-    chown system system /sys/class/camera/rear/rear4_checkfw_user
-    chown system system /sys/class/camera/rear/rear4_camafcal
-    chown system system /sys/class/camera/rear/rear4_mtf_exif
-    chown system system /sys/class/camera/rear/rear4_sensorid_exif
-    chown system system /sys/class/camera/rear/rear4_moduleid
-    chown system system /sys/class/camera/rear/rear4_moduleinfo
-    chown system system /sys/class/camera/rear/rear4_caminfo
-    chown cameraserver cameraserver /sys/kernel/mm/vmscan/mem_boost_mode
+# DP error info
+    chmod 0660 /sys/class/dp_sec/dp_error_info
+    chown system system /sys/class/dp_sec/dp_error_info
 
-    # Camera::Rear ToF
-    chown system system /sys/class/camera/rear/rear_tof_caminfo
-    chown system system /sys/class/camera/rear/rear_tof_moduleinfo
-    chown system system /sys/class/camera/rear/rear_tof_camfw
-    chown system system /sys/class/camera/rear/rear_tof_camfw_full
-    chown system system /sys/class/camera/rear/rear_tof_checkfw_factory
-    chown system system /sys/class/camera/rear/rear_tof_sensorid_exif
-    chown system system /sys/class/camera/rear/rear_tofcal
-    chown system system /sys/class/camera/rear/rear_tofcal_extra
-    chown system system /sys/class/camera/rear/rear_tofcal_size
-    chown system system /sys/class/camera/rear/rear_tofcal_uid
-    chown system system /sys/class/camera/rear/rear_tof_dual_cal
-    chown system system /sys/class/camera/rear/rear_tof_cal_result
-    chown system system /sys/class/camera/rear/rear_tof_ld_onoff
-    chown system system /sys/class/camera/rear/rear_tof_ae_value
-    chown system system /sys/class/camera/rear/rear_tof_check_pd
-    chown system system /sys/class/camera/rear/rear_tof_fps
-    chown system system /sys/class/camera/rear/rear3_moduleid
-    chown system system /sys/class/camera/rear/rear_tof_freq
+# DP monitor info
+    chmod 0440 /sys/class/dp_sec/monitor_info
+    chown system system /sys/class/dp_sec/monitor_info
 
-    #Camera Front
-    chown system system /sys/class/camera/front/front_afcal
-    chown system system /sys/class/camera/front/front_camfw
-    chown system system /sys/class/camera/front/front_camfw_full
-    chown system system /sys/class/camera/front/front_caminfo
-    chown system system /sys/class/camera/front/front_camtype
-    chown system system /sys/class/camera/front/front_checkfw_factory
-    chown system system /sys/class/camera/front/front_checkfw_user
-    chown system system /sys/class/camera/front/front_hwparam
-    chown system system /sys/class/camera/front/front_mipi_clock
-    chown system system /sys/class/camera/front/front_moduleid
-    chown system system /sys/class/camera/front/front_moduleinfo
-    chown system system /sys/class/camera/front/front_mtf_exif
-    chown system system /sys/class/camera/front/front_sensorid_exif
+# DP dex version
+    chmod 0440 /sys/class/dp_sec/dex_ver
+    chown system system /sys/class/dp_sec/dex_ver
 
-    #Camera Front2
-    chown system system /sys/class/camera/front/front2_camtype
-    chown system system /sys/class/camera/front/front2_mtf_exif
+# Key
+    chown system radio /sys/class/sec/sec_key/wakeup_keys
+    write /sys/class/sec/sec_key/wakeup_keys 116,172
+    chown system system /sys/class/sec/sec_key/key_pressed_count
+    chown system system /sys/class/sec/sec_powerkey/powerkey_pressed_count
 
-    # Camera::Front ToF
-    chown system system /sys/class/camera/front/front_tof_caminfo
-    chown system system /sys/class/camera/front/front_tof_moduleinfo
-    chown system system /sys/class/camera/front/front_tof_camfw
-    chown system system /sys/class/camera/front/front_tof_camfw_full
-    chown system system /sys/class/camera/front/front_tof_checkfw_factory
-    chown system system /sys/class/camera/front/front_tof_sensorid_exif
-    chown system system /sys/class/camera/front/front_tofcal
-    chown system system /sys/class/camera/front/front_tofcal_extra
-    chown system system /sys/class/camera/front/front_tofcal_size
-    chown system system /sys/class/camera/front/front_tofcal_uid
-    chown system system /sys/class/camera/front/front_tof_dual_cal
-    chown system system /sys/class/camera/front/front_tof_cal_result
-    chown system system /sys/class/camera/front/front_tof_ld_onoff
-    chown system system /sys/class/camera/front/front_tof_ae_value
-    chown system system /sys/class/camera/front/front_tof_check_pd
-    chown system system /sys/class/camera/front/front_tof_fps
-    chown system system /sys/class/camera/front/front_tof_freq
+# sensors
+    mkdir /efs/FactoryApp/sensors/ 0775 root root
+    chown system system /mnt/vendor/persist/sensors/registry/registry/sns_cm
 
-    #Camera Flash
-    chown system system /sys/class/camera/flash/rear_flash
+# Meta event
+    chown system radio /sys/class/sensors/sensor_dev/flush
 
-    # Camera::Ois
-    chown system system /sys/class/camera/ois/selftest
-    chown system system /sys/class/camera/ois/calibrationtest
-    chown system system /sys/class/camera/ois/ois_power
-    chown system system /sys/class/camera/ois/ois_rawdata
-    chown system system /sys/class/camera/ois/oisfw
-    chown system system /sys/class/camera/ois/ois_diff
-    chown system system /sys/class/camera/ois/ois_exif
-    chown system system /sys/class/camera/ois/autotest
-    chown system system /sys/class/camera/ois/autotest_2nd
-    chown system system /sys/class/camera/ois/ois_gain_rear
-    chown system system /sys/class/camera/ois/ois_gain_rear3
-    chown system system /sys/class/camera/ois/ois_supperssion_ratio_rear
-    chown system system /sys/class/camera/ois/ois_supperssion_ratio_rear3
-    chown system system /sys/class/camera/ois/ois_hall_position
-    chown system system /sys/class/camera/ois/reset_check
-    chown system system /sys/class/camera/ois/ois_set_mode
-    chown system system /sys/class/camera/ois/check_cross_talk
-    chown system system /sys/class/camera/ois/rear3_read_cross_talk
-    chown system system /sys/class/camera/ois/ois_ext_clk
+# Permissions for Power
+    chown radio system /sys/power/cpufreq_max_limit
+    chown radio system /sys/power/cpufreq_min_limit
+    chown radio system /sys/power/cpufreq_table
+    chown radio system /sys/power/over_limit
+    chmod 664 /sys/power/cpufreq_max_limit
+    chmod 664 /sys/power/cpufreq_min_limit
+    chmod 444 /sys/power/cpufreq_table
+    chmod 664 /sys/power/over_limit
+    chown system system /sys/power/rtc_status
+    chmod 444 /sys/power/rtc_status
+    chown radio system /sys/power/volkey_wakeup
+    chmod 664 /sys/power/volkey_wakeup
+    chown system system /sys/class/sec/ap_pmic/chg_det
+    chown system system /sys/class/sec/ap_pmic/manual_reset
+    chown radio system /sys/module/qpnp_power_on/parameters/reset_enabled
+    chmod 664 /sys/module/qpnp_power_on/parameters/reset_enabled
+    chown radio system /sys/module/qpnp_power_on/parameters/wake_enabled
+    chmod 664 /sys/module/qpnp_power_on/parameters/wake_enabled
+    chown radio system /sys/module/lpm_levels/parameters/secdebug
+    chmod 664 /sys/module/lpm_levels/parameters/secdebug
+    chown system system /sys/power/system_sleep/stats
 
-    #Camera AF
-    chown system system /sys/class/camera/af/af_position
+# Add permission for Display PMIC
+    chown system system /sys/class/sec/disp_pmic/enable_fd
+    chown system system /sys/class/sec/disp_pmic/power_meter/adc_mode
+    chown system system /sys/class/sec/disp_pmic/power_meter/adc_val_all
 
-    # Camera::Adaptive Mipi
-    chown system system /sys/class/camera/test/adaptive_test
-
-    # Camera::EarlyInit
-    setprop persist.camera.earlyinit 0
-
-    #Camera End 
+# for eRR.p
+    chown system system /proc/pwrsrc
+    chmod 0400 /proc/pwrsrc
 
 # Permissions for FMM
     chown system system /sys/class/sec/sec_debug/FMM_lock
     chmod 0660 /sys/class/sec/sec_debug/FMM_lock
 
-# Permissions for Performance
-    chown root system /sys/devices/platform/soc/5000000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_clock_mhz
-    chown root system /sys/devices/platform/soc/5000000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_clock_mhz
-    chmod 0664 /sys/devices/platform/soc/5000000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_clock_mhz
-    chmod 0664 /sys/devices/platform/soc/5000000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_clock_mhz
-    chown root system /dev/stune/top-app/schedtune.boost
-    chmod 0664 /dev/stune/top-app/schedtune.boost
-    chown system system /sys/class/input_booster/level
-    chown system system /sys/class/input_booster/head
-    chown system system /sys/class/input_booster/tail
-    chown system system /sys/class/input_booster/touchkey/level
-    chown system system /sys/class/input_booster/touchkey/freq
-    chown system system /sys/class/input_booster/touchkey/time
-    chmod 0664 /sys/class/input_booster/level
-    chmod 0664 /sys/class/input_booster/head
-    chmod 0664 /sys/class/input_booster/tail
-    chmod 0664 /sys/class/input_booster/touchkey/level
-    chmod 0664 /sys/class/input_booster/touchkey/freq
-    chmod 0664 /sys/class/input_booster/touchkey/time
-    chown root system /sys/class/devfreq/soc:qcom,cpu6-cpu-ddr-latfloor/min_freq
-    chown root system /sys/class/devfreq/soc:qcom,cpu6-cpu-ddr-latfloor/max_freq
-    chmod 0664 /sys/class/devfreq/soc:qcom,cpu6-cpu-ddr-latfloor/min_freq
-    chmod 0664 /sys/class/devfreq/soc:qcom,cpu6-cpu-ddr-latfloor/max_freq
+# Permissions for recovery_cause
+    chown root system /sys/class/sec/sec_debug/recovery_cause
 
-# enabled permission
-on property:sys.boot_completed=1
-    chown system system /sys/class/sec/tsp/input/enabled
-    chown system system /sys/class/sec/tsp1/input/enabled
-    chown system system /sys/class/sec/tsp2/input/enabled
-    chown system system /sys/class/sec/sec_epen/input/enabled
-    chown system system /sys/class/sec/tsp/enabled
-    chown system system /sys/class/sec/tsp1/enabled
-    chown system system /sys/class/sec/tsp2/enabled
-    chown system system /sys/class/sec/sec_epen/enabled
-    chown system system /sys/class/sec/tsp/input/trusted_touch_enable
-    chown system system /sys/class/sec/tsp/input/trusted_touch_event
-    chown system system /sys/class/sec/tsp/input/trusted_touch_type
-    chown system system /sys/class/sec/tsp1/input/trusted_touch_enable
-    chown system system /sys/class/sec/tsp1/input/trusted_touch_event
-    chown system system /sys/class/sec/tsp1/input/trusted_touch_type
-    chown system system /sys/class/sec/tsp2/input/trusted_touch_enable
-    chown system system /sys/class/sec/tsp2/input/trusted_touch_event
-    chown system system /sys/class/sec/tsp2/input/trusted_touch_type
+# Video call Virtual Background
+    mkdir /data/vendor/segbackground 0771 system system
 
-# FINGERPRINT FRAMEWORK : starts goodixfingerprintd
-service goodixd /vendor/bin/goodixfingerprintd
-    class late_start
+service factory_ssc /vendor/bin/factory.ssc
+    class core
     user system
-    group media_rw system
+    group system radio inet diag net_admin net_raw sdcard_rw sdcard_r media_rw
+
+# ARGOSD
+service argos-daemon /vendor/bin/argosd
+    class main
+    user system
+    group system radio
+    disabled
+
+on property:sys.boot_completed=1
+    start argos-daemon
+
+on property:sys.boot_completed=1
+    setprop ro.factory.sensor.delay.init 1
+
+on property:vendor.chre.enabled=0
+    stop chre

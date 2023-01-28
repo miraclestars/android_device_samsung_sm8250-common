@@ -31,19 +31,6 @@ on boot
     chmod 0660 /dev/st54spi
     chown system system /dev/st54spi
 
-# NFC: create data/nfc for nv storage
-    mkdir /data/nfc 0770 nfc nfc
-    mkdir /data/nfc/param 0770 nfc nfc
-
-# NFC: /efs/nfc for nv storage
-    mkdir /efs/nfc 0700 nfc nfc
-
-# NFC KEY
-    mkdir /data/nfc_log 0750 nfc system
-#    copy /system/etc/nfc_key /data/nfc/Key
-    chmod 660 /data/nfc/Key
-    chown nfc nfc /data/nfc/Key
-
 # For NFC hardware SKU
 on boot && property:ro.boot.nfc.feature.chipname=*
     setprop ro.vendor.nfc.feature.chipname ${ro.boot.nfc.feature.chipname}

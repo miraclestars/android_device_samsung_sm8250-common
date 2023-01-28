@@ -343,10 +343,6 @@ case "$target" in
                 setprop vendor.fastrpc.disable.cdsprpcd.daemon 1
                 setprop vendor.gralloc.disable_ubwc 1
                 ;;
-            471)
-                #scuba APQ
-                setprop vendor.gralloc.disable_ubwc 1
-                ;;
         esac
         ;;
     "sdm710" | "msmpeafowl")

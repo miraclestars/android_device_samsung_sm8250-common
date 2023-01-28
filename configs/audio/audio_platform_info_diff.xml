@@ -48,6 +48,5 @@
         <device name="SND_DEVICE_OUT_CALL_SPEAKER_EX_EVS" acdb_id="75"/>
         <device name="SND_DEVICE_OUT_WIFI_CALL_SPEAKER_EX" acdb_id="75"/>
         <device name="SND_DEVICE_OUT_WIFI_CALL_SPEAKER_EX_EVS" acdb_id="75"/>
-        <device name="SND_DEVICE_IN_USB_MIC_REMOTEMIC" acdb_id="511"/>
     </acdb_ids>
 </audio_platform_info>

@@ -26,46 +26,38 @@
 <!-- IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                          -->
 <mixer>
     <!-- These are the initial mixer settings -->
-    <ctl name="Headset Playback Volume" value="120" />
-    <ctl name="Headset Capture Volume" value="93" />
+    <ctl name="Headset Playback Volume" value="112" />
+    <ctl name="Headset Capture Volume" value="110" />
 
     <!-- Play Scenario  -->
     <path name="usb-headphones-gain">
-        <ctl name="Headset Playback Volume" value="120" />
+        <ctl name="Headset Playback Volume" value="112" />
     </path>
 
     <path name="speaker-and-usb-headphones-gain">
-        <ctl name="Headset Playback Volume" value="64" />
+        <ctl name="Headset Playback Volume" value="66" />
     </path>
 
     <path name="dual-speaker-and-usb-headphones-gain">
-        <ctl name="Headset Playback Volume" value="64" />
+        <ctl name="Headset Playback Volume" value="66" />
     </path>
 
     <path name="fm-usb-headphones-gain">
-        <ctl name="Headset Playback Volume" value="103" />
+        <ctl name="Headset Playback Volume" value="112" />
     </path>
 
     <path name="remote-usb-headset-gain">
         <ctl name="Headset Playback Volume" value="112" />
     </path>
-
-    <path name="listenback-usb-headphones-gain">
-        <ctl name="Headset Playback Volume" value="120" />
-    </path>
-
-    <path name="listenback-usb-headset-gain">
-        <ctl name="Headset Playback Volume" value="120" />
-    </path>
     <!-- end of Play Scenario -->
 
     <!-- Recording Scenario  -->
     <path name="rec-usb-headset-mic-gain">
-        <ctl name="Headset Capture Volume" value="84" />
+        <ctl name="Headset Capture Volume" value="93" />
     </path>
 
     <path name="rec-usb-headset-stereo-mic-gain">
-        <ctl name="Headset Capture Volume" value="83" />
+        <ctl name="Headset Capture Volume" value="93" />
     </path>
     <!-- end of Recording Scenario -->
 
@@ -85,22 +77,22 @@
 
     <!-- call Scenario -->
     <path name="call-usb-headset-gain">
-        <ctl name="Headset Playback Volume" value="120" />
+        <ctl name="Headset Playback Volume" value="115" />
     </path>
 
     <path name="call-usb-headset-mic-gain">
-        <ctl name="Headset Capture Volume" value="104" />
+        <ctl name="Headset Capture Volume" value="120" />
     </path>
 
     <path name="call-usb-headphone-mic-gain">
     </path>
 
     <path name="wifi-call-usb-headset-gain">
-        <ctl name="Headset Playback Volume" value="120" />
+        <ctl name="Headset Playback Volume" value="115" />
     </path>
 
     <path name="wifi-call-usb-headset-mic-gain">
-        <ctl name="Headset Capture Volume" value="104" />
+        <ctl name="Headset Capture Volume" value="120" />
     </path>
 
     <path name="wifi-call-headphone-mic-gain">
@@ -116,7 +108,7 @@
     </path>
 
     <path name="call-tty-usb-headset-gain">
-        <ctl name="Headset Playback Volume" value="120" />
+        <ctl name="Headset Playback Volume" value="115" />
     </path>
 
     <path name="call-tty-full-usb-headset-mic-gain">
@@ -133,7 +125,7 @@
     </path>
 
     <path name="wifi-call-tty-usb-headset-gain">
-        <ctl name="Headset Playback Volume" value="120" />
+        <ctl name="Headset Playback Volume" value="115" />
     </path>
 
     <path name="wifi-call-tty-full-usb-headset-mic-gain">
@@ -143,7 +135,7 @@
 
     <!-- VoIP Scenario -->
     <path name="voip-comm-usb-headset-gain">
-        <ctl name="Headset Playback Volume" value="120" />
+        <ctl name="Headset Playback Volume" value="115" />
     </path>
 
     <path name="voip-comm-usb-headset-mic-gain">
@@ -154,7 +146,7 @@
     </path>
 
     <path name="voip-fmc-usb-headset-gain">
-        <ctl name="Headset Playback Volume" value="120" />
+        <ctl name="Headset Playback Volume" value="115" />
     </path>
 
     <path name="voip-fmc-usb-headset-mic-gain">
