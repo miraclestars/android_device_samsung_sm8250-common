@@ -107,10 +107,10 @@ ro.crypto.volume.filenames_mode=aes-256-cts
 # Dalvik VM
 dalvik.vm.heapgrowthlimit=256m
 dalvik.vm.heapmaxfree=8m
-dalvik.vm.heapminfree=512k
+dalvik.vm.heapminfree=32m
 dalvik.vm.heapsize=512m
-dalvik.vm.heapstartsize=8m
-dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapstartsize=16m
+dalvik.vm.heaptargetutilization=0.5
 dalvik.vm.lockprof.threshold=500
 
 # Display
@@ -120,6 +120,7 @@ debug.sf.early_app_phase_offset_ns=100000
 debug.sf.early_gl_app_phase_offset_ns=100000
 debug.sf.early_gl_phase_offset_ns=100000
 debug.sf.early_phase_offset_ns=100000
+debug.sf.enable_advanced_sf_phase_offset=1
 debug.sf.enable_gl_backpressure=1
 debug.sf.high_fps_early_gl_phase_offset_ns=100000
 debug.sf.high_fps_early_phase_offset_ns=100000
@@ -140,7 +141,6 @@ ro.surface_flinger.use_color_management=true
 ro.surface_flinger.use_content_detection_for_refresh_rate=false
 ro.surface_flinger.wcg_composition_dataspace=143261696
 vendor.display.comp_mask=0
-vendor.display.dataspace_saturation_matrix=1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0
 vendor.display.disable_decimation=1
 vendor.display.disable_dynamic_fps=1
 vendor.display.disable_excl_rect=0
@@ -179,7 +179,6 @@ ro.telephony.default_network=9,9
 ro.vendor.epdg.support=true
 ro.vendor.sec.radio.def_network=9
 vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
-vendor.sec.rild.libpath2=/vendor/lib64/libsec-ril-dsds.so
 
 # USB
 vendor.usb.diag.func.name=diag
