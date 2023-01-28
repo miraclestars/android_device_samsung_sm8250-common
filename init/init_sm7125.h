@@ -18,7 +18,7 @@ typedef struct {
 
 static const variant international_models = {
     .model = "SM-A525F",
-    .codename = "a52q"
+    .codename = "y2qdcmw"
 };
 
 static const variant international_models_a72 = {
@@ -28,7 +28,7 @@ static const variant international_models_a72 = {
 
 static const variant america_models = {
     .model = "SM-A525M",
-    .codename = "a52q"
+    .codename = "y2qdcmw"
 };
 
 static const variant america_models_a72 = {

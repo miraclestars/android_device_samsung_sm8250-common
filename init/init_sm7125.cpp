@@ -57,7 +57,7 @@ void vendor_load_properties()
 
     if (device.size() == 0) {
         LOG(ERROR) << "Could not detect device, forcing a52q";
-        device = "a52q";
+        device = "y2qdcmw";
     }
 
     name = device + "nsxx";
