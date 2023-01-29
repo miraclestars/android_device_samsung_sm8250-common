@@ -207,12 +207,6 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss.visibility_control@1.0.vendor \
     android.hardware.gnss@2.1.vendor
 
-# Graphics
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-# A list of dpis to select prebuilt apk, in precedence order.
-PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
-
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1.vendor
