@@ -21,6 +21,8 @@
 #include <hidl/HidlTransportSupport.h>
 
 #include "GloveMode.h"
+#include "KeyDisabler.h"
+#include "StylusMode.h"
 #include "TouchscreenGesture.h"
 
 using android::hardware::configureRpcThreadpool;
@@ -30,10 +32,14 @@ using android::status_t;
 using android::OK;
 
 using ::vendor::lineage::touch::V1_0::samsung::GloveMode;
+using ::vendor::lineage::touch::V1_0::samsung::KeyDisabler;
+using ::vendor::lineage::touch::V1_0::samsung::StylusMode;
 using ::vendor::lineage::touch::V1_0::samsung::TouchscreenGesture;
 
 int main() {
     sp<GloveMode> gloveMode;
+    sp<KeyDisabler> keyDisabler;
+    sp<StylusMode> stylusMode;
     sp<TouchscreenGesture> touchscreenGesture;
     status_t status;
 
@@ -42,6 +48,18 @@ int main() {
     gloveMode = new GloveMode();
     if (gloveMode == nullptr) {
         LOG(ERROR) << "Can not create an instance of Touch HAL GloveMode Iface, exiting.";
+        goto shutdown;
+    }
+
+    keyDisabler = new KeyDisabler();
+    if (keyDisabler == nullptr) {
+        LOG(ERROR) << "Can not create an instance of Touch HAL KeyDisabler Iface, exiting.";
+        goto shutdown;
+    }
+
+    stylusMode = new StylusMode();
+    if (stylusMode == nullptr) {
+        LOG(ERROR) << "Can not create an instance of Touch HAL StylusMode Iface, exiting.";
         goto shutdown;
     }
 
@@ -57,6 +75,24 @@ int main() {
         status = gloveMode->registerAsService();
         if (status != OK) {
             LOG(ERROR) << "Could not register service for Touch HAL GloveMode Iface (" << status
+                       << ")";
+            goto shutdown;
+        }
+    }
+
+    if (keyDisabler->isSupported()) {
+        status = keyDisabler->registerAsService();
+        if (status != OK) {
+            LOG(ERROR) << "Could not register service for Touch HAL KeyDisabler Iface (" << status
+                       << ")";
+            goto shutdown;
+        }
+    }
+
+    if (stylusMode->isSupported()) {
+        status = stylusMode->registerAsService();
+        if (status != OK) {
+            LOG(ERROR) << "Could not register service for Touch HAL StylusMode Iface (" << status
                        << ")";
             goto shutdown;
         }

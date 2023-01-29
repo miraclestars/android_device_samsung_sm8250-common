@@ -10,7 +10,9 @@ genfscon sysfs /class/input                                                     
 genfscon sysfs /class/misc/backlightnotification                                                               u:object_r:sysfs_backlight_writable:s0
 genfscon sysfs /class/sec/led                                                                                  u:object_r:sysfs_led_writable:s0
 genfscon sysfs /class/sec/sec_touchkey                                                                         u:object_r:sysfs_sec_touchkey:s0
+genfscon sysfs /class/sec/sec_touchkey/input/enabled                                                           u:object_r:sysfs_sec_touchkey_writable:s0
 genfscon sysfs /class/sec/tsp                                                                                  u:object_r:sysfs_sec_touchscreen:s0
+genfscon sysfs /class/sec/tsp/cmd                                                                              u:object_r:sysfs_touchscreen_writable:s0
 genfscon sysfs /class/sensor_event                                                                             u:object_r:sysfs_sensors:s0
 
 genfscon sysfs /devices/platform/panel@0/backlight/panel/brightness                                            u:object_r:sysfs_backlight_writable:s0
