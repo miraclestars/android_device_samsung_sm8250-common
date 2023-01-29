@@ -8,4 +8,5 @@ type sec_efs_block_device, dev_type;
 
 type drb_device, dev_type;
 type fp_sensor_device, dev_type;
+type ir_spi_device, dev_type;
 type radio_qos_device, dev_type;

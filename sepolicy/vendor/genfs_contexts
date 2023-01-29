@@ -9,6 +9,7 @@ genfscon sysfs /class/fingerprint/fingerprint                                   
 genfscon sysfs /class/input                                                                                    u:object_r:sysfs_input:s0
 genfscon sysfs /class/misc/backlightnotification                                                               u:object_r:sysfs_backlight_writable:s0
 genfscon sysfs /class/sec/led                                                                                  u:object_r:sysfs_led_writable:s0
+genfscon sysfs /class/sec/sec_ir                                                                               u:object_r:sysfs_sec_ir:s0
 genfscon sysfs /class/sec/sec_touchkey                                                                         u:object_r:sysfs_sec_touchkey:s0
 genfscon sysfs /class/sec/sec_touchkey/input/enabled                                                           u:object_r:sysfs_sec_touchkey_writable:s0
 genfscon sysfs /class/sec/tsp                                                                                  u:object_r:sysfs_sec_touchscreen:s0
