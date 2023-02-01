@@ -483,6 +483,24 @@ vendor/lib64/libminksocket.so
 vendor/lib64/liboemcrypto.so
 vendor/lib64/libtrustedapploader.so
 
+# Face
+vendor/bin/hw/vendor.samsung.hardware.biometrics.face@2.0-service
+vendor/etc/face3d/qcnn_concat_file_model-0324_2_encrypted
+vendor/etc/facerestoration/settings.json
+vendor/etc/init/vendor.samsung.hardware.biometrics.face@2.0-service.rc
+vendor/lib/cdsp_face.so
+vendor/lib/libFace3DTA.so
+vendor/lib/libFace3D_hlos.so
+vendor/lib/libFaceService.so
+vendor/lib/libface3d_dev.so
+vendor/lib/vendor.samsung.hardware.biometrics.face@2.0.so
+vendor/lib64/cdsp_face.so
+vendor/lib64/libFace3DTA.so
+vendor/lib64/libFace3D_hlos.so
+vendor/lib64/libFaceService.so
+vendor/lib64/libface3d_dev.so
+vendor/lib64/vendor.samsung.hardware.biometrics.face@2.0.so
+
 # Feature
 vendor/lib/libfloatingfeature.so
 vendor/lib/libsecnativefeature.so
