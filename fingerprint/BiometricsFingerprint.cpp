@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2023 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#define LOG_TAG "android.hardware.biometrics.fingerprint@2.3-service-samsung.sm8250"
 
 #include <android-base/logging.h>
 
@@ -53,23 +52,13 @@ static void set(const std::string& path, const T& value) {
     file << value;
 }
 
-std::string getBootloader() {
-    return android::base::GetProperty("ro.boot.bootloader", "");
-}
-
 BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr) {
     sInstance = this;  // keep track of the most recent instance
     if (!openHal()) {
         LOG(ERROR) << "Can't open HAL module";
     }
 
-    if (getBootloader().find("A525") != std::string::npos) {
-        set(TSP_CMD_PATH, "set_fod_rect,421,2018,659,2256");
-    } else if (getBootloader().find("A725") != std::string::npos) {
-        set(TSP_CMD_PATH, "set_fod_rect,426,2031,654,2259");
-    } else {
-        LOG(ERROR) << "Device is not an A52 or A72, not setting set_fod_rect";
-    }
+    set(TSP_CMD_PATH, "set_fod_rect,554,2375,886,2707");
 
     std::ifstream in("/sys/devices/virtual/fingerprint/fingerprint/position");
     mIsUdfps = !!in;
@@ -128,7 +117,7 @@ Return<bool> BiometricsFingerprint::isUdfps(uint32_t) {
 Return<void> BiometricsFingerprint::onFingerDown(uint32_t, uint32_t, float, float) {
     property_set("vendor.finger.down", "1");
 
-    std::thread([this]() {
+    std::thread([]() {
         std::this_thread::sleep_for(std::chrono::milliseconds(35));
         set(HBM_PATH, "331");
     }).detach();
