@@ -228,6 +228,22 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
+        <name>vendor.samsung.hardware.bluetooth.a2dpsink</name>
+        <version>1.0</version>
+        <interface>
+            <name>ISehBluetoothA2dpSinkProvidersFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.samsung.hardware.bluetooth.audio</name>
+        <version>2.1</version>
+        <interface>
+            <name>ISehBluetoothAudioProvidersFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
         <name>vendor.samsung.hardware.camera.provider</name>
         <version>4.0</version>
         <interface>

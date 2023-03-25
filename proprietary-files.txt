@@ -1,4 +1,4 @@
-# All blobs are from SC52AOMU1CVK3, unless pinned
+# All blobs are from SC52AOMU1DWA5, unless pinned
 
 # ACDB
 vendor/etc/acdbdata/adsp_avs_config.acdb
@@ -122,29 +122,45 @@ vendor/firmware/dax_param.bin
 # Bluetooth
 vendor/lib/com.qualcomm.qti.ant@1.0.so
 vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
+vendor/lib/hw/audio.a2dpsink.default.so
 vendor/lib/hw/audio.bluetooth_qti.default.so
 vendor/lib/hw/vendor.samsung.hardware.bluetooth.a2dp@1.0-impl.so
+vendor/lib/hw/vendor.samsung.hardware.bluetooth.a2dpsink@1.0-impl.so
+vendor/lib/hw/vendor.samsung.hardware.bluetooth.audio@2.1-impl.so
+vendor/lib/libbluetooth_a2dpsink_session.so
 vendor/lib/libbluetooth_audio_session_qti.so
 vendor/lib/libbthost_if.so
 vendor/lib/libbtnv.so
 vendor/lib/libidl.so
+vendor/lib/libsehbluetooth_audio_session.so
 vendor/lib/libsoc_helper.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.1.so
 vendor/lib/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
+vendor/lib/vendor.samsung.hardware.bluetooth.a2dpsink@1.0.so
+vendor/lib/vendor.samsung.hardware.bluetooth.audio@2.0.so
+vendor/lib/vendor.samsung.hardware.bluetooth.audio@2.1.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so
+vendor/lib64/hw/audio.a2dpsink.default.so
 vendor/lib64/hw/audio.bluetooth_qti.default.so
 vendor/lib64/hw/vendor.samsung.hardware.bluetooth.a2dp@1.0-impl.so
+vendor/lib64/hw/vendor.samsung.hardware.bluetooth.a2dpsink@1.0-impl.so
+vendor/lib64/hw/vendor.samsung.hardware.bluetooth.audio@2.1-impl.so
+vendor/lib64/libbluetooth_a2dpsink_session.so
 vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/libbt-vendor.so
 vendor/lib64/libbthost_if.so
 vendor/lib64/libbtnv.so
 vendor/lib64/libidl.so
+vendor/lib64/libsehbluetooth_audio_session.so
 vendor/lib64/libsoc_helper.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 vendor/lib64/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
+vendor/lib64/vendor.samsung.hardware.bluetooth.a2dpsink@1.0.so
+vendor/lib64/vendor.samsung.hardware.bluetooth.audio@2.0.so
+vendor/lib64/vendor.samsung.hardware.bluetooth.audio@2.1.so
 vendor/lib64/vendor.samsung.hardware.bluetooth@2.0.so
 
 # Bluetooth (aptX)
@@ -227,6 +243,7 @@ vendor/lib/hw/camera.unihal.default.so
 vendor/lib/hw/vendor.samsung.hardware.camera.provider@4.0-impl.so
 vendor/lib/libBeauty_v4.camera.samsung.so
 vendor/lib/libbeautyshot.arcsoft.so
+vendor/lib/libBlurDetectionDeepLearning.camera.samsung.so
 vendor/lib/libcamera_nn_stub.so
 vendor/lib/libcamxfdalgo.so
 vendor/lib/libcamxfdengine.so
@@ -247,6 +264,7 @@ vendor/lib/libformatConverter.unifunc.so
 vendor/lib/libhand_interaction.uniplugin@1.0.so
 vendor/lib/libhandgesture.arcsoft.so
 vendor/lib/libHandGesture.camera.samsung.so
+vendor/lib/libHDRVerifier_v1.camera.samsung.so
 vendor/lib/libhigh_dynamic_range_bokeh.so
 vendor/lib/libHpr_RecGAE_cvFeature_v1.0.camera.samsung.so
 vendor/lib/libHprFace_GAE_api.camera.samsung.so
@@ -291,6 +309,7 @@ vendor/lib/libsrib_CNNInterface.camera.samsung.so
 vendor/lib/libsrib_humanaware_engine.camera.samsung.so
 vendor/lib/libswldc_capture_core.camera.samsung.so
 vendor/lib/libswregistrationalgo.so
+vendor/lib/libtensorflowLite.singletake.camera.samsung.so
 vendor/lib/libuniplugin.so
 vendor/lib/libvdis_core.so
 vendor/lib/libvideobeauty.arcsoft.so
@@ -382,6 +401,7 @@ vendor/lib64/hw/camera.unihal.default.so
 vendor/lib64/hw/vendor.samsung.hardware.camera.provider@4.0-impl.so
 vendor/lib64/libBeauty_v4.camera.samsung.so
 vendor/lib64/libbeautyshot.arcsoft.so
+vendor/lib64/libBlurDetectionDeepLearning.camera.samsung.so
 vendor/lib64/libcamera_nn_stub.so
 vendor/lib64/libcamxfdalgo.so
 vendor/lib64/libcamxfdengine.so
@@ -403,6 +423,7 @@ vendor/lib64/libformatConverter.unifunc.so
 vendor/lib64/libhand_interaction.uniplugin@1.0.so
 vendor/lib64/libhandgesture.arcsoft.so
 vendor/lib64/libHandGesture.camera.samsung.so
+vendor/lib64/libHDRVerifier_v1.camera.samsung.so
 vendor/lib64/libhigh_dynamic_range_bokeh.so
 vendor/lib64/libHpr_RecGAE_cvFeature_v1.0.camera.samsung.so
 vendor/lib64/libHprFace_GAE_api.camera.samsung.so
@@ -447,6 +468,7 @@ vendor/lib64/libsrib_CNNInterface.camera.samsung.so
 vendor/lib64/libsrib_humanaware_engine.camera.samsung.so
 vendor/lib64/libswldc_capture_core.camera.samsung.so
 vendor/lib64/libswregistrationalgo.so
+vendor/lib64/libtensorflowLite.singletake.camera.samsung.so
 vendor/lib64/libuniplugin.so
 vendor/lib64/libvdis_core.so
 vendor/lib64/libvideobeauty.arcsoft.so
@@ -758,8 +780,8 @@ vendor/lib64/vendor.samsung.hardware.health@2.0.so
 # HotwordEnrollment
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 -system_ext/framework/com.android.hotwordenrollment.common.util.jar
--product/priv-app/HotwordEnrollmentOKGoogleEx3HEXAGON/HotwordEnrollmentOKGoogleEx3HEXAGON.apk
--product/priv-app/HotwordEnrollmentXGoogleEx3HEXAGON/HotwordEnrollmentXGoogleEx3HEXAGON.apk
+-product/priv-app/HotwordEnrollmentOKGoogleEx2HEXAGON/HotwordEnrollmentOKGoogleEx2HEXAGON.apk
+-product/priv-app/HotwordEnrollmentXGoogleEx2HEXAGON/HotwordEnrollmentXGoogleEx2HEXAGON.apk
 
 # IOP
 vendor/bin/hw/vendor.qti.hardware.iop@2.0-service
@@ -1133,9 +1155,7 @@ vendor/etc/init/init_thermal-engine.rc
 vendor/etc/init/vendor.samsung.hardware.thermal@1.0-service.rc
 vendor/etc/thermal-engine.conf
 -vendor/etc/vintf/manifest/vendor.samsung.hardware.thermal@1.0-manifest.xml
-vendor/lib/libhypervintf.so
 -vendor/lib/libthermalclient.so
-vendor/lib/vendor.samsung.hardware.hyper-V2-ndk_platform.so
 vendor/lib/vendor.samsung.hardware.thermal@1.0.so
 vendor/lib64/libhypervintf.so
 -vendor/lib64/libthermalclient.so

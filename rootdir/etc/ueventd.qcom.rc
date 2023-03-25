@@ -297,11 +297,6 @@ firmware_directories /vendor/firmware_mnt/image/ /vendor/firmware-modem/image/
 /sys/devices/virtual/input/input*   set_delay_ms     0660  system   input
 /sys/devices/virtual/input/input*   do_flush         0660  system   input
 
-# grip sensor
-/dev/input/event*                                    0660  system   input
-/sys/devices/virtual/input/input*   enable           0660  system   input
-/sys/devices/virtual/input/input*   enable2          0660  system   input
-
 # vm_bms
 /dev/vm_bms               0660   system     system
 /dev/battery_data         0660   system     system
@@ -406,9 +401,6 @@ firmware_directories /vendor/firmware_mnt/image/ /vendor/firmware-modem/image/
 /sys/devices/system/memory/memory* state            0660    system  system
 
 /sys/devices/virtual/hdcp/msm_hdcp  min_level_change 0664    system  graphics
-
-# KGSL
-/sys/class/kgsl/kgsl-3d0    perfcounter              0660    root    shell
 
 # sys-fs display
 /sys/class/graphics/fb*     hpd                      0664    system  graphics
@@ -527,3 +519,45 @@ firmware_directories /vendor/firmware_mnt/image/ /vendor/firmware-modem/image/
 /sys/class/sensors/als_rear    curr_adc                0664    system    system
 /sys/class/sensors/als_rear    sensor_info             0444    system    system
 /dev/als_rear                                          0600    system    system
+
+#
+# Permissions for Vibrator [
+#
+
+# Vibrator nodes permission (timed_output)
+/sys/class/timed_output/vibrator    enable                           0664   system system
+/sys/class/timed_output/vibrator    motor_type                       0664   system system
+/sys/class/timed_output/vibrator    intensity                        0664   system system
+/sys/class/timed_output/vibrator    haptic_engine                    0664   system system
+/sys/class/timed_output/vibrator    multi_freq                       0664   system system
+/sys/class/timed_output/vibrator    num_waves                        0664   system system
+/sys/class/timed_output/vibrator    cp_trigger_index                 0664   system system
+/sys/class/timed_output/vibrator    cp_trigger_queue                 0664   system system
+/sys/class/timed_output/vibrator    pwle                             0664   system system
+/sys/class/timed_output/vibrator    virtual_composite_indexes        0664   system system
+/sys/class/timed_output/vibrator    virtual_pwle_indexes             0664   system system
+/sys/class/timed_output/vibrator    event_cmd                        0664   system system
+/sys/class/timed_output/vibrator    intensities                      0664   system system
+/sys/class/timed_output/vibrator    haptic_intensities               0664   system system
+/sys/class/timed_output/vibrator    haptic_durations                 0664   system system
+/sys/class/timed_output/vibrator    use_sep_index                    0664   system system
+
+# Vibrator nodes permission - inputff 
+/sys/class/sec_vib_inputff/control	i2s_test                      0664   system system
+/sys/class/sec_vib_inputff/control	firmware_load                 0664   system system
+/sys/class/sec_vib_inputff/control	current_temp                  0664   system system
+/sys/class/sec_vib_inputff/control	ach_percent                   0664   system system
+/sys/class/sec_vib_inputff/control	trigger_calibration           0664   system system
+/sys/class/sec_vib_inputff/control	f0_measured                   0664   system system
+/sys/class/sec_vib_inputff/control	f0_offset                     0664   system system
+/sys/class/sec_vib_inputff/control	f0_stored                     0664   system system
+/sys/class/sec_vib_inputff/control	use_sep_index                 0664   system system
+
+# Vibrator nodes permission (vib_info)
+/sys/class/vib_info_class/vib_support_info	intensities           0664   system system
+/sys/class/vib_info_class/vib_support_info	haptic_intensities    0664   system system
+/sys/class/vib_info_class/vib_support_info	functions             0664   system system
+
+#
+# ] Permissions for Vibrator
+#

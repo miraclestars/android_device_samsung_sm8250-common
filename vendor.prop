@@ -3,6 +3,9 @@ aaudio.hw_burst_min_usec=2000
 aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=2
 af.fast_track_multiplier=1
+persist.vendor.audio.ambisonic.capture=false
+persist.vendor.audio.ambisonic.auto.profile=false
+persist.vendor.audio.apptype.multirec.enabled=false
 persist.vendor.audio.avs.afe_api_version=2
 persist.vendor.audio.fluence.speaker=true
 persist.vendor.audio.fluence.tmic.enabled=false
@@ -79,43 +82,48 @@ bluetooth.profile.pbap.server.enabled?=true
 bluetooth.profile.sap.server.enabled?=true
 persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
 persist.bluetooth.a2dp_offload.disabled=false
+persist.sys.fflag.override.settings_bluetooth_hearing_aid=true
 persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac
 persist.vendor.bt.aac_frm_ctl.enabled=true
-persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptive
+persist.vendor.bt.aac_vbr_frm_ctl.enabled=true
+persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptiver2
+persist.vendor.qcom.bluetooth.a2dp_mcast_test.enabled=false
 persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
-persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=false
+persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=true
 persist.vendor.qcom.bluetooth.enable.splita2dp=true
-persist.vendor.qcom.bluetooth.scram.enabled=true
-persist.vendor.qcom.bluetooth.soc=cherokee
+persist.vendor.qcom.bluetooth.scram.enabled=false
+persist.vendor.qcom.bluetooth.soc=hastings
 persist.vendor.qcom.bluetooth.twsp_state.enabled=false
 ro.bluetooth.a2dp_offload.supported=true
 ro.vendor.bluetooth.wipower=false
-vendor.qcom.bluetooth.soc=cherokee
+vendor.qcom.bluetooth.soc=hastings
 
 # Camera
 camera.disable_zsl_mode=1
 ro.camera.notify_nfc=1
 
 # Chipset
-ro.soc.manufacturer=Qualcomm
+ro.soc.manufacturer=QTI
 ro.soc.model=SM8250
 
 # Crypto
+ro.crypto.allow_encrypt_override=true
 ro.crypto.metadata_init_delete_all_keys.enabled=false
 ro.crypto.volume.filenames_mode=aes-256-cts
 
 # Dalvik VM
 dalvik.vm.heapgrowthlimit=256m
 dalvik.vm.heapmaxfree=8m
-dalvik.vm.heapminfree=32m
+dalvik.vm.heapminfree=2m
 dalvik.vm.heapsize=512m
-dalvik.vm.heapstartsize=16m
-dalvik.vm.heaptargetutilization=0.5
+dalvik.vm.heapstartsize=8m
+dalvik.vm.heaptargetutilization=0.75
 dalvik.vm.lockprof.threshold=500
 
 # Display
 debug.egl.hw=0
 debug.mdpcomp.logs=0
+debug.sf.disable_backpressure=1
 debug.sf.early_app_phase_offset_ns=100000
 debug.sf.early_gl_app_phase_offset_ns=100000
 debug.sf.early_gl_phase_offset_ns=100000
@@ -127,7 +135,7 @@ debug.sf.high_fps_early_phase_offset_ns=100000
 debug.sf.high_fps_late_app_phase_offset_ns=100000
 debug.sf.high_fps_late_sf_phase_offset_ns=100000
 debug.sf.hw=0
-debug.sf.use_content_detection_v2=false
+debug.sf.latch_unsignaled=1
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 ro.opengles.version=196610
@@ -141,19 +149,19 @@ ro.surface_flinger.use_color_management=true
 ro.surface_flinger.use_content_detection_for_refresh_rate=false
 ro.surface_flinger.wcg_composition_dataspace=143261696
 vendor.display.comp_mask=0
-vendor.display.disable_decimation=1
 vendor.display.disable_dynamic_fps=1
 vendor.display.disable_excl_rect=0
+vendor.display.disable_excl_rect_partial_fb=1
 vendor.display.disable_ext_anim=1
 vendor.display.disable_hw_recovery_dump=1
-vendor.display.disable_inline_rotator=1
+vendor.display.disable_offline_rotator=1
 vendor.display.disable_scaler=0
-vendor.display.disable_ui_3d_tonemap=1
-vendor.display.enable_default_color_mode=1
-vendor.display.enable_null_display=0
+vendor.display.enable_async_powermode=0
 vendor.display.enable_optimize_refresh=1
+vendor.display.enable_posted_start_dyn=1
 vendor.display.idle_time_inactive=0
 vendor.display.idle_time=0
+vendor.display.use_smooth_motion=0
 vendor.gralloc.disable_ubwc=0
 
 # Gatekeeper
@@ -161,7 +169,7 @@ ro.hardware.gatekeeper=mdfpp
 
 # Keystore
 ro.hardware.keystore=mdfpp
-ro.security.keystore.keytype=sakv2,gak
+ro.security.keystore.keytype=sakv2,gak,sgak
 
 # Media
 debug.stagefright.ccodec=1
@@ -175,7 +183,6 @@ persist.vendor.radio.atfwd.start=true
 persist.vendor.radio.enableadvancedscan=true
 ro.radio.noril=no
 ro.telephony.default_cdma_sub=0
-ro.telephony.default_network=9,9
 ro.vendor.epdg.support=true
 ro.vendor.sec.radio.def_network=9
 vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so

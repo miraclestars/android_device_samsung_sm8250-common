@@ -189,7 +189,7 @@
         <device name="SND_DEVICE_OUT_HDMI" interface=""/>
         <device name="SND_DEVICE_OUT_VOICE_CALL_FORWARD" interface="SLIMBUS_0_RX"/>
         <device name="SND_DEVICE_OUT_VOICE_HEARING_AID" backend="hearing-aid" interface="BT_RX"/>
-
+        <device name="SND_DEVICE_OUT_VOICE_TX" backend="afe-proxy" interface="RT_PROXY_DAI_001_RX"/>
         <device name="SND_DEVICE_OUT_HEADSET_REMOTEMIC" backend="headphones" interface=""/>
         <device name="SND_DEVICE_OUT_USB_REMOTEMIC" backend="usb-headphones" interface="USB_AUDIO_RX"/>
         <device name="SND_DEVICE_OUT_BT_REMOTEMIC" backend="bt-sco" interface="QUAT_MI2S_RX"/>

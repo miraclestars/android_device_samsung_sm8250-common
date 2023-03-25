@@ -342,6 +342,16 @@
         <fqname>@1.0::ISehBluetoothAudioOffload/default</fqname>
     </hal>
     <hal format="hidl">
+        <name>vendor.samsung.hardware.bluetooth.a2dpsink</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::ISehBluetoothA2dpSinkProvidersFactory/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.samsung.hardware.bluetooth.audio</name>
+        <transport>hwbinder</transport>
+        <fqname>@2.1::ISehBluetoothAudioProvidersFactory/default</fqname>
+    </hal>
+    <hal format="hidl">
         <name>vendor.samsung.hardware.camera.provider</name>
         <transport>hwbinder</transport>
         <fqname>@4.0::ISehCameraProvider/legacy/0</fqname>
