@@ -1,7 +1,147 @@
+allow init {
+    biometrics_vendor_data_file
+    keydata_data_file
+    keyrefuge_data_file
+}:dir create_dir_perms;
+
+allow init {
+    biometrics_vendor_data_file
+    keydata_data_file
+    keyrefuge_data_file
+}:file create_file_perms;
+
+allow init nativetest_data_file:dir r_dir_perms;
+allow init nativetest_data_file:file r_file_perms;
+
+allow init block_device:blk_file { ioctl read write create getattr setattr lock append map unlink open watch watch_reads };
+allow init param_block_device:blk_file rw_file_perms;
+
+allow init ap_device:dir create_dir_perms;
+allow init ap_device:file create_file_perms;
+allow init { ap_device usb_device }:dir mounton;
+
+allow init {
+    tz_device
+    vendor_qbt_device
+    watchdog_device
+}:chr_file rw_file_perms;
+
+allow init {
+    asec_apk_file
+    efs_file
+    keydata_data_file
+    keyrefuge_data_file
+    omr_file
+    sec_efs_file
+    sec_poc_file
+    system_sec_efs_file
+    vendor_configs_file
+}:dir mounton;
+
+allow init audit_log:dir rw_dir_perms;
+allow init audit_log:file create_file_perms;
+allow init cache_file:file rename;
+allow init dumplog_data_file:file append;
+allow init firmware_file:filesystem relabelto;
+allow init mnt_user_file:lnk_file read;
+allow init stats_data_file:dir rw_dir_perms;
+allow init stats_data_file:file rw_file_perms;
+allow init storage_file:lnk_file read;
+allow init zram_data_file:file rw_file_perms;
+
+allow init configfs:dir create_dir_perms;
+allow init configfs:dir relabelto;
+allow init configfs:filesystem mount;
+
+allow init usb_configfs:dir relabelto;
+allow init usb_configfs:dir create_dir_perms;
+allow init usb_configfs:file create_file_perms;
+allow init usb_configfs:lnk_file create_file_perms;
+allow init usb_configfs:file link;
+allow init usb_configfs:filesystem mount;
+
+allow init debugfs:file write;
+allow init debugfs_tracing:dir rw_dir_perms;
+allow init debugfs_tracing:file rw_file_perms;
+allow init debugfs_tracing_debug:dir r_dir_perms;
+allow init debugfs_tracing_debug:file rw_file_perms;
+allow init debugfs_type:{ dir file lnk_file } relabelfrom;
+allow init debugfs_wifi_tracing:dir create_dir_perms;
+
+allow init {
+    proc_avc_msg
+    proc_fslog
+    proc_swappiness
+    proc_watermark_boost_factor
+}:file rw_file_perms;
+
+allow init {
+    proc_auto_comment
+    proc_extra
+    proc_partition
+    proc_simslot_count
+    proc_slabinfo
+}:file r_file_perms;
+
+r_dir_file(init, proc_bus_input);
+allow init proc_bluetooth:file setattr;
+allow init proc_fslog:dir r_dir_perms;
 allow init proc_last_kmsg:file setattr;
 
-# /sys/kernel/tracing
-allow init debugfs_tracing_debug:dir mounton;
+allow init {
+    sysfs_battery
+    sysfs_lcd_writable
+    sysfs_vibrator
+    vendor_sysfs_battery_supply
+}:file relabelfrom;
 
-# /mnt/vendor/efs
-allow init efs_file:dir mounton;
+allow init {
+    sysfs_sec
+    sysfs_ski_storage_readable
+    sysfs_ski_ufs_writable
+    sysfs_ss_writable
+    sysfs_wifi
+    vendor_sysfs_devfreq
+}:dir r_dir_perms;
+
+allow init {
+    sysfs_battery
+    sysfs_modem
+    sysfs_net
+    sysfs_sec
+    sysfs_ski_storage_readable
+    sysfs_ski_ufs_writable
+    sysfs_ss_writable
+    sysfs_wifi
+    vendor_sysfs_devfreq
+    vendor_sysfs_graphics
+    vendor_sysfs_mmc_host
+    vendor_sysfs_scsi_host
+}:file rw_file_perms;
+
+allow init {
+    sysfs_sec
+    sysfs_ss_writable
+    sysfs_wifi
+    vendor_sysfs_devfreq
+    vendor_sysfs_mmc_host
+    vendor_sysfs_scsi_host
+}:lnk_file r_file_perms;
+
+allow init sysfs:file create;
+allow init sysfs_devices_system_cpu:file write;
+allow init sysfs_fs_f2fs:file read;
+allow init sysfs_sec:file w_file_perms;
+
+allow init kernel:system module_request;
+allow init rild_socket:sock_file { write open };
+allow init sdcardfs:dir search;
+allow init vendor_shell_exec:file { read getattr map execute open };
+
+allow init property_socket:sock_file write;
+allow init init:unix_stream_socket connectto;
+allow init init:netlink_generic_socket create_socket_perms_no_ioctl;
+
+set_prop(init, ina_status_prop)
+set_prop(init, multisim_prop)
+set_prop(init, vendor_default_prop)

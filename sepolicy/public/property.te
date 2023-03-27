@@ -1,2 +1,98 @@
+# App
+system_public_prop(chipname_prop)
+
+# Audio
+system_public_prop(sec_audio_prop)
+system_public_prop(smartamp_prop)
+
+# Bluetooth
+system_public_prop(rfkilldisabled_prop)
+system_public_prop(sec_bluetooth_prop)
+
+# Boot
+system_public_prop(boot_force_upload_prop)
+
+# Cache
+system_public_prop(cache_status_prop)
+
+# Camera
+system_public_prop(sec_camera_prop)
+system_public_prop(sns_camera_light_prop)
+
+# CNSS
+vendor_public_prop(sec_cnss_diag_prop)
+
+# Debug
+system_public_prop(debug_level_prop)
+
+# Df
+system_public_prop(vendor_df_prop)
+
+# Dump
+system_public_prop(compact_dump_prop)
+
+# Error
+system_public_prop(receiver_error_prop)
+
+# Face
+system_public_prop(vendor_fr_dlymgr_prop)
+system_public_prop(vendor_fr_wkrmgr_prop)
+
+# Factory
+system_public_prop(ctl_factory_ssc_prop)
+system_public_prop(vendor_factory_prop)
+
 # Fingerprint
 system_public_prop(vendor_fingerprint_prop)
+
+# HDR
+system_public_prop(sec_hdr_prop)
+
+# Ina
+system_public_prop(ina_status_prop)
+
+# Netflix
+system_public_prop(netflix_bsp_rev_prop)
+
+# Product
+system_public_prop(product_ship_prop)
+
+# RADIO
+system_public_prop(exported_radio_prop)
+system_public_prop(ril_daemon_prop)
+
+# Recovery
+system_public_prop(recovery_prop)
+
+# Rmnet
+system_public_prop(vendor_rmnet_prop)
+
+# Sensor
+system_public_prop(system_sensor_prop)
+system_public_prop(system_sensordebug_prop)
+
+# Server
+system_public_prop(apm_prop)
+
+# Sim
+system_public_prop(multisim_prop)
+
+# System
+system_public_prop(system_product_prop)
+
+# Time
+system_public_prop(sec_timed_prop)
+
+# USB
+system_public_prop(sec_audio_usb_prop)
+
+# Wda
+system_public_prop(vendor_wda_prop)
+
+# Wifi
+system_public_prop(exported_wifi_prop)
+system_public_prop(vendor_hostapd_prop)
+system_public_prop(wpa_supplicant_prop)
+
+# Zram
+system_public_prop(vendor_zram_prop)

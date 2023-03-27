@@ -1,0 +1,131 @@
+# App
+ro.chipname                                  u:object_r:chipname_prop:s0
+
+# Audio
+secmm.c2.input                               u:object_r:sec_audio_prop:s0
+secmm.c2.output                              u:object_r:sec_audio_prop:s0
+secmm.csc.input                              u:object_r:sec_audio_prop:s0
+secmm.csc.output                             u:object_r:sec_audio_prop:s0
+secmm.decoder.                               u:object_r:sec_audio_prop:s0
+secmm.encoder.                               u:object_r:sec_audio_prop:s0
+secmm.hdr2sdr.input                          u:object_r:sec_audio_prop:s0
+secmm.hdr2sdr.output                         u:object_r:sec_audio_prop:s0
+secmm.ImageFormat.debug.                     u:object_r:sec_audio_prop:s0
+secmm.postctrl.output                        u:object_r:sec_audio_prop:s0
+secmm.superslowmotion.                       u:object_r:sec_audio_prop:s0
+secmm.vicom.                                 u:object_r:sec_audio_prop:s0
+tas.smartamp.disable                         u:object_r:smartamp_prop:s0
+
+# Bluetooth
+ro.rfkilldisabled                            u:object_r:rfkilldisabled_prop:s0
+sys.bluetooth.tty                            u:object_r:sec_bluetooth_prop:s0
+vendor.bluetooth_fw_ver                      u:object_r:wifi_log_prop:s0
+
+# Boot
+ro.boot.force_upload                         u:object_r:boot_force_upload_prop:s0
+
+# Cache
+persist.cache_status_64                      u:object_r:cache_status_prop:s0
+persist.cache_status_32                      u:object_r:cache_status_prop:s0
+persist.cache_integrity_64                   u:object_r:cache_status_prop:s0
+persist.cache_integrity_32                   u:object_r:cache_status_prop:s0
+
+# Camera
+persist.sys.camera.                          u:object_r:sec_camera_prop:s0
+persist.vendor.camera.feature.cac            u:object_r:sec_camera_prop:s0
+ro.camera.req.fmq.size                       u:object_r:sec_camera_prop:s0
+ro.camera.res.fmq.size                       u:object_r:sec_camera_prop:s0
+service.camera.                              u:object_r:sec_camera_prop:s0
+sys.cameramode.                              u:object_r:sec_camera_prop:s0
+system.camera.CC.                            u:object_r:sec_camera_prop:s0
+persist.sns.camera_light                     u:object_r:sns_camera_light_prop:s0
+
+# CNSS
+cnss_diag.service                            u:object_r:sec_cnss_diag_prop:s0
+
+# Debug
+ro.boot.debug_level                          u:object_r:debug_level_prop:s0
+
+# Df
+persist.data.df.agg.dl_pkt                   u:object_r:vendor_df_prop:s0
+persist.data.df.agg.dl_size                  u:object_r:vendor_df_prop:s0
+
+# Dump
+init.svc.compact_dump                        u:object_r:compact_dump_prop:s0
+
+# Error
+ro.error.receiver.default                    u:object_r:receiver_error_prop:s0
+
+# Face
+sec.fr.DlyMgr                                u:object_r:vendor_fr_dlymgr_prop:s0
+sec.fr.WkrMgr                                u:object_r:vendor_fr_wkrmgr_prop:s0
+
+# Factory
+ctl.factory_ssc                              u:object_r:ctl_factory_ssc_prop:s0
+ro.factory.factory_binary                    u:object_r:vendor_factory_prop:s0
+
+# HDR
+hdr.                                         u:object_r:sec_hdr_prop:s0
+
+# Ina
+persist.sys.ina.status                       u:object_r:ina_status_prop:s0
+
+# Netflix
+ro.netflix.bsp_rev                           u:object_r:netflix_bsp_rev_prop:s0
+
+# Product
+ro.product_ship                              u:object_r:product_ship_prop:s0
+
+# RADIO
+init.svc.ril-daemon                          u:object_r:ril_daemon_prop:s0
+ril.NwNmId                                   u:object_r:exported_radio_prop:s0
+ril.NwNmId2                                  u:object_r:exported_radio_prop:s0
+persist.ims.gcfmode                          u:object_r:exported_radio_prop:s0
+persist.radio.gcfmode                        u:object_r:exported_radio_prop:s0
+persist.ims.mock.                            u:object_r:exported_radio_prop:s0
+persist.ims.pctmode                          u:object_r:exported_radio_prop:s0
+gsm.operator.numeric                         u:object_r:exported_radio_prop:s0
+persist.ims.salescode.sve                    u:object_r:exported_radio_prop:s0
+
+# Recovery
+recovery.                                    u:object_r:recovery_prop:s0
+ro.recovery.                                 u:object_r:recovery_prop:s0
+
+# Rmnet
+persist.rmnet.data.enable                    u:object_r:vendor_rmnet_prop:s0
+persist.rmnet.mux                            u:object_r:vendor_rmnet_prop:s0
+
+# Sensor
+persist.dm.passive.ambient_brightness        u:object_r:system_sensor_prop:s0
+persist.dm.passive.display_brightness        u:object_r:system_sensor_prop:s0
+persist.dm.passive.sub_ambient_brightness    u:object_r:system_sensor_prop:s0
+persist.dm.passive.sub_display_brightness    u:object_r:system_sensor_prop:s0
+sys.sensordebug.hal.ss                       u:object_r:system_sensordebug_prop:s0
+
+# Server
+persist.app.permission.monitor               u:object_r:apm_prop:s0
+
+# Sim
+ro.multisim.                                 u:object_r:multisim_prop:s0
+
+# System
+ro.product.system.                           u:object_r:system_product_prop:s0
+
+# Time
+persist.timed.enable                         u:object_r:sec_timed_prop:s0
+
+# USB
+audio.usb.enable.                            u:object_r:sec_audio_usb_prop:s0
+
+# Wda
+persist.data.wda.enable                      u:object_r:vendor_wda_prop:s0
+
+# Wifi
+hostapd.dbglevel                             u:object_r:vendor_hostapd_prop:s0
+vendor.wifiap.                               u:object_r:exported_wifi_prop:s0
+wlan.p2p.                                    u:object_r:exported_wifi_prop:s0
+init.svc.wpa_supplicant                      u:object_r:wpa_supplicant_prop:s0
+
+# Zram
+ro.sys.kernelmemory.nandswap.                u:object_r:vendor_zram_prop:s0
+ro.sys.zram                                  u:object_r:vendor_zram_prop:s0

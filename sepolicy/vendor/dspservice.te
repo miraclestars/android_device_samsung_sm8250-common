@@ -1,0 +1,12 @@
+allow vendor_dspservice sysfs_battery:dir r_dir_perms;
+allow vendor_dspservice sysfs_battery:file rw_file_perms;
+
+allow vendor_dspservice {
+    hidl_manager_hwservice
+    system_suspend_hwservice
+}:hwservice_manager find;
+
+binder_call(vendor_dspservice, hwservicemanager)
+binder_call(vendor_dspservice, system_suspend_server)
+
+get_prop(vendor_dspservice, hwservicemanager_prop)

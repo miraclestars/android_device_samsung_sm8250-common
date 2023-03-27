@@ -1,48 +1,107 @@
-get_prop(rild, vendor_radio_prop)
-get_prop(rild, radio_prop)
+hal_client_domain(rild, hal_audio)
 
-allow rild block_device:dir search;
-allow rild mnt_vendor_file:dir { getattr search };
+allow rild dumplog_data_file:file { ioctl read write getattr append };
+allow rild radio_data_file:file { ioctl read getattr };
+allow rild system_data_file:dir { getattr search };
+allow rild vendor_radio_data_file:dir create_dir_perms;
+allow rild vendor_radio_data_file:file create_file_perms;
 
-# audio hal
-allow rild hal_audio_default:dir search;
-allow rild hal_audio_default:file r_file_perms;
+allow rild { param_block_device radio_block_device }:blk_file rw_file_perms;
 
-# /data
-allow rild system_data_file:dir getattr;
+allow rild {
+    drb_device
+    kmsg_device
+    rm_net_device
+    rtc_device
+    sec_radio_device
+    tun_device
+    uart_device
+    vendor_esoc_device
+    vndbinder_device
+}:chr_file rw_file_perms;
 
-# /dev/drb
-allow rild drb_device:chr_file rw_file_perms;
+allowxperm rild tun_device:chr_file ioctl { TUNGETIFF TUNSETIFF };
+allow rild vendor_ramdump_device:chr_file r_file_perms;
 
-# /data/vendor/secradio
-allow rild radio_vendor_data_file:dir rw_dir_perms;
-allow rild radio_vendor_data_file:file create_file_perms;
+allow rild {
+    app_efs_file
+    efs_gsm_file
+    imei_efs_file
+    sec_efs_file
+    system_sec_efs_file
+}:dir create_dir_perms;
 
-# /efs/FactoryApp/
-allow rild app_efs_file:dir r_dir_perms;
-allow rild app_efs_file:file { rw_file_perms setattr };
+allow rild {
+    app_efs_file
+    bin_nv_data_efs_file
+    efs_gsm_file
+    imei_efs_file
+    nv_core_efs_file
+    sec_efs_file
+    system_sec_efs_file
+}:file create_file_perms;
 
-# /efs/imei
-allow rild imei_efs_file:dir r_dir_perms;
-allow rild imei_efs_file:file r_file_perms;
-
-# /mnt/vendor/efs/
-allow rild prov_efs_file:dir r_dir_perms;
+allowxperm rild bin_nv_data_efs_file:file ioctl { 0x6601 };
+allow rild { efs_file sec_poc_file }:dir rw_dir_perms;
+allow rild prov_efs_file:dir search;
 allow rild prov_efs_file:file r_file_perms;
 
-# /proc/net/xt_qtaguid/iface_stat_fmt
+allow rild {
+    mnt_user_file
+    mnt_vendor_file
+    omr_file
+    storage_file
+}:dir r_dir_perms;
+
+allow rild { firmware_file omr_file }:file r_file_perms;
+allow rild media_rw_data_file:file { ioctl read write getattr append };
+allow rild mnt_user_file:lnk_file r_file_perms;
+allow rild storage_file:file rw_file_perms;
+allow rild storage_file:lnk_file rw_file_perms;
+allow rild vendor_log_file:dir create_dir_perms;
+allow rild vendor_log_file:file create_file_perms;
+
+allow rild proc_net:file rw_file_perms;
 allow rild proc_qtaguid_stat:file r_file_perms;
 
-# /proc/sys/net/ipv6/conf/*/accept_ra_defrtr
-allow rild proc_net:file rw_file_perms;
+allow rild hal_audio_default:dir search;
+allow rild hal_audio_default:file { read getattr open };
 
-allow rild tun_device:chr_file rw_file_perms;
-allowxperm rild tun_device:chr_file ioctl { 0x54ca 0x54cb };
-allow rild self:tun_socket create;
+r_dir_file(rild, vendor_sysfs_diag);
+allow rild sysfs_ss_writable:file rw_file_perms;
 
-dontaudit rild {
-    system_prop
-    default_prop
-}:file read;
+r_dir_file(rild, vendor_debugfs_ipc);
 
+allow rild self:capability { chown sys_time };
+allow rild self:packet_socket { ioctl read write create getopt setopt };
+allowxperm rild self:packet_socket ioctl { 0x8906 0x8933 };
+allow rild self:qipcrtr_socket ioctl;
+allowxperm rild self:qipcrtr_socket ioctl { 0xc800 };
+allow rild self:tun_socket { create relabelfrom relabelto };
+
+allow rild domain:dir { read getattr open search };
+allow rild domain:file { read getattr open };
+allow rild domain:lnk_file { read getattr open };
+
+allow rild qosd_socket:sock_file { ioctl read write getattr append };
+
+allow rild sdcardfs:dir create_dir_perms;
+allow rild sdcardfs:file create_file_perms;
+
+allow rild property_socket:sock_file write;
+allow rild init:unix_stream_socket connectto;
+allow rild dumpstate:fd use;
+
+get_prop(rild, product_ship_prop)
+get_prop(rild, sec_timed_prop)
+get_prop(rild, vendor_model_suffix_prop)
+get_prop(rild, vendor_radio_prop)
+set_prop(rild, exported_radio_prop)
+set_prop(rild, powerctl_prop)
+set_prop(rild, vendor_data_ko_prop)
+set_prop(rild, vendor_data_shsusr_prop)
+set_prop(rild, vendor_members_prop)
+
+dontaudit rild system_prop:file read;
+dontaudit rild default_prop:file read;
 dontaudit rild default_prop:property_service set;

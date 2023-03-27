@@ -1,2 +1,14 @@
-allow hal_usb_default vendor_sysfs_battery_supply:dir search;
-allow hal_usb_default vendor_sysfs_battery_supply:file { getattr open read };
+hal_server_domain(hal_usb_default, hal_usb_gadget)
+
+allow hal_usb_default usb_configfs:dir rw_dir_perms;
+allow hal_usb_default usb_configfs:file rw_file_perms;
+
+allow hal_usb_default sysfs_battery:dir search;
+allow hal_usb_default sysfs_batteryinfo:dir search;
+allow hal_usb_default sysfs_ss_writable:dir r_dir_perms;
+allow hal_usb_default sysfs_ss_writable:file rw_file_perms;
+allow hal_usb_default sysfs_ss_writable:lnk_file rw_file_perms;
+allow hal_usb_default sysfs_usb:file rw_file_perms;
+allow hal_usb_default vendor_sysfs_usb_c:dir r_dir_perms;
+
+get_prop(hal_usb_default, vendor_usb_prop)

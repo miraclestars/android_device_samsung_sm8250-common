@@ -1,0 +1,25 @@
+allow vendor_mdm_helper vendor_sdx50m_file:dir create_dir_perms;
+allow vendor_mdm_helper vendor_sdx50m_file:file create_file_perms;
+allow vendor_mdm_helper vendor_sysfs_data:file r_file_perms;
+allow vendor_mdm_helper system_data_file:dir getattr;
+allow vendor_mdm_helper vendor_data_file:dir rw_dir_perms;
+
+allow vendor_mdm_helper kmsg_device:chr_file w_file_perms;
+
+allow vendor_mdm_helper proc_cmdline:file r_file_perms;
+
+allow vendor_mdm_helper sysfs:file read;
+
+allow vendor_mdm_helper {
+    hidl_manager_hwservice
+    system_suspend_hwservice
+}:hwservice_manager find;
+
+allow vendor_mdm_helper vendor_toolbox_exec:file rx_file_perms;
+
+allow vendor_mdm_helper vendor_mdm_helper:capability { chown fowner };
+
+binder_call(vendor_mdm_helper, hwservicemanager)
+binder_call(vendor_mdm_helper, system_suspend_server)
+
+get_prop(vendor_mdm_helper, hwservicemanager_prop)

@@ -1,17 +1,24 @@
-# /sys/devices/platform/soc/soc:battery/power_supply/*
-allow hal_health_default sysfs_battery:file r_file_perms;
-allow hal_health_default sysfs_battery:dir search;
+hal_client_domain(hal_health_default, hal_thermal)
 
-# /efs/Battery
-allow hal_health_default battery_efs_file:dir r_dir_perms;
-allow hal_health_default battery_efs_file:file { rw_file_perms setattr };
+allow hal_health_default param_block_device:blk_file rw_file_perms;
 
-# /efs/FactoryApp
-allow hal_health_default app_efs_file:dir { read write add_name search };
-allow hal_health_default app_efs_file:file { read write open create getattr setattr };
+allow hal_health_default {
+    app_efs_file
+    battery_efs_file
+    vendor_log_file
+}:file create_file_perms;
 
-allow hal_health_default efs_file:dir search;
+allow hal_health_default app_efs_file:dir rw_dir_perms;
+allow hal_health_default { battery_efs_file vendor_log_file }:dir create_dir_perms;
 
-# Thermal
+r_dir_file(hal_health_default, sysfs_battery);
+r_dir_file(hal_health_default, sysfs_ski_power_readable);
+r_dir_file(hal_health_default, sysfs_ss_writable);
+allow hal_health_default sysfs_battery:file w_file_perms;
+
 allow hal_health_default hal_thermal_samsung_hwservice:hwservice_manager find;
+
 binder_call(hal_health_default, hal_thermal_default)
+
+get_prop(hal_health_default, debug_level_prop)
+get_prop(hal_health_default, product_ship_prop)

@@ -1,45 +1,83 @@
-binder_call(hal_sensors_default, system_server)
+allow hal_sensors_default {
+    akmd_vendor_data_file
+    vendor_sensorhub_data_file
+    yas_lib_vendor_data_file
+}:dir create_dir_perms;
 
-# /dev/iio:device1
-allow hal_sensors_default iio_device:chr_file r_file_perms;
+allow hal_sensors_default {
+    akmd_vendor_data_file
+    vendor_sensorhub_data_file
+    yas_lib_vendor_data_file
+}:file create_file_perms;
 
-# /efs
-allow hal_sensors_default efs_file:dir r_dir_perms;
+allow hal_sensors_default {
+    hrm_device
+    iio_device
+    vendor_qdsp_device
+}:chr_file r_file_perms;
 
-# /efs/FactoryApp/
-allow hal_sensors_default app_efs_file:dir rw_dir_perms;
-allow hal_sensors_default app_efs_file:file { setattr rw_file_perms };
+allow hal_sensors_default {
+    range_sensor_device
+    shub_device
+    ssp_device
+}:chr_file rw_file_perms;
 
-# /sys/bus/iio/devices
-allow hal_sensors_default sysfs_iio:dir r_dir_perms;
-allow hal_sensors_default sysfs_iio:file r_file_perms;
+allow hal_sensors_default {
+    app_efs_file
+    efs_file
+    sec_poc_file
+}:dir rw_dir_perms;
 
-# /sys/devices/virtual/sensors/
-allow hal_sensors_default sysfs_sensors:dir r_dir_perms;
-allow hal_sensors_default sysfs_sensors:file rw_file_perms;
+allow hal_sensors_default {
+    app_efs_file
+    efs_file
+    sec_poc_file
+}:file create_file_perms;
 
-# /sys/devices/virtual/lcd/panel/window_type
-allow hal_sensors_default sysfs_lcd_writable:dir r_dir_perms;
-allow hal_sensors_default sysfs_lcd_writable:file r_file_perms;
+allow hal_sensors_default { sec_efs_file system_sec_efs_file }:dir r_dir_perms;
 
-# /sys/class/input
-allow hal_sensors_default sysfs_input:dir r_dir_perms;
-allow hal_sensors_default sysfs_input:file { read write open };
+allow hal_sensors_default mnt_vendor_file:dir create_dir_perms;
+allow hal_sensors_default vendor_persist_sensors_file:lnk_file r_file_perms;
 
-# /sys/devices/virtual/sec/sec_key/
-allow hal_sensors_default sysfs_sec_key:dir r_dir_perms;
-allow hal_sensors_default sysfs_sec_key:file r_file_perms;
+allow hal_sensors_default {
+    sysfs
+    sysfs_iio
+    sysfs_lcd_writable
+    sysfs_sensor_writable
+    sysfs_ski_sensor_writable
+    sysfs_ss_writable
+}:dir r_dir_perms;
 
-# /sys/class/sec/tsp/
-allow hal_sensors_default sysfs_sec_touchscreen:dir r_dir_perms;
-allow hal_sensors_default sysfs_sec_touchscreen:file r_file_perms;
-allow hal_sensors_default sysfs_sec_touchscreen:lnk_file r_file_perms;
-allow hal_sensors_default sysfs_power_writable:dir search;
-allow hal_sensors_default sysfs_power_writable:file { read open };
+allow hal_sensors_default {
+    sysfs
+    sysfs_iio
+    sysfs_sec
+    sysfs_sensor_writable
+    sysfs_ski_sensor_writable
+}:file rw_file_perms;
 
-# /sys/class/sec/tsp/cmd
-allow hal_sensors_default sysfs_touchscreen_writable:file rw_file_perms;
+r_dir_file(hal_sensors_default, sysfs_type);
+allow hal_sensors_default { sysfs_lcd_writable sysfs_ss_writable }:file r_file_perms;
 
-# props
+allow hal_sensors_default {
+    hidl_manager_hwservice
+    system_suspend_hwservice
+}:hwservice_manager find;
+
+allow hal_sensors_default vendor_qvrd:fd use;
+
+allow hal_sensors_default self:capability { sys_admin sys_resource };
+allow hal_sensors_default self:cap_userns { sys_admin sys_resource };
+
 allow hal_sensors_default property_socket:sock_file write;
-unix_socket_connect(hal_sensors_default, property, init)
+allow hal_sensors_default init:unix_stream_socket connectto;
+
+binder_call(hal_sensors_default, hwservicemanager)
+binder_call(hal_sensors_default, system_server)
+binder_call(hal_sensors_default, system_suspend_server)
+
+get_prop(hal_sensors_default, hwservicemanager_prop)
+get_prop(hal_sensors_default, system_sensor_prop)
+get_prop(hal_sensors_default, system_sensordebug_prop)
+get_prop(hal_sensors_default, vendor_fastrpc_prop)
+set_prop(hal_sensors_default, sns_camera_light_prop)

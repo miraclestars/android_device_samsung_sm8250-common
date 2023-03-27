@@ -1,4 +1,18 @@
-allow fsck self:capability kill;
+allow fsck {
+    carrier_block_device
+    dqmdbg_block_device
+    efs_block_device
+    keydata_block_device
+    keyrefuge_block_device
+    omr_block_device
+    sec_efs_block_device
+}:blk_file rw_file_perms;
 
-# EFS
-allow fsck { efs_block_device sec_efs_block_device }:blk_file rw_file_perms;
+r_dir_file(fsck, omr_file);
+
+allow fsck proc_fslog:dir r_dir_perms;
+allow fsck proc_fslog:file rw_file_perms;
+
+allow fsck vold:netlink_socket { read write };
+
+allow fsck self:capability sys_admin;

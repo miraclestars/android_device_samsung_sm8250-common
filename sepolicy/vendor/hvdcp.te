@@ -1,0 +1,14 @@
+allow vendor_hvdcp sysfs_battery:dir r_dir_perms;
+allow vendor_hvdcp sysfs_battery:file rw_file_perms;
+
+allow vendor_hvdcp {
+    hidl_manager_hwservice
+    system_suspend_hwservice
+}:hwservice_manager find;
+
+allow vendor_hvdcp init:unix_stream_socket connectto;
+
+binder_call(vendor_hvdcp, hwservicemanager)
+binder_call(vendor_hvdcp, system_suspend_server)
+
+get_prop(vendor_hvdcp, hwservicemanager_prop)

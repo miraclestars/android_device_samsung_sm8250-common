@@ -1,0 +1,51 @@
+allow surfaceflinger dumplog_data_file:dir create_dir_perms;
+allow surfaceflinger dumplog_data_file:file create_file_perms;
+allow surfaceflinger system_data_file:dir r_dir_perms;
+allow surfaceflinger system_data_file:file r_file_perms;
+
+allow surfaceflinger { camera_device tty_device }:chr_file rw_file_perms;
+allow surfaceflinger devpts:chr_file { read write };
+
+allow surfaceflinger system_file:file { getattr map execute execute_no_trans };
+allow surfaceflinger cache_file:file write;
+
+r_dir_file(surfaceflinger, sysfs_gpu);
+r_dir_file(surfaceflinger, sysfs_lcd_writable);
+r_dir_file(surfaceflinger, sysfs_ski_display_writable);
+allow surfaceflinger sysfs_lcd_writable:file w_file_perms;
+allow surfaceflinger sysfs_sec:file r_file_perms;
+allow surfaceflinger sysfs_ski_display_writable:file w_file_perms;
+allow surfaceflinger sysfs_ss_writable:file rw_file_perms;
+
+allow surfaceflinger domain:dir { read getattr open search };
+allow surfaceflinger domain:lnk_file { read getattr open };
+
+allow surfaceflinger platform_app:unix_stream_socket { read write getopt };
+allow surfaceflinger system_app:fifo_file { write lock append map open };
+
+allow surfaceflinger { shell_exec toolbox_exec }:file rx_file_perms;
+
+allow surfaceflinger self:capability { sys_admin sys_resource };
+allow surfaceflinger self:cap_userns { sys_admin sys_resource };
+allow surfaceflinger self:tcp_socket create;
+allowxperm surfaceflinger self:unix_stream_socket ioctl msm_sock_ipc_ioctls;
+
+allow surfaceflinger property_socket:sock_file write;
+allow surfaceflinger init:unix_stream_socket connectto;
+
+binder_call(surfaceflinger, adbd)
+binder_call(surfaceflinger, bluetooth)
+binder_call(surfaceflinger, bootanim)
+binder_call(surfaceflinger, mediacodec)
+binder_call(surfaceflinger, mediaserver)
+binder_call(surfaceflinger, nfc)
+binder_call(surfaceflinger, radio)
+binder_call(surfaceflinger, system_server)
+binder_call(surfaceflinger, servicemanager)
+
+get_prop(surfaceflinger, vendor_display_sf_prop)
+set_prop(surfaceflinger, ctl_start_prop)
+set_prop(surfaceflinger, debug_prop)
+set_prop(surfaceflinger, dumpstate_prop)
+set_prop(surfaceflinger, dumpstate_options_prop)
+set_prop(surfaceflinger, shell_prop)

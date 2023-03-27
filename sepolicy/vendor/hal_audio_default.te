@@ -1,9 +1,54 @@
-allow hal_audio_default audio_efs_file:file { read open };
-allow hal_audio_default audio_efs_file:dir search;
+allow hal_audio_default vendor_audiopcm_data_file:dir create_dir_perms;
+allow hal_audio_default vendor_audiopcm_data_file:file create_file_perms;
 
-allow hal_audio_default imei_efs_file:dir search;
-allow hal_audio_default imei_efs_file:file { read open getattr };
+allow hal_audio_default {
+    seiren_device
+    vendor_diag_device
+    vts_fio_device
+}:chr_file rw_file_perms;
 
-allow hal_audio_default efs_file:dir search;
+allow hal_audio_default imei_efs_file:dir r_dir_perms;
+allow hal_audio_default imei_efs_file:file r_file_perms;
+allow hal_audio_default { sec_efs_file system_sec_efs_file }:dir create_dir_perms;
+allow hal_audio_default { sec_efs_file system_sec_efs_file }:file create_file_perms;
 
-get_prop(hal_audio_default, vendor_radio_prop)
+allow hal_audio_default omr_file:dir r_dir_perms;
+allow hal_audio_default omr_file:file r_file_perms;
+allow hal_audio_default vendor_log_file:dir create_dir_perms;
+allow hal_audio_default vendor_log_file:file create_file_perms;
+
+r_dir_file(hal_audio_default, proc_abox);
+allow hal_audio_default proc_abox:file w_file_perms;
+
+allow hal_audio_default {
+    sysfs
+    sysfs_ss_writable
+    vendor_sysfs_cirrus_cal
+}:dir r_dir_perms;
+
+allow hal_audio_default { sysfs_audio_writable sysfs_lpeff }:file r_file_perms;
+allow hal_audio_default { sysfs_ss_writable vendor_sysfs_cirrus_cal }:file rw_file_perms;
+allow hal_audio_default sysfs_ss_writable:lnk_file r_file_perms;
+
+allow hal_audio_default system_app:fd use;
+allow hal_audio_default system_app:fifo_file write;
+
+allow hal_audio_default hal_bluetooth_a2dp_hwservice:hwservice_manager { add find };
+
+allow hal_audio_default rild:unix_stream_socket connectto;
+
+allow hal_audio_default self:netlink_kobject_uevent_socket { read create bind getopt setopt };
+
+binder_call(hal_audio_default, system_suspend_server)
+binder_call(hal_audio, bluetooth)
+binder_call(hal_audio, hwservicemanager)
+
+allow hal_audio_default property_socket:sock_file write;
+allow hal_audio_default init:unix_stream_socket connectto;
+allow hal_audio dumpstate:unix_stream_socket { read write };
+
+get_prop(hal_audio_default, sec_audio_prop)
+get_prop(hal_audio_default, sec_audio_usb_prop)
+get_prop(hal_audio_default, smartamp_prop)
+get_prop(hal_audio_default, vendor_dolby_prop)
+set_prop(hal_audio_default, vendor_audio_prop)

@@ -1,8 +1,35 @@
+# CAMERA
+vendor_public_prop(vendor_camera_motor_prop)
+vendor_public_prop(vendor_sec_camera_prop)
+
 # Fastcharge
 vendor_internal_prop(vendor_fastcharge_prop)
 
-# power
-vendor_internal_prop(vendor_power_prop)
+# Fastrpc
+vendor_public_prop(vendor_fastrpc_prop)
 
-# qseecom
-vendor_internal_prop(vendor_qseecomd_prop)
+# Graphics
+vendor_public_prop(vendor_debug_egl_prop)
+vendor_public_prop(vendor_display_sf_prop)
+
+# Member
+vendor_public_prop(vendor_members_prop)
+
+# Model
+vendor_public_prop(vendor_model_suffix_prop)
+
+# NFC
+vendor_public_prop(vendor_nfc_prop)
+vendor_public_prop(vendor_sec_nfc_prop)
+
+# Sensor
+vendor_public_prop(vendor_sensor_prop)
+
+# Sound
+vendor_public_prop(vendor_dolby_prop)
+
+# Tee
+vendor_public_prop(vendor_qseecomd_prop)
+
+# Wlan Driver
+vendor_public_prop(vendor_wlandriver_prop)

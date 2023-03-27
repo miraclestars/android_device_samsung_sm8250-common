@@ -1,3 +1,2 @@
 allow hal_lineage_powershare_default sysfs_battery:dir search;
-allow hal_lineage_powershare_default sysfs_battery_writable:dir search;
-allow hal_lineage_powershare_default sysfs_battery_writable:file rw_file_perms;
+allow hal_lineage_powershare_default sysfs_battery:file rw_file_perms;

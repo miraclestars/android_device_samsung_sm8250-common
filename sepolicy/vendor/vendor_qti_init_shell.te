@@ -1,1 +1,58 @@
-allow vendor_qti_init_shell sysfs_power_writable:file { write setattr };
+allow vendor_qti_init_shell vendor_data_file:dir rw_dir_perms;
+allow vendor_qti_init_shell vendor_data_file:file create_file_perms;
+
+allow vendor_qti_init_shell { gpu_device kgsl_device }:chr_file r_file_perms;
+allow vendor_qti_init_shell kgsl_device:chr_file getattr;
+allow vendor_qti_init_shell kmsg_device:chr_file w_file_perms;
+allow vendor_qti_init_shell kmsg_device:file rw_file_perms;
+
+allow vendor_qti_init_shell app_efs_file:dir { setattr search };
+allow vendor_qti_init_shell bluetooth_efs_file:dir r_dir_perms;
+allow vendor_qti_init_shell bluetooth_efs_file:file r_file_perms;
+allow vendor_qti_init_shell { efs_file sec_poc_file }:dir search;
+allow vendor_qti_init_shell { efs_file sec_poc_file }:file r_file_perms;
+
+allow vendor_qti_init_shell mnt_vendor_file:dir create;
+allow vendor_qti_init_shell mnt_vendor_file:dir create_dir_perms;
+
+allow vendor_qti_init_shell usb_configfs:dir rw_dir_perms;
+allow vendor_qti_init_shell usb_configfs:file rw_file_perms;
+
+allow vendor_qti_init_shell debugfs_tracing:file rw_file_perms;
+
+allow vendor_qti_init_shell {
+    proc_default_smp_affinity
+    proc_page_cluster
+    proc_sched
+}:file rw_file_perms;
+
+allow vendor_qti_init_shell proc:file { read write open };
+allow vendor_qti_init_shell proc_swappiness:file { read write open };
+
+allow vendor_qti_init_shell {
+    sysfs_devices_system_cpu
+    sysfs_lowmemorykiller
+    vendor_sysfs_devfreq
+    vendor_sysfs_kgsl
+    vendor_sysfs_qdss_dev
+    vendor_sysfs_scsi_host
+}:file create_file_perms;
+
+allow vendor_qti_init_shell sysfs:file { read write open };
+allow vendor_qti_init_shell sysfs:file setattr;
+allow vendor_qti_init_shell sysfs:file rw_file_perms;
+allow vendor_qti_init_shell sysfs_android_usb:file { read write open };
+allow vendor_qti_init_shell sysfs_socinfo:file { w_file_perms setattr };
+allow vendor_qti_init_shell sysfs_ss_writable:file setattr;
+allow vendor_qti_init_shell vendor_sysfs_kgsl:dir search;
+
+allow vendor_qti_init_shell property_socket:sock_file write;
+allow vendor_qti_init_shell init:unix_stream_socket connectto;
+
+get_prop(vendor_qti_init_shell, boot_force_upload_prop)
+get_prop(vendor_qti_init_shell, recovery_prop)
+set_prop(vendor_qti_init_shell, ctl_default_prop)
+set_prop(vendor_qti_init_shell, ctl_factory_ssc_prop)
+set_prop(vendor_qti_init_shell, multisim_prop)
+
+dontaudit vendor_qti_init_shell self:capability dac_override;

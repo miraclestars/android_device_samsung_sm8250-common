@@ -1,47 +1,107 @@
-# DATA
+# Data files
+type accounts_data_file, file_type, data_file_type, core_data_file_type;
+type akmd_vendor_data_file, file_type, data_file_type;
+type audit_log, file_type, data_file_type, core_data_file_type;
 type biometrics_vendor_data_file, file_type, data_file_type;
-type conn_vendor_data_file, file_type, data_file_type;
-type gatekeeper_vendor_data_file, file_type, data_file_type;
-type radio_vendor_data_file, file_type, data_file_type;
+type dumplog_data_file, file_type, data_file_type, core_data_file_type, mlstrustedobject;
+type fota_data_file, file_type, data_file_type, core_data_file_type;
+type keyfota_data_file, file_type, data_file_type, core_data_file_type;
+type sec_data_file, file_type, data_file_type, core_data_file_type, mlstrustedobject;
+type sec_wifi_data_file, file_type, data_file_type, core_data_file_type;
+type tee_vendor_data_file, file_type, data_file_type;
+type users_system_data_file, file_type, data_file_type, core_data_file_type, mlstrustedobject;
+type vendor_audiopcm_data_file, data_file_type, file_type;
+type vendor_convergence_data_file, file_type, data_file_type;
+type vendor_gatekeeper_data_file, file_type, data_file_type;
+type vendor_keymaster_data_file, file_type, data_file_type;
+type vendor_mediacodec_data_file, file_type, data_file_type;
+type vendor_sdx50m_file, file_type, data_file_type;
+type vendor_sensorhub_data_file, file_type, data_file_type;
+type vendor_segbackground_data_file, file_type, data_file_type;
+type yas_lib_vendor_data_file, file_type, data_file_type;
+type zram_data_file, file_type, data_file_type, core_data_file_type;
 
-# EFS types
-type app_efs_file, file_type;
-type audio_efs_file, file_type;
-type battery_efs_file, file_type;
-type biometrics_efs_file, file_type;
-type cpk_efs_file, file_type;
-type imei_efs_file, file_type;
-type nfc_efs_file, file_type;
-type pfw_efs_file, file_type;
-type prov_efs_file, file_type;
-type wifi_efs_file, file_type;
+# configfs
+type usb_configfs, fs_type;
 
-# PROC
+# debugfs
+type vendor_debugfs_ipc, fs_type, debugfs_type;
+type vendor_debugfs_wlan, fs_type, debugfs_type;
+
+# EFS files
+type app_efs_file, file_type, mlstrustedobject, efs_type;
+type battery_efs_file, file_type, efs_type;
+type bin_nv_data_efs_file, file_type, efs_type;
+type camera_efs_file, file_type, efs_type;
+type efs_gsm_file, file_type, efs_type;
+type imei_efs_file, file_type, mlstrustedobject, efs_type;
+type mb_po_efs_file, file_type, efs_type;
+type nv_core_efs_file, file_type, efs_type;
+type prov_efs_file, file_type, efs_type;
+type sec_efs_file, file_type, mlstrustedobject, efs_type;
+type sec_poc_file, file_type, mlstrustedobject, efs_type;
+type system_sec_efs_file, file_type, mlstrustedobject, efs_type;
+type wifi_efs_file, file_type, mlstrustedobject, efs_type;
+
+type dqmdbgblk_file, file_type;
+type keydata_data_file, file_type;
+type keyrefuge_data_file, file_type;
+type omr_file, file_type, mlstrustedobject;
+
+# proc
+type proc_abox, fs_type, proc_type;
+type proc_auto_comment, fs_type, proc_type;
+type proc_avc_msg, fs_type, proc_type;
+type proc_bluetooth, fs_type, proc_type;
+type proc_boot_stat, fs_type, proc_type;
+type proc_bus_input, fs_type, proc_type;
+type proc_default_smp_affinity, fs_type, proc_type;
+type proc_extra, fs_type, proc_type;
+type proc_fmw_config, fs_type, proc_type;
+type proc_fslog, fs_type, proc_type;
 type proc_last_kmsg, fs_type, proc_type;
+type proc_partition, fs_type, proc_type;
+type proc_simslot_count, fs_type, proc_type;
+type proc_swappiness, fs_type, proc_type;
 
-# SYSFS
-type sysfs_battery, sysfs_type, r_fs_type, fs_type;
-type sysfs_camera, sysfs_type, r_fs_type, fs_type;
-type sysfs_fingerprint, sysfs_type, r_fs_type, fs_type;
-type sysfs_iio, sysfs_type, r_fs_type, fs_type;
-type sysfs_input, sysfs_type, r_fs_type, fs_type;
-type sysfs_mdnie_writable, fs_type, sysfs_type;
-type sysfs_npu, fs_type, sysfs_type;
-type sysfs_sec_ir, sysfs_type, r_fs_type, fs_type;
-type sysfs_sec_key, sysfs_type, r_fs_type, fs_type;
-type sysfs_sec_switch, sysfs_type, r_fs_type, fs_type;
-type sysfs_sec_touchkey, sysfs_type, r_fs_type, fs_type;
-type sysfs_sec_touchscreen, sysfs_type, r_fs_type, fs_type;
-type sysfs_sensors, sysfs_type, r_fs_type, fs_type;
-type sysfs_wifi, sysfs_type, r_fs_type, fs_type;
+# Socket
+type qosd_socket, file_type;
+type tz_socket, file_type, mlstrustedobject;
 
-type sysfs_backlight_writable, sysfs_type, rw_fs_type, fs_type;
-type sysfs_battery_writable, sysfs_type, rw_fs_type, fs_type;
-type sysfs_camera_writable, sysfs_type, r_fs_type, fs_type;
+# sysfs
+type sysfs_battery, sysfs_type, fs_type;
+type sysfs_iio, sysfs_type, fs_type;
+type sysfs_lpeff, sysfs_type, fs_type;
+type sysfs_modem, sysfs_type, fs_type;
+type sysfs_sec, sysfs_type, fs_type;
+type sysfs_sec_ir, sysfs_type, fs_type;
+type sysfs_sec_touchscreen, sysfs_type, fs_type;
+type sysfs_secgpio, sysfs_type, fs_type;
+type sysfs_socinfo, sysfs_type, fs_type;
+type sysfs_vnswap, sysfs_type, fs_type;
+type sysfs_wifi, sysfs_type, fs_type;
+type vendor_sysfs_cirrus_cal, sysfs_type, fs_type;
+type vendor_sysfs_wlan, sysfs_type, fs_type;
+
+type sysfs_ski_display_readable, sysfs_type, r_fs_type, fs_type;
+type sysfs_ski_hal_readable, sysfs_type, r_fs_type, fs_type;
+type sysfs_ski_hwparam_readable, sysfs_type, r_fs_type, fs_type;
+type sysfs_ski_power_readable, sysfs_type, r_fs_type, fs_type;
+type sysfs_ski_sensor_readable, sysfs_type, r_fs_type, fs_type;
+type sysfs_ski_storage_readable, sysfs_type, r_fs_type, fs_type;
+
+type sysfs_app_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_audio_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_camera_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_lcd_writable, sysfs_type, rw_fs_type, fs_type;
-type sysfs_power_writable, sysfs_type, rw_fs_type, fs_type;
-type sysfs_sec_switch_writable, sysfs_type, rw_fs_type, fs_type;
-type sysfs_sec_touchkey_writable, sysfs_type, rw_fs_type, fs_type;
-type sysfs_sensors_writable, sysfs_type, rw_fs_type, fs_type;
-type sysfs_touchscreen_writable, sysfs_type, rw_fs_type, fs_type;
-type sysfs_wifi_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_sensor_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_ski_camera_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_ski_display_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_ski_hall_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_ski_led_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_ski_memory_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_ski_muic_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_ski_sensor_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_ski_touch_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_ski_ufs_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_ss_writable, sysfs_type, rw_fs_type, fs_type;

@@ -1,16 +1,27 @@
-allow system_app proc_pagetypeinfo:file { read open getattr };
+hal_client_domain(system_app, hal_allocator)
+hal_client_domain(system_app, hal_power)
+hal_client_domain(system_app, hal_telephony)
+hal_client_domain(system_app, hal_thermal)
+hal_client_domain(system_app, vendor_hal_diaghal)
+hal_client_domain(system_app, vendor_hal_qccvndhal)
 
-# ZRAM
+allow system_app proc_pagetypeinfo:file r_file_perms;
+
+allow system_app {
+    sysfs_app_writable
+    sysfs_secgpio
+    sysfs_vibrator
+}:file rw_file_perms;
+
+r_dir_file(system_app, sysfs_rtc);
+r_dir_file(system_app, sysfs_sec_touchscreen);
+r_dir_file(system_app, sysfs_thermal);
+allow system_app sysfs_app_writable:dir search;
+allow system_app sysfs_secgpio:dir r_dir_perms;
 allow system_app sysfs_zram:dir search;
-allow system_app sysfs_zram:file { read open getattr };
+allow system_app sysfs_zram:file r_file_perms;
 
 binder_call(system_app, hal_power_default)
 binder_call(system_app, hal_vibrator_default)
 
-# MDNIE
-allow system_app sysfs_mdnie_writable:dir search;
-allow system_app sysfs_mdnie_writable:file { open write getattr };
-
-# UDFPS
 set_prop(system_app, vendor_fingerprint_prop)
-get_prop(system_app, vendor_fingerprint_prop)

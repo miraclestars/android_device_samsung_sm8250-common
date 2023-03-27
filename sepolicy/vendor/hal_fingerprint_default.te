@@ -1,32 +1,37 @@
+allow hal_fingerprint_default biometrics_vendor_data_file:dir create_dir_perms;
+allow hal_fingerprint_default biometrics_vendor_data_file:file create_file_perms;
+allow hal_fingerprint_default vendor_data_file:dir create_dir_perms;
+allow hal_fingerprint_default vendor_data_file:file create_file_perms;
+r_dir_file(hal_fingerprint_default, tee_vendor_data_file);
+
 allow hal_fingerprint_default {
     fp_sensor_device
+    goodix_device
+    vendor_qbt_device
     tee_device
+    tz_user_device
 }:chr_file rw_file_perms;
 
-allow hal_fingerprint_default fingerprint_vendor_data_file:dir { rw_dir_perms create rmdir };
+allow hal_fingerprint_default {
+    efs_file
+    sec_poc_file
+    firmware_file
+}:file r_file_perms;
 
-allow hal_fingerprint_default fingerprint_vendor_data_file:file { read write open getattr rename create unlink };
+allow hal_fingerprint_default { sec_efs_file system_sec_efs_file }:dir create_dir_perms;
+allow hal_fingerprint_default { sec_efs_file system_sec_efs_file }:file create_file_perms;
+allow hal_fingerprint_default { sec_efs_file system_sec_efs_file }:lnk_file r_file_perms;
 
-# /efs/biometrics
-allow hal_fingerprint_default biometrics_efs_file:file r_file_perms;
-allow hal_fingerprint_default biometrics_efs_file:dir search;
-allow hal_fingerprint_default efs_file:dir search;
+r_dir_file(hal_fingerprint_default, sysfs_battery);
+r_dir_file(hal_fingerprint_default, sysfs_lcd_writable);
+r_dir_file(hal_fingerprint_default, sysfs_ski_display_readable);
+r_dir_file(hal_fingerprint_default, sysfs_ski_display_writable);
+r_dir_file(hal_fingerprint_default, sysfs_ss_writable);
+r_dir_file(hal_fingerprint_default, vendor_sysfs_battery_supply);
+allow hal_fingerprint_default sysfs_batteryinfo:dir search;
 
-# /sys/class/lcd/panel/mask_brightness
-allow hal_fingerprint_default sysfs_lcd_writable:dir search;
-allow hal_fingerprint_default sysfs_lcd_writable:file rw_file_perms;
+allow hal_fingerprint_default hal_fingerprint_default:netlink_route_socket { read write create bind };
 
-# /sys/class/fingerprint/
-allow hal_fingerprint_default sysfs_fingerprint:dir r_dir_perms;
-allow hal_fingerprint_default sysfs_fingerprint:file r_file_perms;
-
-# /data/vendor/biometrics/*
-allow hal_fingerprint_default biometrics_vendor_data_file:file create_file_perms;
-allow hal_fingerprint_default biometrics_vendor_data_file:dir { read write open add_name create rmdir remove_name search };
-
-# /sys/class/sec/tsp/
-allow hal_fingerprint_default sysfs_sec_touchscreen:dir search;
-allow hal_fingerprint_default sysfs_touchscreen_writable:file { write open getattr };
-
-# vendor.finger.down
+get_prop(hal_fingerprint_default, debug_level_prop)
+get_prop(hal_fingerprint_default, product_ship_prop)
 set_prop(hal_fingerprint_default, vendor_fingerprint_prop)
