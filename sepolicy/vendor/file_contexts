@@ -2,6 +2,7 @@
 /(vendor|system/vendor)/bin/factory\.ssc        u:object_r:factory_ssc_exec:s0
 /(vendor|system/vendor)/bin/hw/macloader        u:object_r:macloader_exec:s0
 /(vendor|system/vendor)/bin/secril_config_svc   u:object_r:vendor_secril_config_svc_exec:s0
+/(vendor|system/vendor)/bin/vaultkeeperd        u:object_r:vaultkeeperd_exec:s0
 
 # Block devices
 /dev/block/platform/soc/1d84000.ufshc/by-name/carrier     u:object_r:carrier_block_device:s0
@@ -139,6 +140,7 @@
 /efs/tas25xx(/.*)?                              u:object_r:sec_efs_file:s0
 /efs/TEE(/.*)?                                  u:object_r:prov_efs_file:s0
 /efs/usb_hw_param(/.*)?                         u:object_r:sec_efs_file:s0
+/efs/vk(/.*)?                                   u:object_r:vaultkeeper_efs_file:s0
 /efs/vold(/.*)?                                 u:object_r:sec_efs_file:s0
 /efs/wifi(/.*)?                                 u:object_r:wifi_efs_file:s0
 /efs/wv\.keys                                   u:object_r:sec_efs_file:s0
@@ -182,6 +184,7 @@
 /mnt/vendor/efs/tas25xx(/.*)?                   u:object_r:sec_efs_file:s0
 /mnt/vendor/efs/TEE(/.*)?                       u:object_r:prov_efs_file:s0
 /mnt/vendor/efs/usb_hw_param(/.*)?              u:object_r:sec_efs_file:s0
+/mnt/vendor/efs/vk(/.*)?                        u:object_r:vaultkeeper_efs_file:s0
 /mnt/vendor/efs/vold(/.*)?                      u:object_r:sec_efs_file:s0
 /mnt/vendor/efs/wifi(/.*)?                      u:object_r:wifi_efs_file:s0
 /mnt/vendor/efs/wv\.keys                        u:object_r:sec_efs_file:s0
@@ -219,3 +222,4 @@
 /dev/socket/qosd                                u:object_r:qosd_socket:s0
 /dev/socket/tz                                  u:object_r:tz_socket:s0
 /dev/socket/taa                                 u:object_r:tz_socket:s0
+/dev/socket/vaultkeeper                         u:object_r:vaultkeeper_socket:s0

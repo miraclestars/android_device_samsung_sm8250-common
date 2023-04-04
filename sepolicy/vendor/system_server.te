@@ -12,3 +12,5 @@ allow system_server proc_last_kmsg:file r_file_perms;
 r_dir_file(system_server, sysfs_sec_touchscreen);
 r_dir_file(system_server, sysfs_ski_hwparam_readable);
 allow system_server vendor_sysfs_graphics:file r_file_perms;
+
+binder_call(system_server, vaultkeeperd)

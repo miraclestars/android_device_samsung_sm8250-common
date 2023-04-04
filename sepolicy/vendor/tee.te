@@ -30,7 +30,10 @@ allow tee {
     efs_file
     prov_efs_file
     sec_poc_file
+    vaultkeeper_efs_file
 }:file create_file_perms;
+
+allow tee vaultkeeper_efs_file:dir rw_dir_perms;
 
 r_dir_file(tee, firmware_file);
 allow tee vendor_persist_qti_fp_file:dir create_dir_perms;

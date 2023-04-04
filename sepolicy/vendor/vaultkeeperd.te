@@ -1,0 +1,55 @@
+type vaultkeeperd, domain;
+type vaultkeeperd_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vaultkeeperd)
+
+hal_client_domain(vaultkeeperd, vendor_hal_qseecom)
+
+type_transition vaultkeeperd efs_file:dir vaultkeeper_efs_file "vk";
+
+r_dir_file(vaultkeeperd, tee_vendor_data_file);
+
+allow vaultkeeperd steady_block_device:blk_file rw_file_perms;
+
+allow vaultkeeperd {
+    kmsg_device
+    tee_device
+    vndbinder_device
+}:chr_file rw_file_perms;
+
+allow vaultkeeperd ion_device:chr_file r_file_perms;
+
+allow vaultkeeperd efs_file:dir rw_dir_perms;
+allow vaultkeeperd sec_poc_file:dir rw_dir_perms;
+allow vaultkeeperd vaultkeeper_efs_file:dir create_dir_perms;
+allow vaultkeeperd vaultkeeper_efs_file:file create_file_perms;
+
+allow vaultkeeperd vendor_file:file rx_file_perms;
+allow vaultkeeperd vendor_log_file:dir create_dir_perms;
+allow vaultkeeperd vendor_log_file:file create_file_perms;
+
+allow vaultkeeperd proc_version:file r_file_perms;
+
+r_dir_file(vaultkeeperd, vendor_sysfs_scsi_host);
+
+allow vaultkeeperd kernel:system syslog_read;
+
+allow vaultkeeperd vaultkeeper_socket:dir rw_dir_perms;
+allow vaultkeeperd vaultkeeper_socket:sock_file create_file_perms;
+
+allow vaultkeeperd vendor_shell_exec:file rx_file_perms;
+allow vaultkeeperd vendor_toolbox_exec:file rx_file_perms;
+
+allow vaultkeeperd self:capability { setgid setuid };
+
+binder_call(vaultkeeperd, hwservicemanager)
+binder_call(vaultkeeperd, vndservicemanager)
+
+allow vaultkeeperd property_socket:sock_file write;
+allow vaultkeeperd init:unix_stream_socket connectto;
+
+get_prop(vaultkeeperd, exported_system_prop)
+get_prop(vaultkeeperd, hwservicemanager_prop)
+get_prop(vaultkeeperd, vendor_factory_prop)
+get_prop(vaultkeeperd, vendor_qseecomd_prop)
+set_prop(vaultkeeperd, vendor_sec_vaultkeeper_prop)

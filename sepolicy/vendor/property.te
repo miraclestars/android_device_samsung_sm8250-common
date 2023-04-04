@@ -31,5 +31,8 @@ vendor_public_prop(vendor_dolby_prop)
 # Tee
 vendor_public_prop(vendor_qseecomd_prop)
 
+# Vaultkeeper
+vendor_public_prop(vendor_sec_vaultkeeper_prop)
+
 # Wlan Driver
 vendor_public_prop(vendor_wlandriver_prop)

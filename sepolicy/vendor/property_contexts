@@ -40,6 +40,11 @@ vendor.dolby.                                    u:object_r:vendor_dolby_prop:s0
 # Tee
 vendor.sys.qseecomd.                             u:object_r:vendor_qseecomd_prop:s0
 
+# Vaultkeeper
+vendor.ro.security.vaultkeeper.                  u:object_r:vendor_sec_vaultkeeper_prop:s0
+vendor.security.vaultkeeper.                     u:object_r:vendor_sec_vaultkeeper_prop:s0
+ro.vendor.security.vaultkeeper.                  u:object_r:vendor_sec_vaultkeeper_prop:s0
+
 # Wifi
 ro.vendor.wifi.sap.interface                     u:object_r:vendor_wifi_prop:s0
 vendor.qcom.wifi.macloader                       u:object_r:vendor_wifi_prop:s0

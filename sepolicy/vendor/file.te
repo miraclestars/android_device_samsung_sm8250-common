@@ -41,6 +41,7 @@ type prov_efs_file, file_type, efs_type;
 type sec_efs_file, file_type, mlstrustedobject, efs_type;
 type sec_poc_file, file_type, mlstrustedobject, efs_type;
 type system_sec_efs_file, file_type, mlstrustedobject, efs_type;
+type vaultkeeper_efs_file, file_type, efs_type;
 type wifi_efs_file, file_type, mlstrustedobject, efs_type;
 
 type dqmdbgblk_file, file_type;
@@ -67,6 +68,7 @@ type proc_swappiness, fs_type, proc_type;
 # Socket
 type qosd_socket, file_type;
 type tz_socket, file_type, mlstrustedobject;
+type vaultkeeper_socket, file_type;
 
 # sysfs
 type sysfs_battery, sysfs_type, fs_type;

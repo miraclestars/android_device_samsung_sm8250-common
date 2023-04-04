@@ -1032,6 +1032,7 @@ vendor/bin/qrtr-lookup
 vendor/bin/rmt_storage
 vendor/bin/ssgtzd
 vendor/bin/tftp_server
+vendor/bin/vaultkeeperd
 vendor/etc/data/dsi_config.xml
 vendor/etc/data/netmgr_config.xml
 vendor/etc/init/dataadpl.rc
