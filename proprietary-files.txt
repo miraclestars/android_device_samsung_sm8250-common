@@ -163,9 +163,6 @@ vendor/lib64/vendor.samsung.hardware.bluetooth.audio@2.0.so
 vendor/lib64/vendor.samsung.hardware.bluetooth.audio@2.1.so
 vendor/lib64/vendor.samsung.hardware.bluetooth@2.0.so
 
-# Bluetooth (aptX)
-system/lib64/libaptX_encoder.so:system_ext/lib64/libaptX_encoder.so
-
 # Camera
 vendor/bin/hw/vendor.samsung.hardware.camera.provider@4.0-service_64
 vendor/etc/init/vendor.samsung.hardware.camera.provider@4.0-service_64.rc
