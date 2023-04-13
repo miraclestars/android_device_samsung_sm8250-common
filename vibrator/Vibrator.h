@@ -12,6 +12,10 @@
 #define INTENSITY_MAX 10000
 #define INTENSITY_DEFAULT INTENSITY_MAX
 
+#define AMPLITUDE_LIGHT 0.25
+#define AMPLITUDE_MEDIUM 0.5
+#define AMPLITUDE_STRONG 1
+
 #define VIBRATOR_TIMEOUT_PATH "/sys/class/timed_output/vibrator/enable"
 #define VIBRATOR_INTENSITY_PATH "/sys/class/timed_output/vibrator/intensity"
 
@@ -59,7 +63,7 @@ public:
 private:
     ndk::ScopedAStatus activate(uint32_t ms);
     static uint32_t effectToMs(Effect effect, ndk::ScopedAStatus* status);
-    static uint8_t strengthToAmplitude(EffectStrength strength, ndk::ScopedAStatus* status);
+    static float strengthToAmplitude(EffectStrength strength, ndk::ScopedAStatus* status);
 
     bool mEnabled{false};
     bool mExternalControl{false};

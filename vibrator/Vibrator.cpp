@@ -86,7 +86,7 @@ ndk::ScopedAStatus Vibrator::on(int32_t timeoutMs, const std::shared_ptr<IVibrat
 
 ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength strength, const std::shared_ptr<IVibratorCallback>& callback, int32_t* _aidl_return) {
     ndk::ScopedAStatus status;
-    uint8_t amplitude;
+    float amplitude;
     uint32_t ms;
 
     amplitude = strengthToAmplitude(strength, &status);
@@ -129,16 +129,14 @@ ndk::ScopedAStatus Vibrator::getSupportedEffects(std::vector<Effect>* _aidl_retu
 ndk::ScopedAStatus Vibrator::setAmplitude(float amplitude) {
     uint32_t intensity;
 
-    if (amplitude == 0) {
-        return ndk::ScopedAStatus::fromExceptionCode(EX_ILLEGAL_ARGUMENT);
+    if (amplitude <= 0.0f || amplitude > 1.0f) {
+        return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_ILLEGAL_ARGUMENT));
     }
 
-    LOG(DEBUG) << "Setting amplitude: " << (uint32_t)amplitude;
+    LOG(DEBUG) << "Setting amplitude: " << amplitude;
 
-    intensity = std::lround((amplitude - 1) * INTENSITY_MAX / 254.0);
-    if (intensity > INTENSITY_MAX) {
-        intensity = INTENSITY_MAX;
-    }
+    intensity = amplitude * INTENSITY_MAX;
+
     LOG(DEBUG) << "Setting intensity: " << intensity;
 
     return writeNode(VIBRATOR_TIMEOUT_PATH, intensity);
@@ -240,16 +238,16 @@ ndk::ScopedAStatus Vibrator::activate(uint32_t timeoutMs) {
     return writeNode(VIBRATOR_TIMEOUT_PATH, timeoutMs);
 }
 
-uint8_t Vibrator::strengthToAmplitude(EffectStrength strength, ndk::ScopedAStatus* status) {
+float Vibrator::strengthToAmplitude(EffectStrength strength, ndk::ScopedAStatus* status) {
     *status = ndk::ScopedAStatus::ok();
 
     switch (strength) {
         case EffectStrength::LIGHT:
-            return 64;
+            return AMPLITUDE_LIGHT;
         case EffectStrength::MEDIUM:
-            return 128;
+            return AMPLITUDE_MEDIUM;
         case EffectStrength::STRONG:
-            return 255;
+            return AMPLITUDE_STRONG;
     }
 
     *status = ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
