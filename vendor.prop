@@ -101,6 +101,7 @@ vendor.qcom.bluetooth.soc=hastings
 # Camera
 camera.disable_zsl_mode=1
 ro.camera.notify_nfc=1
+vendor.camera.unihal.enable=true
 
 # Chipset
 ro.soc.manufacturer=QTI
