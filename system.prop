@@ -1,3 +1,6 @@
+# Charger
+ro.charger.enable_suspend=true
+
 # Netflix
 ro.netflix.bsp_rev=Q8250-19134-1
 
