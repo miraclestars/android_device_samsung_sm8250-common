@@ -184,6 +184,7 @@ persist.vendor.radio.atfwd.start=true
 persist.vendor.radio.enableadvancedscan=true
 ro.radio.noril=no
 ro.telephony.default_cdma_sub=0
+ro.telephony.default_network=33,33
 ro.vendor.epdg.support=true
 ro.vendor.sec.radio.def_network=9
 vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
