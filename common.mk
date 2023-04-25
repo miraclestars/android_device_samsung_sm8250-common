@@ -41,6 +41,7 @@ PRODUCT_PACKAGES += \
     audio.primary.kona \
     audio.r_submix.default \
     audio.usb.default \
+    audioadsprpcd \
     liba2dpoffload \
     libaudiopreprocessing \
     libbatterylistener \
