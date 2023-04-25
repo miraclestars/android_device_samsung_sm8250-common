@@ -1,6 +1,9 @@
 # Charger
 ro.charger.enable_suspend=true
 
+# HWUI
+debug.hwui.skia_atrace_enabled=false
+
 # Netflix
 ro.netflix.bsp_rev=Q8250-19134-1
 
