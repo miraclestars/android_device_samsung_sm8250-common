@@ -526,7 +526,7 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.3.vendor \
-    android.hardware.vibrator-service.samsung.sm8250
+    android.hardware.vibrator-service.samsung
 
 # VNDK
 PRODUCT_EXTRA_VNDK_VERSIONS := 28 29 30

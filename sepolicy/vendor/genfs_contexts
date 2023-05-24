@@ -60,6 +60,8 @@ genfscon sysfs /class/sec/switch/afc_disable                                    
 genfscon sysfs /class/sec/tsp(/.*)?                                                                            u:object_r:sysfs_ss_writable:s0
 genfscon sysfs /class/sec/tsp/input/enabled                                                                    u:object_r:sysfs_ss_writable:s0
 genfscon sysfs /class/tas25xx(/.*)?                                                                            u:object_r:sysfs_ss_writable:s0
+genfscon sysfs /class/timed_output/vibrator/cp_trigger_index                                                   u:object_r:sysfs_vibrator:s0
+genfscon sysfs /class/timed_output/vibrator/enable                                                             u:object_r:sysfs_vibrator:s0
 genfscon sysfs /class/timed_output/vibrator/intensity                                                          u:object_r:sysfs_vibrator:s0
 genfscon sysfs /class/timed_output/vibrator/multi_freq                                                         u:object_r:sysfs_vibrator:s0
 genfscon sysfs /class/usb_notify/usb_control(/.*)?                                                             u:object_r:sysfs_usb:s0
@@ -195,6 +197,7 @@ genfscon sysfs /devices/virtual/sensors/ssc_core/ssr_msg                        
 genfscon sysfs /devices/virtual/sensors/ssp_sensor(/.*)?                                                       u:object_r:sysfs_ski_sensor_writable:s0
 genfscon sysfs /devices/virtual/sensors/ssp_sensor/mcu_test                                                    u:object_r:sysfs_sensor_writable:s0
 genfscon sysfs /devices/virtual/tas25xx(/.*)?                                                                  u:object_r:sysfs_ss_writable:s0
+genfscon sysfs /devices/virtual/timed_output/vibrator/cp_trigger_index                                         u:object_r:sysfs_vibrator:s0
 genfscon sysfs /devices/virtual/timed_output/vibrator/intensity                                                u:object_r:sysfs_vibrator:s0
 genfscon sysfs /devices/virtual/timed_output/vibrator/multi_freq                                               u:object_r:sysfs_vibrator:s0
 

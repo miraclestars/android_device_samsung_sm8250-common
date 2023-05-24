@@ -1,5 +1,0 @@
-service vendor.vibrator-default /vendor/bin/hw/android.hardware.vibrator-service.samsung.sm8250
-    class hal
-    user system
-    group system
-    shutdown critical
