@@ -100,6 +100,7 @@ genfscon sysfs /devices/platform/panel_drv_0/lcd/panel/lcd_type                 
 genfscon sysfs /devices/platform/panel_drv_0/lcd/panel/manufacture_code                                        u:object_r:sysfs_ski_display_readable:s0
 genfscon sysfs /devices/platform/panel_drv_0/lcd/panel/vrr                                                     u:object_r:sysfs_ski_display_readable:s0
 genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply              u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/battery/batt_slate_mode                                   u:object_r:sysfs_battery_writable:s0
 genfscon sysfs /devices/platform/soc/4a88000.spi/spi_master/spi0/spi0.[0-9]/input/input[0-9](/.*)?             u:object_r:sysfs_ss_writable:s0
 genfscon sysfs /devices/platform/soc/5e00000.qcom,mdss_mdp/backlight/panel0-backlight/brightness               u:object_r:sysfs_ski_display_writable:s0
 genfscon sysfs /devices/platform/soc/888000.spi/spi_master/spi0/spi0.0/input/input3                            u:object_r:sysfs_ski_touch_writable:s0
