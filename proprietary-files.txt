@@ -1,4 +1,4 @@
-# All blobs are from SC52AOMU1DWA5, unless pinned
+# All blobs are from SC52AOMU1DWE2, unless pinned
 
 # ACDB
 vendor/etc/acdbdata/adsp_avs_config.acdb
