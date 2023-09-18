@@ -315,6 +315,7 @@ vendor/lib/libvideobeauty_interface.so
 vendor/lib/unihal_cutils@2.1.so
 vendor/lib/unihal_main@2.1.so
 vendor/lib/unihal_uniplugin@1.0.so
+vendor/lib/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
 vendor/lib/vendor.qti.hardware.scve.objecttracker@1.0.so
 vendor/lib/vendor.qti.hardware.scve.panorama@1.0.so
 vendor/lib/vendor.samsung.hardware.camera.device@5.0.so
@@ -474,6 +475,7 @@ vendor/lib64/libvideobeauty_interface.so
 vendor/lib64/unihal_cutils@2.1.so
 vendor/lib64/unihal_main@2.1.so
 vendor/lib64/unihal_uniplugin@1.0.so
+vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
 vendor/lib64/vendor.qti.hardware.scve.objecttracker@1.0.so
 vendor/lib64/vendor.qti.hardware.scve.panorama@1.0.so
 vendor/lib64/vendor.samsung.hardware.camera.device@5.0.so
