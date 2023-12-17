@@ -101,6 +101,10 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor
 
+# Board API level
+BOARD_API_LEVEL := 29
+BOARD_SHIPPING_API_LEVEL := $(BOARD_API_LEVEL)
+
 # Camera
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0.vendor \
