@@ -6,6 +6,7 @@ type biometrics_vendor_data_file, file_type, data_file_type;
 type dumplog_data_file, file_type, data_file_type, core_data_file_type, mlstrustedobject;
 type fota_data_file, file_type, data_file_type, core_data_file_type;
 type keyfota_data_file, file_type, data_file_type, core_data_file_type;
+type radio_vendor_data_file, file_type, data_file_type;
 type sec_data_file, file_type, data_file_type, core_data_file_type, mlstrustedobject;
 type sec_wifi_data_file, file_type, data_file_type, core_data_file_type;
 type tee_vendor_data_file, file_type, data_file_type;
