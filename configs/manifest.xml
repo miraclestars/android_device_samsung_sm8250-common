@@ -1,10 +1,5 @@
 <manifest version="2.0" type="device" target-level="4">
     <hal format="hidl">
-        <name>android.hardware.atrace</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IAtraceDevice/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
         <fqname>@6.0::IDevicesFactory/default</fqname>
@@ -33,11 +28,6 @@
         <name>android.hardware.camera.provider</name>
         <transport>hwbinder</transport>
         <fqname>@2.6::ICameraProvider/legacy/0</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.cas</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.2::IMediaCasService/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.dumpstate</name>
