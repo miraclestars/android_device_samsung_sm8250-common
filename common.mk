@@ -432,6 +432,7 @@ TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 # QMI
 PRODUCT_PACKAGES += \
     libjson \
+    libprotobuf-cpp-full-3.9.1-vendorcompat \
     libprotobuf-cpp-lite-3.9.1-vendorcompat \
     libqti_vndfwk_detect \
     libqti_vndfwk_detect.vendor \
