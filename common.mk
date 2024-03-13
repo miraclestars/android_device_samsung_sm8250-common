@@ -108,16 +108,8 @@ BOARD_SHIPPING_API_LEVEL := $(BOARD_API_LEVEL)
 # Camera
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0.vendor \
-    android.hardware.camera.device@3.6.vendor \
-    android.hardware.camera.provider@2.4-legacy \
-    android.hardware.camera.provider@2.5-legacy \
-    android.hardware.camera.provider@2.6.vendor \
-    android.hardware.camera.provider@2.6-service_64.samsung-sm8250 \
-    camera.device@1.0-impl \
-    camera.device@3.2-impl \
-    camera.device@3.3-impl \
-    camera.device@3.4-impl \
-    camera.device@3.5-impl \
+    android.hardware.camera.provider@2.5-legacy.samsung \
+    android.hardware.camera.provider@2.5-service_64.samsung \
     libcamera2ndk_vendor \
     libgrallocusage.vendor \
     libgui_vendor \

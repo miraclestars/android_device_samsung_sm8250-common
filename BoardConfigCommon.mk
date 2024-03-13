@@ -71,7 +71,9 @@ TARGET_BOOTLOADER_BOARD_NAME := kona
 TARGET_NO_BOOTLOADER := true
 
 # Camera
-USE_DEVICE_SPECIFIC_CAMERA := true
+SOONG_CONFIG_NAMESPACES += samsungCameraVars
+SOONG_CONFIG_samsungCameraVars += needs_sec_reserved_field
+SOONG_CONFIG_samsungCameraVars_needs_sec_reserved_field := true
 
 # Display
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2000U | 0x400000000LL

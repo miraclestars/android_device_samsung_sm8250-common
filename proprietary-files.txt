@@ -164,8 +164,6 @@ vendor/lib64/vendor.samsung.hardware.bluetooth.audio@2.1.so
 vendor/lib64/vendor.samsung.hardware.bluetooth@2.0.so
 
 # Camera
-vendor/bin/hw/vendor.samsung.hardware.camera.provider@4.0-service_64
-vendor/etc/init/vendor.samsung.hardware.camera.provider@4.0-service_64.rc
 vendor/firmware/CAMERA_ICP.elf
 vendor/lib/camera/com.qti.eeprom.truly_cmb433.so
 vendor/lib/camera/com.samsung.sensor.hi847.so
@@ -237,7 +235,6 @@ vendor/lib/camera/components/com.ss.stats.awb.so
 vendor/lib/camera/components/libdepthmapwrapper.so
 vendor/lib/camera/ois_mcu_stm32g_fw.bin
 vendor/lib/hw/camera.unihal.default.so
-vendor/lib/hw/vendor.samsung.hardware.camera.provider@4.0-impl.so
 vendor/lib/libBeauty_v4.camera.samsung.so
 vendor/lib/libbeautyshot.arcsoft.so
 vendor/lib/libBlurDetectionDeepLearning.camera.samsung.so
@@ -318,10 +315,6 @@ vendor/lib/unihal_uniplugin@1.0.so
 vendor/lib/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
 vendor/lib/vendor.qti.hardware.scve.objecttracker@1.0.so
 vendor/lib/vendor.qti.hardware.scve.panorama@1.0.so
-vendor/lib/vendor.samsung.hardware.camera.device@5.0.so
-vendor/lib/vendor.samsung.hardware.camera.device@5.0-impl.so
-vendor/lib/vendor.samsung.hardware.camera.provider@4.0.so
-vendor/lib/vendor.samsung.hardware.camera.provider@4.0-legacy.so
 vendor/lib64/camera/com.qti.eeprom.truly_cmb433.so
 vendor/lib64/camera/com.samsung.sensor.hi847.so
 vendor/lib64/camera/com.samsung.sensor.imx374.so
@@ -396,7 +389,6 @@ vendor/lib64/camera/ois_mcu_stm32g_fw.bin
 vendor/lib64/camera/uw_dual_calibration.bin
 vendor/lib64/camera/w_dual_calibration.bin
 vendor/lib64/hw/camera.unihal.default.so
-vendor/lib64/hw/vendor.samsung.hardware.camera.provider@4.0-impl.so
 vendor/lib64/libBeauty_v4.camera.samsung.so
 vendor/lib64/libbeautyshot.arcsoft.so
 vendor/lib64/libBlurDetectionDeepLearning.camera.samsung.so
@@ -478,10 +470,6 @@ vendor/lib64/unihal_uniplugin@1.0.so
 vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
 vendor/lib64/vendor.qti.hardware.scve.objecttracker@1.0.so
 vendor/lib64/vendor.qti.hardware.scve.panorama@1.0.so
-vendor/lib64/vendor.samsung.hardware.camera.device@5.0.so
-vendor/lib64/vendor.samsung.hardware.camera.device@5.0-impl.so
-vendor/lib64/vendor.samsung.hardware.camera.provider@4.0.so
-vendor/lib64/vendor.samsung.hardware.camera.provider@4.0-legacy.so
 
 # Charger
 vendor/bin/hvdcp_opti
