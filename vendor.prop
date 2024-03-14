@@ -165,6 +165,12 @@ vendor.display.idle_time=0
 vendor.display.use_smooth_motion=0
 vendor.gralloc.disable_ubwc=0
 
+# Fingerprint
+ro.vendor.fingerprint.force_calibrate=true
+ro.vendor.fingerprint.request_touch_event=true
+ro.vendor.fingerprint.supports_gestures=true
+ro.vendor.fingerprint.type=udfps
+
 # Gatekeeper
 ro.hardware.gatekeeper=mdfpp
 
