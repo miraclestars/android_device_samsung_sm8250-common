@@ -239,6 +239,7 @@ PRODUCT_PACKAGES += \
     init.vendor.sensors.rc \
     ueventd.qcom.rc \
     vaultkeeper_common.rc \
+    wifi_brcm.rc \
     wifi_qcom.rc \
     wifi_sec.rc
 
