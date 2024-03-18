@@ -9,9 +9,6 @@ persist.vendor.sec.fastchg_enabled               u:object_r:vendor_fastcharge_pr
 # Fastrpc
 vendor.fastrpc                                   u:object_r:vendor_fastrpc_prop:s0
 
-# Fingerprint
-vendor.finger.down                               u:object_r:vendor_fingerprint_prop:s0
-
 # Graphics
 vendor.display.sf.                               u:object_r:vendor_display_sf_prop:s0
 vendor.debug.egl.                                u:object_r:vendor_debug_egl_prop:s0

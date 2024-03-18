@@ -184,8 +184,7 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.face@1.0.vendor \
     android.hardware.biometrics.fingerprint-service.samsung \
     android.hardware.common-V1-ndk_platform.vendor \
-    fingerprint.default \
-    SamsungUdfpsHandler.sm8250
+    fingerprint.default
 
 # FlipFlap
 PRODUCT_PACKAGES += \

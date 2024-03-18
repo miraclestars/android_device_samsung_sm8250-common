@@ -42,9 +42,6 @@ system_public_prop(vendor_fr_wkrmgr_prop)
 system_public_prop(ctl_factory_ssc_prop)
 system_public_prop(vendor_factory_prop)
 
-# Fingerprint
-system_public_prop(vendor_fingerprint_prop)
-
 # HDR
 system_public_prop(sec_hdr_prop)
 

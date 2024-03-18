@@ -34,4 +34,3 @@ allow hal_fingerprint_default hal_fingerprint_default:netlink_route_socket { rea
 
 get_prop(hal_fingerprint_default, debug_level_prop)
 get_prop(hal_fingerprint_default, product_ship_prop)
-set_prop(hal_fingerprint_default, vendor_fingerprint_prop)
