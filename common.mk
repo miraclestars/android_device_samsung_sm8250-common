@@ -528,6 +528,9 @@ PRODUCT_PACKAGES += \
 # VNDK
 PRODUCT_EXTRA_VNDK_VERSIONS := 29 30
 
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v30/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libutils-v30.so
+
 PRODUCT_PACKAGES += \
     libcrypto-v33
 
