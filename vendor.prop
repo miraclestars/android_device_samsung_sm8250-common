@@ -172,6 +172,9 @@ ro.vendor.fingerprint.request_touch_event=true
 ro.vendor.fingerprint.supports_gestures=true
 ro.vendor.fingerprint.type=udfps
 
+# FRP
+ro.frp.pst=/dev/block/persistent
+
 # Gatekeeper
 ro.hardware.gatekeeper=mdfpp
 
