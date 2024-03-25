@@ -1002,6 +1002,8 @@ vendor/lib64/libqmi_csvt_srvc.so
 vendor/lib64/libqmi_encdec.so
 vendor/lib64/libqmi_legacy.so
 vendor/lib64/libqmiservices.so
+vendor/lib64/libqmiservices-ext.so
+vendor/lib64/libqmiservices-sem-ext.so
 vendor/lib64/libqsocket.so
 
 # QTI
@@ -1055,6 +1057,8 @@ vendor/lib64/libqrtr.so
 vendor/lib64/libril_sem.so
 vendor/lib64/libsec-ril.so
 vendor/lib64/libsecril-client.so
+vendor/lib64/libSemDataProps.so
+vendor/lib64/libSemTelephonyProps.so
 vendor/lib64/libsystem_health_mon.so
 vendor/lib64/libvkmanager_vendor.so
 vendor/lib64/libxml.so
