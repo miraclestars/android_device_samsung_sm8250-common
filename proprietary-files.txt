@@ -957,6 +957,8 @@ vendor/lib64/libprotobuf-cpp-lite-3.9.1.so
 vendor/etc/public.libraries.txt
 
 # QMI
+system/etc/permissions/privapp-permissions-qti.xml
+system/etc/sysconfig/qti_whitelist.xml
 vendor/bin/irsc_util
 vendor/bin/pd-mapper
 vendor/bin/qrtr-ns
