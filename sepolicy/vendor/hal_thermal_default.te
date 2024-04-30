@@ -1,0 +1,22 @@
+r_dir_file(hal_thermal_default, sysfs_battery);
+r_dir_file(hal_thermal_default, sysfs_power);
+r_dir_file(hal_thermal_default, sysfs_switch);
+r_dir_file(hal_thermal_default, vendor_sysfs_battery_supply);
+allow hal_thermal_default sysfs_wake_lock:file rw_file_perms;
+
+allow hal_thermal_default {
+    fwk_camera_hwservice
+    hidl_manager_hwservice
+    system_suspend_hwservice
+}:hwservice_manager find;
+
+allow hal_thermal_default hal_thermal_samsung_hwservice:hwservice_manager { add find };
+
+allow hal_thermal_default rild:unix_stream_socket connectto;
+
+binder_call(hal_thermal_default, cameraserver)
+binder_call(hal_thermal_default, hwservicemanager)
+binder_call(hal_thermal_default, servicemanager)
+binder_call(hal_thermal_default, system_suspend_server)
+
+get_prop(hal_thermal_default, hwservicemanager_prop)

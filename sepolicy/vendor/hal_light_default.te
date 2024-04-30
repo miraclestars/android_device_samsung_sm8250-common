@@ -1,0 +1,16 @@
+allow hal_light_default {
+    sysfs
+    sysfs_lcd_writable
+    sysfs_leds
+    sysfs_sec
+    sysfs_ski_display_writable
+    sysfs_ski_led_writable
+    sysfs_ss_writable
+}:file rw_file_perms;
+
+allow hal_light_default sysfs_lcd_writable:dir r_dir_perms;
+allow hal_light_default sysfs_ski_display_writable:dir r_dir_perms;
+
+allow hal_light_default system_app:fifo_file write;
+
+get_prop(hal_light_default, system_product_prop)

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2024 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Define Device Lid Style
+
+     1 HTC/Xiaomi Style Dotcase
+     2 Asus/LG Style Circle Window Cover
+     3 Rectangular window Cover
+     4 Iceview style case where the entire screen is visible
+
+     For example, a device with Asus Circle Cover would set 2 -->
+    <integer name="config_deviceCoverType">3</integer>
+
+</resources>

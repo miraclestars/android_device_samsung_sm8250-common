@@ -1,0 +1,19 @@
+allow hal_gatekeeper_default vendor_gatekeeper_data_file:dir r_dir_perms;
+
+allow hal_gatekeeper_default tz_device:chr_file rw_file_perms;
+
+allow hal_gatekeeper_default { efs_file sec_poc_file }:dir rw_dir_perms;
+allow hal_gatekeeper_default prov_efs_file:dir create_dir_perms;
+
+allow hal_gatekeeper_default {
+    efs_file
+    prov_efs_file
+    sec_poc_file
+}:file create_file_perms;
+
+allow hal_gatekeeper_default vendor_persist_secnvm_file:dir r_dir_perms;
+
+allow hal_gatekeeper_default property_socket:sock_file write;
+allow hal_gatekeeper_default init:unix_stream_socket connectto;
+
+set_prop(hal_gatekeeper_default, dumpstate_options_prop)

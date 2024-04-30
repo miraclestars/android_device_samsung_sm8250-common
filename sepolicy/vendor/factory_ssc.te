@@ -1,0 +1,55 @@
+type factory_ssc, domain;
+type factory_ssc_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(factory_ssc)
+
+allow factory_ssc {
+    ion_device
+    vendor_qdsp_device
+    vendor_xdsp_device
+}:chr_file r_file_perms;
+
+allow factory_ssc vendor_diag_device:chr_file rw_file_perms;
+
+allow factory_ssc {
+    app_efs_file
+    efs_file
+    sec_poc_file
+}:dir create_dir_perms;
+
+allow factory_ssc {
+    app_efs_file
+    efs_file
+    sec_poc_file
+}:file create_file_perms;
+
+allow factory_ssc { sec_efs_file system_sec_efs_file }:dir r_dir_perms;
+
+allow factory_ssc storage_file:dir rw_dir_perms;
+allow factory_ssc storage_file:file rw_file_perms;
+allow factory_ssc storage_file:lnk_file read;
+
+allow factory_ssc sysfs:file r_file_perms;
+allow factory_ssc sysfs_lcd_writable:dir r_dir_perms;
+allow factory_ssc sysfs_lcd_writable:file r_file_perms;
+allow factory_ssc sysfs_sensor_writable:file rw_file_perms;
+
+allow factory_ssc untrusted_app:dir search;
+allow factory_ssc untrusted_app:file read;
+
+allow factory_ssc {
+    vendor_qlogd_exec
+    vendor_shell_exec
+    vendor_toolbox_exec
+}:file rx_file_perms;
+
+allow factory_ssc self:netlink_socket create_socket_perms_no_ioctl;
+allow factory_ssc factory_ssc:qipcrtr_socket create_socket_perms_no_ioctl;
+allow factory_ssc self:tcp_socket create_socket_perms;
+
+allow factory_ssc property_socket:sock_file { ioctl read write getattr append };
+allow factory_ssc init:unix_stream_socket connectto;
+
+get_prop(factory_ssc, vendor_adsprpc_prop)
+get_prop(factory_ssc, vendor_fastrpc_prop)
+set_prop(factory_ssc, vendor_sensor_prop)

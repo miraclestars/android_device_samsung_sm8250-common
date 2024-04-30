@@ -1,0 +1,53 @@
+allow vendor_init block_device:lnk_file setattr;
+allow vendor_init { tee_device watchdog_device }:chr_file rw_file_perms;
+allow vendor_init watchdog_device:dir create_dir_perms;
+allow vendor_init watchdog_device:file create_file_perms;
+allow vendor_init watchdog_device:lnk_file create_file_perms;
+
+allow vendor_init usb_configfs:dir create_dir_perms;
+allow vendor_init usb_configfs:file create_file_perms;
+allow vendor_init usb_configfs:lnk_file create_file_perms;
+
+allow vendor_init {
+    proc_dirty
+    proc_fmw_config
+    proc_sched
+}:file w_file_perms;
+
+allow vendor_init {
+    proc_hung_task
+    proc_sysrq
+    proc_swappiness
+}:file rw_file_perms;
+
+allow vendor_init proc_auto_comment:file create_file_perms;
+allow vendor_init proc_extra:file create_file_perms;
+
+r_dir_file(vendor_init, sysfs_ski_storage_readable);
+r_dir_file(vendor_init, sysfs_ski_ufs_writable);
+
+allow vendor_init cgroup:file rw_file_perms;
+
+allow vendor_init { rootfs tmpfs }:dir create_dir_perms;
+
+allow vendor_init tmpfs:lnk_file create;
+
+get_prop(vendor_init, powerctl_prop)
+get_prop(vendor_init, ril_daemon_prop)
+get_prop(vendor_init, wpa_supplicant_prop)
+set_prop(vendor_init, ina_status_prop)
+set_prop(vendor_init, netflix_bsp_rev_prop)
+set_prop(vendor_init, receiver_error_prop)
+set_prop(vendor_init, sec_audio_prop)
+set_prop(vendor_init, vendor_adsprpc_prop)
+set_prop(vendor_init, vendor_camera_prop)
+set_prop(vendor_init, vendor_df_prop)
+set_prop(vendor_init, vendor_iop_prop)
+set_prop(vendor_init, vendor_members_prop)
+set_prop(vendor_init, vendor_nfc_prop)
+set_prop(vendor_init, vendor_rmnet_prop)
+set_prop(vendor_init, vendor_sec_nfc_prop)
+set_prop(vendor_init, vendor_sensor_prop)
+set_prop(vendor_init, vendor_ssr_prop)
+set_prop(vendor_init, vendor_wda_prop)
+set_prop(vendor_init, vendor_zram_prop)

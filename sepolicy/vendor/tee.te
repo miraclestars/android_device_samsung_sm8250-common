@@ -1,0 +1,77 @@
+hal_client_domain(tee, vendor_hal_soter)
+
+allow tee {
+    vendor_data_qsee_file
+    vendor_gatekeeper_data_file
+    vendor_qfp-daemon_data_file
+}:dir create_dir_perms;
+
+allow tee {
+    vendor_data_qsee_file
+    vendor_gatekeeper_data_file
+    vendor_qfp-daemon_data_file
+}:file create_file_perms;
+
+allow tee {
+    kmsg_device
+    vendor_qsee_ipc_irq_spss_device
+    vndbinder_device
+}:chr_file rw_file_perms;
+
+allow tee graphics_device:dir r_dir_perms;
+
+allow tee {
+    efs_file
+    prov_efs_file
+    sec_poc_file
+}:dir create_dir_perms;
+
+allow tee {
+    efs_file
+    prov_efs_file
+    sec_poc_file
+    vaultkeeper_efs_file
+}:file create_file_perms;
+
+allow tee vaultkeeper_efs_file:dir rw_dir_perms;
+
+r_dir_file(tee, firmware_file);
+allow tee vendor_persist_qti_fp_file:dir create_dir_perms;
+allow tee vendor_persist_qti_fp_file:file create_file_perms;
+
+allow tee proc:file r_file_perms;
+allow tee proc_sysrq:file w_file_perms;
+
+allow tee sysfs_ski_touch_writable:dir r_dir_perms;
+allow tee sysfs_ski_touch_writable:file rw_file_perms;
+allow tee sysfs_ss_writable:file { write lock append map open };
+allow tee sysfs_wake_lock:file rw_file_perms;
+allow tee vendor_sysfs_graphics:file w_file_perms;
+allow tee vendor_sysfs_graphics:lnk_file r_file_perms;
+
+allow tee {
+    hal_graphics_mapper_hwservice
+    hidl_manager_hwservice
+    system_suspend_hwservice
+}:hwservice_manager find;
+
+allow tee hidl_base_hwservice:hwservice_manager add;
+
+allow tee hal_drm_default_exec:file entrypoint;
+
+r_dir_file(tee, rootfs);
+
+allow tee tmpfs:dir r_dir_perms;
+allow tee tmpfs:file r_file_perms;
+
+binder_call(tee, appdomain)
+binder_call(tee, hal_graphics_allocator_default)
+binder_call(tee, hal_graphics_composer_default)
+binder_call(tee, hwservicemanager)
+binder_call(tee, system_suspend_server)
+
+allow tee property_socket:sock_file write;
+allow tee init:unix_stream_socket connectto;
+
+get_prop(tee, hwservicemanager_prop)
+set_prop(tee, vendor_qseecomd_prop)

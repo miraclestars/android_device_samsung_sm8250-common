@@ -1,0 +1,26 @@
+allow hal_graphics_composer_default perf_manager_device:chr_file rw_file_perms;
+
+allow hal_graphics_composer_default firmware_file:file r_file_perms;
+allow hal_graphics_composer_default vendor_log_file:dir rw_dir_perms;
+allow hal_graphics_composer_default vendor_log_file:file rw_file_perms;
+
+r_dir_file(hal_graphics_composer_default, sysfs_camera_writable);
+r_dir_file(hal_graphics_composer_default, sysfs_ss_writable);
+allow hal_graphics_composer_default sysfs:file r_file_perms;
+allow hal_graphics_composer_default sysfs_switch:dir search;
+allow hal_graphics_composer_default sysfs_switch:file r_file_perms;
+
+allow hal_graphics_composer_default vendor_hal_perf_hwservice:hwservice_manager find;
+
+allow hal_graphics_composer_default self:capability { sys_admin sys_resource };
+allow hal_graphics_composer_default self:cap_userns { sys_admin sys_resource };
+
+allow hal_graphics_composer_default property_socket:sock_file write;
+allow hal_graphics_composer_default init:unix_stream_socket connectto;
+
+get_prop(hal_graphics_composer_default, sec_camera_prop)
+get_prop(hal_graphics_composer_default, sec_hdr_prop)
+get_prop(hal_graphics_composer_default, vendor_camera_prop)
+get_prop(hal_graphics_composer_default, vendor_debug_egl_prop)
+get_prop(hal_graphics_composer_default, vendor_mpctl_prop)
+set_prop(hal_graphics_composer_default, vendor_display_sf_prop)

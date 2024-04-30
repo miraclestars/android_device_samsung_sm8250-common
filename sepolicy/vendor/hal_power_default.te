@@ -1,0 +1,32 @@
+allow hal_power_default vendor_latency_device:chr_file rw_file_perms;
+
+allow hal_power_default {
+    sysfs_battery
+    sysfs_power
+    sysfs_sec
+    sysfs_ski_touch_writable
+    sysfs_ss_writable
+    vendor_sysfs_devfreq
+}:dir r_dir_perms;
+
+allow hal_power_default {
+    sysfs
+    sysfs_battery
+    sysfs_sec
+    sysfs_ski_touch_writable
+    sysfs_ss_writable
+    vendor_sysfs_battery_supply
+    vendor_sysfs_devfreq
+}:file rw_file_perms;
+
+r_dir_file(hal_power_default, sysfs_ski_hal_readable);
+r_dir_file(hal_power_default, sysfs_ski_power_readable);
+r_dir_file(hal_power_default, sysfs_type);
+allow hal_power_default sysfs_devices_system_cpu:file w_file_perms;
+allow hal_power_default sysfs_sec:lnk_file rw_file_perms;
+
+allow hal_power_default system_app:fifo_file write;
+
+allow hal_power_default property_socket:sock_file write;
+allow hal_power_default init:unix_stream_socket connectto;
+allow hal_power_default dumpstate:fifo_file write;

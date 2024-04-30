@@ -1,0 +1,14 @@
+allow hal_wifi_hostapd_default vendor_convergence_data_file:dir rw_dir_perms;
+allow hal_wifi_hostapd_default vendor_convergence_data_file:file create_file_perms;
+
+allow hal_wifi_hostapd_default vendor_log_file:dir search;
+
+allow hal_wifi_hostapd_default sysfs_net:lnk_file r_file_perms;
+
+allow hal_wifi_hostapd_default kernel:system module_request;
+
+get_prop(hal_wifi_hostapd_default, debug_level_prop)
+get_prop(hal_wifi_hostapd_default, exported_wifi_prop)
+get_prop(hal_wifi_hostapd_default, product_ship_prop)
+get_prop(hal_wifi_hostapd_default, vendor_hostapd_prop)
+get_prop(hal_wifi_hostapd_default, wifi_log_prop)

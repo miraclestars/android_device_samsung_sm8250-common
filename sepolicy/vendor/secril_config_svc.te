@@ -1,0 +1,21 @@
+type vendor_secril_config_svc, domain, halserverdomain, hal_telephony, hal_telephony_server;
+type vendor_secril_config_svc_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_secril_config_svc)
+
+hal_server_domain(vendor_secril_config_svc, hal_telephony)
+
+allow vendor_secril_config_svc { efs_file sec_poc_file }:dir r_dir_perms;
+allow vendor_secril_config_svc { efs_file sec_poc_file }:file r_file_perms;
+allow vendor_secril_config_svc imei_efs_file:dir create_dir_perms;
+allow vendor_secril_config_svc imei_efs_file:file create_file_perms;
+
+allow vendor_secril_config_svc proc_simslot_count:file r_file_perms;
+
+allow vendor_secril_config_svc property_socket:sock_file write;
+allow vendor_secril_config_svc init:unix_stream_socket connectto;
+
+get_prop(vendor_secril_config_svc, exported_system_prop)
+set_prop(vendor_secril_config_svc, multisim_prop)
+set_prop(vendor_secril_config_svc, radio_prop)
+set_prop(vendor_secril_config_svc, vendor_radio_prop)

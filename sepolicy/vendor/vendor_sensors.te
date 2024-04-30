@@ -1,0 +1,25 @@
+allow vendor_sensors vendor_sensors_vendor_data_file:dir create_dir_perms;
+allow vendor_sensors vendor_sensors_vendor_data_file:file create_file_perms;
+
+allow vendor_sensors vendor_qdsp_device:chr_file r_file_perms;
+
+allow vendor_sensors app_efs_file:dir rw_dir_perms;
+allow vendor_sensors app_efs_file:file create_file_perms;
+
+allow vendor_sensors mnt_vendor_file:dir create_dir_perms;
+allow vendor_sensors mnt_vendor_file:file create_file_perms;
+allow vendor_sensors vendor_persist_sensors_file:fifo_file create_file_perms;
+
+r_dir_file(vendor_sensors, sysfs_type);
+allow vendor_sensors { sysfs_sensor_writable vendor_sysfs_ssr }:dir r_dir_perms;
+allow vendor_sensors { sysfs_sensor_writable vendor_sysfs_ssr }:file r_file_perms;
+
+allow vendor_sensors {
+    hidl_manager_hwservice
+    system_suspend_hwservice
+}:hwservice_manager find;
+
+binder_call(vendor_sensors, hwservicemanager)
+binder_call(vendor_sensors, system_suspend_server)
+
+get_prop(vendor_sensors, hwservicemanager_prop)

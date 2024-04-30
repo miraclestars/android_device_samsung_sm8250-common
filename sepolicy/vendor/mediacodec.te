@@ -1,0 +1,50 @@
+hal_client_domain(mediacodec, vendor_hal_perf)
+
+allow mediacodec { anr_data_file tombstone_data_file }:file append;
+allow mediacodec { vendor_data_file vendor_mediacodec_data_file }:dir rw_dir_perms;
+allow mediacodec { vendor_data_file vendor_mediacodec_data_file }:file create_file_perms;
+
+allow mediacodec {
+    jsqz_device
+    kgsl_device
+    mcfrc_device
+    tee_device
+    vndbinder_device
+}:chr_file rw_file_perms;
+
+allow mediacodec { vendor_qdsp_device vendor_xdsp_device }:chr_file r_file_perms;
+
+allow mediacodec system_file:dir r_dir_perms;
+allow mediacodec system_linker_config_file:file r_file_perms;
+
+allow mediacodec sysfs:file r_file_perms;
+r_dir_file(mediacodec, vendor_sysfs_kgsl);
+
+allow mediacodec system_server:fifo_file rw_file_perms;
+
+allow mediacodec fwk_sensor_hwservice:hwservice_manager find;
+
+allow mediacodec { tombstoned_crash_socket traced_producer_socket }:sock_file write;
+
+allow mediacodec {
+    dumpstate
+    incidentd
+    tombstoned
+}:fd use;
+
+allow mediacodec { dumpstate incidentd }:fifo_file { write append };
+
+allow mediacodec tombstoned:unix_stream_socket connectto;
+
+binder_call(mediacodec, hal_power_default)
+binder_call(mediacodec, servicemanager)
+
+allow mediacodec property_socket:sock_file write;
+allow mediacodec init:unix_stream_socket connectto;
+
+get_prop(mediacodec, sec_camera_prop)
+get_prop(mediacodec, product_ship_prop)
+get_prop(mediacodec, vendor_debug_egl_prop)
+get_prop(mediacodec, vendor_dolby_prop)
+get_prop(mediacodec, vendor_mpctl_prop)
+set_prop(mediacodec, sec_audio_prop)

@@ -1,0 +1,65 @@
+# Copyright (C) 2018 The Android Open Source Project
+#
+# External Interface device configuration common for all android devices
+#
+
+on init
+# MUIC
+    chown system radio /sys/class/sec/switch/otg_test
+    chown system radio /sys/class/sec/switch/uart_sel
+    chown system radio /sys/class/sec/switch/usb_sel
+    chown system radio /sys/class/sec/switch/apo_factory
+    chown system radio /sys/class/sec/switch/afc_disable
+    chown system radio /sys/class/sec/switch/afc_set_voltage
+    chown system radio /sys/class/sec/switch/vbus_value
+    chown system radio /sys/class/sec/switch/vbus_value_pd
+    chown system radio /sys/class/sec/switch/vbus_rawdata
+    chown system radio /sys/class/sec/switch/show_reg
+    chown system radio /sys/class/sec/switch/hiccup
+
+# UVDM permission
+    chown system usb /dev/ccic_misc
+    chmod 0664 /dev/ccic_misc
+
+# LPM mode for ccic
+    chown system radio /sys/class/sec/ccic/lpm_mode
+    chmod 0664 /sys/class/sec/ccic/lpm_mode
+
+# CCIC control option
+    chown system radio /sys/class/sec/ccic/ccic_control_option
+    chown system radio /sys/class/sec/ccic/fw_update
+    chmod 0220 /sys/class/sec/ccic/fw_update
+    chown system radio /sys/class/sec/ccic/control_gpio
+    chmod 0660 /sys/class/sec/ccic/control_gpio
+    chown system usb /sys/class/sec/ccic/dex_fan_uvdm
+    chmod 0220 /sys/class/sec/ccic/dex_fan_uvdm
+    chown system radio /sys/class/sec/ccic/vsafe0v_status
+    chmod 0444 /sys/class/sec/ccic/vsafe0v_status
+    chown system radio /sys/class/sec/ccic/ovp_ic_shutdown
+    chmod 0220 /sys/class/sec/ccic/ovp_ic_shutdown
+    chown system system /sys/class/sec/ccic/hmd_power
+    chmod 0220 /sys/class/sec/ccic/hmd_power
+
+on boot
+
+# vibrator
+    chown system system /sys/class/timed_output/vibrator/enable
+    chown system system /sys/class/timed_output/vibrator/intensity
+    chown system system /sys/class/timed_output/vibrator/multi_freq
+    chown system system /sys/class/timed_output/vibrator/haptic_engine
+    chown system system /sys/class/timed_output/vibrator/motor_type
+    chown system system /sys/class/timed_output/vibrator/event_cmd
+    chown system system /sys/class/timed_output/vibrator/cp_trigger_index
+    chown system system /sys/class/timed_output/vibrator/cp_trigger_queue
+    chown system system /sys/class/timed_output/vibrator/gpio1_enable
+    chown system system /sys/class/timed_output/vibrator/gpio1_fall_index
+    chown system system /sys/class/timed_output/vibrator/gpio1_fall_timeout
+    chown system system /sys/class/timed_output/vibrator/gpio1_rise_index
+    chown system system /sys/class/timed_output/vibrator/f0_measured
+    chown system system /sys/class/timed_output/vibrator/f0_stored
+    chown system system /sys/class/timed_output/vibrator/redc_measured
+    chown system system /sys/class/timed_output/vibrator/redc_stored
+    chown system system /sys/class/timed_output/vibrator/comp_enable
+    chown system system /sys/class/timed_output/vibrator/standby_timeout
+    chown system system /sys/class/timed_output/vibrator/heartbeat
+    chown system system /sys/class/timed_output/vibrator/num_waves

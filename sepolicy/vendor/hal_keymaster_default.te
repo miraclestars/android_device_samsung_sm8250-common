@@ -1,0 +1,33 @@
+allow hal_keymaster_default vendor_keymaster_data_file:dir create_dir_perms;
+allow hal_keymaster_default vendor_keymaster_data_file:file create_file_perms;
+
+allow hal_keymaster_default {
+    ssp_device
+    tee_device
+    tz_device
+    vendor_skp_device
+    vendor_sp_keymaster_device
+    vendor_spcom_device
+    vendor_spss_utils_device
+}:chr_file rw_file_perms;
+
+allowxperm hal_keymaster_default vendor_spss_utils_device:chr_file ioctl { 0x5302 };
+
+allow hal_keymaster_default prov_efs_file:dir create_dir_perms;
+allow hal_keymaster_default prov_efs_file:file create_file_perms;
+r_dir_file(hal_keymaster_default, efs_file);
+r_dir_file(hal_keymaster_default, sec_poc_file);
+
+allow hal_keymaster_default firmware_file:file r_file_perms;
+allow hal_keymaster_default mnt_vendor_file:dir r_dir_perms;
+
+allow hal_keymaster_default property_socket:sock_file write;
+allow hal_keymaster_default init:unix_stream_socket connectto;
+
+binder_call(hal_keymaster_default, vendor_hal_keymaster_qti)
+
+get_prop(hal_keymaster_default, compact_dump_prop)
+get_prop(hal_keymaster_default, vendor_spcomlib_prop)
+get_prop(hal_keymaster_default, vendor_tee_listener_prop)
+set_prop(hal_keymaster_default, ctl_start_prop)
+set_prop(hal_keymaster_default, dumpstate_options_prop)

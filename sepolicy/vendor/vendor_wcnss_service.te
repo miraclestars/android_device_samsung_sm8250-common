@@ -1,0 +1,32 @@
+r_dir_file(vendor_wcnss_service, vendor_convergence_data_file);
+
+allow vendor_wcnss_service kmsg_device:chr_file w_file_perms;
+allow vendor_wcnss_service vndbinder_device:chr_file rw_file_perms;
+
+allow vendor_wcnss_service firmware_file:lnk_file read;
+allow vendor_wcnss_service vendor_log_file:dir create_dir_perms;
+allow vendor_wcnss_service vendor_log_file:file create_file_perms;
+allow vendor_wcnss_service vendor_persist_file:dir rw_dir_perms;
+allow vendor_wcnss_service vendor_persist_file:file create_file_perms;
+allow vendor_wcnss_service wpa_data_file:sock_file rw_file_perms;
+
+r_dir_file(vendor_wcnss_service, proc_net);
+allow vendor_wcnss_service proc_net:file w_file_perms;
+
+r_dir_file(vendor_wcnss_service, sysfs);
+allow vendor_wcnss_service sysfs_wifi:dir r_dir_perms;
+allow vendor_wcnss_service sysfs_wifi:file rw_file_perms;
+
+allow vendor_wcnss_service vendor_wifihal_socket:dir rw_dir_perms;
+allow vendor_wcnss_service vendor_wifihal_socket:sock_file create_file_perms;
+
+allow vendor_wcnss_service hal_wifi_supplicant_default:unix_dgram_socket sendto;
+
+allow vendor_wcnss_service { rootfs sdcardfs }:dir r_dir_perms;
+
+allow vendor_wcnss_service self:capability { setgid setuid };
+
+allow vendor_wcnss_service property_socket:sock_file write;
+allow vendor_wcnss_service init:unix_stream_socket connectto;
+
+set_prop(vendor_wcnss_service, vendor_wifi_prop)

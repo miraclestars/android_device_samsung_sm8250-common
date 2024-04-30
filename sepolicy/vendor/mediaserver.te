@@ -1,0 +1,35 @@
+allow mediaserver dumplog_data_file:dir create_dir_perms;
+allow mediaserver dumplog_data_file:file create_file_perms;
+allow mediaserver system_app_data_file:file { read getattr };
+allow mediaserver shell_data_file:file { ioctl read getattr };
+
+allow mediaserver {
+    radio_data_file
+    system_data_file
+    mnt_user_file
+    storage_file
+}:dir r_dir_perms;
+
+allow mediaserver {
+    radio_data_file
+    sec_data_file
+    system_data_file
+    omr_file
+}:file r_file_perms;
+
+allow mediaserver { mnt_user_file storage_file }:lnk_file r_file_perms;
+
+allow mediaserver kgsl_device:chr_file rw_file_perms;
+
+allow mediaserver package_native_service:service_manager find;
+
+allow mediaserver { sdcardfs fuse }:dir create_dir_perms;
+allow mediaserver { sdcardfs fuse }:file create_file_perms;
+
+get_prop(mediaserver, apm_prop)
+get_prop(mediaserver, sec_audio_prop)
+get_prop(mediaserver, sec_camera_prop)
+get_prop(mediaserver, wifi_prop)
+set_prop(mediaserver, ctl_default_prop)
+set_prop(mediaserver, dynamic_system_prop)
+set_prop(mediaserver, exported_system_prop)

@@ -1,0 +1,7 @@
+allow vendor_adsprpcd mnt_vendor_file:dir create_dir_perms;
+allow vendor_adsprpcd mnt_vendor_file:file create_file_perms;
+
+r_dir_file(vendor_adsprpcd, sysfs_sensor_writable);
+r_dir_file(vendor_adsprpcd, vendor_sysfs_graphics);
+
+get_prop(vendor_adsprpcd, vendor_fastrpc_prop)

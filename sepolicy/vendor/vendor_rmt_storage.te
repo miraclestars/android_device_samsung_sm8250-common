@@ -1,0 +1,12 @@
+allow vendor_rmt_storage {
+    hidl_manager_hwservice
+    system_suspend_hwservice
+}:hwservice_manager find;
+
+allow vendor_rmt_storage property_socket:sock_file write;
+allow vendor_rmt_storage init:unix_stream_socket connectto;
+
+binder_call(vendor_rmt_storage, hwservicemanager)
+binder_call(vendor_rmt_storage, system_suspend_server)
+
+get_prop(vendor_rmt_storage, hwservicemanager_prop)

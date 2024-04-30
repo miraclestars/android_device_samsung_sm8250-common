@@ -1,0 +1,8 @@
+allow fsck_untrusted proc_fslog:dir r_dir_perms;
+allow fsck_untrusted proc_fslog:file rw_file_perms;
+allow fsck_untrusted proc_stat:file r_file_perms;
+
+allow fsck_untrusted vold:netlink_socket { read write };
+allow fsck_untrusted vold:unix_stream_socket { read write };
+
+allow fsck_untrusted self:capability { kill sys_admin };

@@ -1,0 +1,11 @@
+allow vendor_time_daemon rild:dir search;
+allow vendor_time_daemon rild:file r_file_perms;
+
+r_dir_file(vendor_time_daemon, tee);
+
+allow vendor_time_daemon vendor_timeservice_app:dir search;
+allow vendor_time_daemon vendor_timeservice_app:file r_file_perms;
+
+allow vendor_time_daemon self:capability { setgid setuid };
+
+get_prop(vendor_time_daemon, debug_level_prop)

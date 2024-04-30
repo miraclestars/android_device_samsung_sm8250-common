@@ -1,0 +1,19 @@
+allow vdc dumplog_data_file:dir create_dir_perms;
+allow vdc dumplog_data_file:file create_file_perms;
+allow vdc dumplog_data_file:file write;
+allow vdc system_data_file:dir r_dir_perms;
+allow vdc system_data_file:file r_file_perms;
+
+allow vdc audit_log:file w_file_perms;
+allow vdc cache_file:file write;
+allow vdc cache_recovery_file:dir rw_dir_perms;
+allow vdc cache_recovery_file:file create_file_perms;
+
+allow vdc sysfs_wake_lock:file write;
+
+allow vdc dumpstate:unix_stream_socket getopt;
+
+allow vdc sdcardfs:file w_file_perms;
+
+allow vdc vold:fifo_file rw_file_perms;
+allow vdc vold:netlink_kobject_uevent_socket { read write };

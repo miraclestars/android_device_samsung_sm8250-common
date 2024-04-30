@@ -1,0 +1,8 @@
+allow vendor_per_mgr vndbinder_device:chr_file rw_file_perms;
+
+allow vendor_per_mgr vendor_sysfs_ssr:file r_file_perms;
+
+allow vendor_per_mgr property_socket:sock_file write;
+allow vendor_per_mgr init:unix_stream_socket connectto;
+
+binder_call(vendor_per_mgr, vendor_qcomsysd)

@@ -1,0 +1,89 @@
+allow kernel { dumplog_data_file wifi_data_file }:dir rw_dir_perms;
+
+allow kernel {
+    accounts_data_file
+    media_rw_data_file
+    sec_wifi_data_file
+}:file rw_file_perms;
+
+allow kernel {
+    camera_data_file
+    dumplog_data_file
+    wifi_data_file
+}:file create_file_perms;
+
+allow kernel app_data_file:file write;
+allow kernel camera_data_file:dir create_dir_perms;
+allow kernel media_rw_data_file:dir r_dir_perms;
+allow kernel privapp_data_file:file write;
+allow kernel radio_data_file:file w_file_perms;
+allow kernel system_app_data_file:file { write lock append };
+allow kernel system_data_file:file open;
+
+allow kernel {
+    debug_block_device
+    nad_refer_block_device
+    param_block_device
+}:blk_file rw_file_perms;
+
+allow kernel block_device:dir search;
+
+allow kernel serial_device:chr_file rw_file_perms;
+
+allow kernel { sec_efs_file system_sec_efs_file }:dir create_dir_perms;
+
+allow kernel {
+    app_efs_file
+    sec_efs_file
+    system_sec_efs_file
+}:file create_file_perms;
+
+allow kernel app_efs_file:dir rw_dir_perms;
+allow kernel { battery_efs_file wifi_efs_file }:dir r_dir_perms;
+allow kernel { battery_efs_file wifi_efs_file }:file r_file_perms;
+
+r_dir_file(kernel, mnt_user_file);
+allow kernel omr_file:file r_file_perms;
+allow kernel same_process_hal_file:file { read getattr map execute open };
+allow kernel vendor_file:file { read open };
+allow kernel vendor_configs_file:file r_file_perms;
+
+allow kernel proc_avc_msg:file write;
+allow kernel proc_boot_stat:file { read getattr lock map open };
+
+allow kernel {
+    sysfs_battery
+    sysfs_sec
+    sysfs_ski_sensor_writable
+    vendor_sysfs_battery_supply
+}:file r_file_perms;
+
+r_dir_file(kernel, sysfs_ski_hal_readable);
+allow kernel sysfs_lcd_writable:dir r_dir_perms;
+allow kernel sysfs_lcd_writable:file { read open getattr };
+allow kernel { sysfs_ss_writable sysfs_usb }:file rw_file_perms;
+allow kernel sysfs_ss_writable:lnk_file r_file_perms;
+allow kernel vendor_sysfs_sensors:dir search;
+
+allow kernel debugfs_mmc:dir r_dir_perms;
+allow kernel { vendor_debugfs_ipc vendor_debugfs_wlan }:dir search;
+
+allow kernel sdcard_type:dir r_dir_perms;
+allow kernel sdcard_type:file rw_file_perms;
+
+allow kernel vfat:dir rw_dir_perms;
+allow kernel vfat:file rw_file_perms;
+
+allow kernel self:capability { fowner fsetid net_raw sys_module sys_rawio mknod sys_admin };
+allow kernel self:system module_request;
+
+allow kernel vendor_modprobe:key search;
+
+allow kernel {
+    appdomain
+    mediaserver
+    sdcardd
+}:fd use;
+
+allow kernel shell_exec:file { read open };
+allow kernel vendor_shell_exec:file r_file_perms;

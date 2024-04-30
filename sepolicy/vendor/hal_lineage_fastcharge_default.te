@@ -1,0 +1,4 @@
+allow hal_lineage_fastcharge_default sysfs_switch:dir search;
+allow hal_lineage_fastcharge_default sysfs_ski_muic_writable:file rw_file_perms;
+
+set_prop(hal_lineage_fastcharge_default, vendor_fastcharge_prop)

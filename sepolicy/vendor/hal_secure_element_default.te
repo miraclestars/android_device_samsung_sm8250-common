@@ -1,0 +1,14 @@
+allow hal_secure_element_default sem_device:chr_file rw_file_perms;
+
+allow hal_secure_element_default system_suspend_server:fd use;
+
+allow hal_secure_element_default rild:unix_stream_socket connectto;
+
+allow hal_secure_element_default property_socket:sock_file write;
+allow hal_secure_element_default init:unix_stream_socket connectto;
+
+binder_call(hal_secure_element_default, system_suspend_server)
+
+wakelock_use(hal_secure_element_default)
+
+set_prop(hal_secure_element_default, vendor_sehal_init_prop)

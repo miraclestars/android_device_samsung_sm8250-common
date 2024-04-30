@@ -1,0 +1,57 @@
+allow netutils_wrapper radio_data_file:file r_file_perms;
+
+allow netutils_wrapper param_block_device:blk_file rw_file_perms;
+
+allow netutils_wrapper drb_device:chr_file rw_file_perms;
+
+allow netutils_wrapper { efs_file sec_poc_file }:file rw_file_perms;
+
+allow netutils_wrapper proc_net:file rw_file_perms;
+
+allow netutils_wrapper {
+    rild
+    vendor_dpmd
+    vendor_netmgrd
+}:fd use;
+
+allow netutils_wrapper {
+    rild
+    vendor_dpmd
+    vendor_netmgrd
+}:fifo_file { read write getattr };
+
+allow netutils_wrapper {
+    rild
+    vendor_dpmd
+    vendor_netmgrd
+}:netlink_route_socket { read write };
+
+allow netutils_wrapper {
+    rild
+    vendor_dpmd
+    vendor_netmgrd
+}:unix_stream_socket { read write };
+
+allow netutils_wrapper {
+    rild
+    vendor_dpmd
+    vendor_netmgrd
+}:netlink_generic_socket { read write };
+
+allow netutils_wrapper {
+    rild
+    vendor_dpmd
+    vendor_netmgrd
+}:netlink_xfrm_socket { read write };
+
+allow netutils_wrapper {
+    rild
+    vendor_dpmd
+    vendor_netmgrd
+}:udp_socket { read write };
+
+allow netutils_wrapper {
+    rild
+    vendor_dpmd
+    vendor_netmgrd
+}:tcp_socket { read write };

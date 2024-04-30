@@ -1,0 +1,11 @@
+# VaultKeeper
+service vaultkeeper /vendor/bin/vaultkeeperd
+    class core
+    user system
+    group system
+    disabled
+
+on late-fs
+    # vaultkeeper
+    mkdir /dev/socket/vaultkeeper 0770 system system
+    start vaultkeeper

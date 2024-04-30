@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2024 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- override full colour to black -->
+    <color name="full_bat_bg">#000000</color>
+    <color name="low_bat_bg">#000000</color>
+    <color name="charge_bat_bg">#000000</color>
+
+</resources>

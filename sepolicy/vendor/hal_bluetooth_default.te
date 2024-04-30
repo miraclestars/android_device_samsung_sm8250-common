@@ -1,0 +1,37 @@
+allow hal_bluetooth_default vendor_convergence_data_file:dir rw_dir_perms;
+allow hal_bluetooth_default vendor_convergence_data_file:file rw_file_perms;
+
+allow hal_bluetooth_default ap_device:dir r_dir_perms;
+allow hal_bluetooth vendor_diag_device:chr_file rw_file_perms;
+
+allow hal_bluetooth_default {
+    sec_radio_device
+    serial_device
+    uart_device
+    vendor_bt_device
+    wbrc_dev
+}:chr_file rw_file_perms;
+
+allow hal_bluetooth_default bluetooth_efs_file:dir create_dir_perms;
+allow hal_bluetooth_default bluetooth_efs_file:file create_file_perms;
+allow hal_bluetooth_default efs_file:dir r_dir_perms;
+allow hal_bluetooth_default sec_poc_file:dir r_dir_perms;
+
+r_dir_file(hal_bluetooth_default, firmware_file);
+allow hal_bluetooth_default vendor_firmware_file:dir r_dir_perms;
+allow hal_bluetooth_default vendor_firmware_file:file r_file_perms;
+allow hal_bluetooth_default vendor_log_file:dir create_dir_perms;
+allow hal_bluetooth_default vendor_log_file:file create_file_perms;
+
+allow hal_bluetooth_default proc_bluetooth_writable:dir search;
+
+allow hal_bluetooth_default property_socket:sock_file write;
+allow hal_bluetooth_default init:unix_stream_socket connectto;
+
+get_prop(hal_bluetooth_default, debug_level_prop)
+get_prop(hal_bluetooth_default, rfkilldisabled_prop)
+get_prop(hal_bluetooth_default, vendor_factory_prop)
+get_prop(hal_bluetooth_default, vendor_soc_id_prop)
+set_prop(hal_bluetooth_default, sec_bluetooth_prop)
+set_prop(hal_bluetooth_default, vendor_bluetooth_prop)
+set_prop(hal_bluetooth_default, wifi_log_prop)

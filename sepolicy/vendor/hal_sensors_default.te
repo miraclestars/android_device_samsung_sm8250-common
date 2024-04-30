@@ -1,0 +1,83 @@
+allow hal_sensors_default {
+    akmd_vendor_data_file
+    vendor_sensorhub_data_file
+    yas_lib_vendor_data_file
+}:dir create_dir_perms;
+
+allow hal_sensors_default {
+    akmd_vendor_data_file
+    vendor_sensorhub_data_file
+    yas_lib_vendor_data_file
+}:file create_file_perms;
+
+allow hal_sensors_default {
+    hrm_device
+    iio_device
+    vendor_qdsp_device
+}:chr_file r_file_perms;
+
+allow hal_sensors_default {
+    range_sensor_device
+    shub_device
+    ssp_device
+}:chr_file rw_file_perms;
+
+allow hal_sensors_default {
+    app_efs_file
+    efs_file
+    sec_poc_file
+}:dir rw_dir_perms;
+
+allow hal_sensors_default {
+    app_efs_file
+    efs_file
+    sec_poc_file
+}:file create_file_perms;
+
+allow hal_sensors_default { sec_efs_file system_sec_efs_file }:dir r_dir_perms;
+
+allow hal_sensors_default mnt_vendor_file:dir create_dir_perms;
+allow hal_sensors_default vendor_persist_sensors_file:lnk_file r_file_perms;
+
+allow hal_sensors_default {
+    sysfs
+    sysfs_iio
+    sysfs_lcd_writable
+    sysfs_sensor_writable
+    sysfs_ski_sensor_writable
+    sysfs_ss_writable
+}:dir r_dir_perms;
+
+allow hal_sensors_default {
+    sysfs
+    sysfs_iio
+    sysfs_sec
+    sysfs_sensor_writable
+    sysfs_ski_sensor_writable
+}:file rw_file_perms;
+
+r_dir_file(hal_sensors_default, sysfs_type);
+allow hal_sensors_default { sysfs_lcd_writable sysfs_ss_writable }:file r_file_perms;
+
+allow hal_sensors_default {
+    hidl_manager_hwservice
+    system_suspend_hwservice
+}:hwservice_manager find;
+
+allow hal_sensors_default vendor_qvrd:fd use;
+
+allow hal_sensors_default self:capability { sys_admin sys_resource };
+allow hal_sensors_default self:cap_userns { sys_admin sys_resource };
+
+allow hal_sensors_default property_socket:sock_file write;
+allow hal_sensors_default init:unix_stream_socket connectto;
+
+binder_call(hal_sensors_default, hwservicemanager)
+binder_call(hal_sensors_default, system_server)
+binder_call(hal_sensors_default, system_suspend_server)
+
+get_prop(hal_sensors_default, hwservicemanager_prop)
+get_prop(hal_sensors_default, system_sensor_prop)
+get_prop(hal_sensors_default, system_sensordebug_prop)
+get_prop(hal_sensors_default, vendor_fastrpc_prop)
+set_prop(hal_sensors_default, sns_camera_light_prop)

@@ -1,0 +1,11 @@
+# Charger
+ro.charger.enable_suspend=1
+
+# Keystore
+ro.security.keystore.keytype=sakv2,gak,sgak
+
+# OEM Unlock
+ro.oem_unlock_supported=1
+
+# RIL
+ro.vendor.qti.va_aosp.support=1

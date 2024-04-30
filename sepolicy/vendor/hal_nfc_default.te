@@ -1,0 +1,15 @@
+allow hal_nfc_default vendor_data_file:file rw_file_perms;
+allow hal_nfc_default vendor_nfc_vendor_data_file:dir rw_dir_perms;
+allow hal_nfc_default vendor_nfc_vendor_data_file:file create_file_perms;
+
+allow hal_nfc_default { nfc_device tz_device }:chr_file rw_file_perms;
+
+allow hal_nfc_default { sec_efs_file system_sec_efs_file }:dir search;
+
+allow hal_nfc_default property_socket:sock_file write;
+allow hal_nfc_default init:unix_stream_socket connectto;
+
+get_prop(hal_nfc_default, product_ship_prop)
+get_prop(hal_nfc_default, vendor_factory_prop)
+get_prop(hal_nfc_default, vendor_sec_nfc_prop)
+set_prop(hal_nfc_default, vendor_nfc_prop)

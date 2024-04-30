@@ -1,0 +1,16 @@
+allow vendor_biometricsface face_vendor_data_file:dir create_dir_perms;
+
+allow vendor_biometricsface vendor_xdsp_device:chr_file r_file_perms;
+
+allow vendor_biometricsface {
+    hal_graphics_allocator_hwservice
+    hal_graphics_mapper_hwservice
+}:hwservice_manager find;
+
+binder_call(vendor_biometricsface, cameraserver)
+binder_call(vendor_biometricsface, hal_graphics_allocator_default)
+
+get_prop(vendor_biometricsface, exported_camera_prop)
+get_prop(vendor_biometricsface, camera_config_prop)
+get_prop(vendor_biometricsface, vendor_fr_dlymgr_prop)
+get_prop(vendor_biometricsface, vendor_fr_wkrmgr_prop)

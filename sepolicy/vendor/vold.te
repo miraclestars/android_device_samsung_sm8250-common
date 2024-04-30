@@ -1,0 +1,176 @@
+allow vold {
+    anr_data_file
+    apk_data_file
+    dumplog_data_file
+    fota_data_file
+    keydata_data_file
+    keyfota_data_file
+    keyrefuge_data_file
+    sec_data_file
+    system_data_file
+    users_system_data_file
+}:dir create_dir_perms;
+
+allow vold {
+    accounts_data_file
+    anr_data_file
+    apk_data_file
+    dumplog_data_file
+    fota_data_file
+    keydata_data_file
+    keyfota_data_file
+    keyrefuge_data_file
+    sec_data_file
+    users_system_data_file
+}:file create_file_perms;
+
+allow vold fota_data_file:file unlink;
+allow vold install_data_file:file r_file_perms;
+allow vold { media_rw_data_file sec_data_file }:file { relabelfrom relabelto };
+allow vold { nfc_data_file system_app_data_file }:dir getattr;
+allow vold system_data_file:lnk_file r_file_perms;
+allow vold system_data_file:dir { relabelfrom relabelto };
+allow vold system_data_file:lnk_file { unlink link rename };
+allow vold vendor_data_file:file getattr;
+allow vold wifi_data_file:dir rw_dir_perms;
+allow vold wifi_data_file:file rw_file_perms;
+
+allow vold {
+    keydata_block_device
+    keyrefuge_block_device
+    param_block_device
+    steady_block_device
+    vendor_gpt_block_device
+    vendor_rpmb_device
+}:blk_file rw_file_perms;
+
+allow vold dev_type:blk_file getattr;
+allow vold swap_device:blk_file r_file_perms;
+
+allow vold { ion_device random_device }:chr_file r_file_perms;
+allow vold tz_device:chr_file rw_file_perms;
+
+allow vold {
+    mb_po_efs_file
+    sec_efs_file
+    system_sec_efs_file
+}:dir create_dir_perms;
+
+allow vold {
+    mb_po_efs_file
+    sec_efs_file
+    system_sec_efs_file
+}:file create_file_perms;
+
+allow vold efs_file:dir rw_dir_perms;
+allow vold imei_efs_file:dir r_dir_perms;
+allow vold imei_efs_file:file r_file_perms;
+allow vold sec_poc_file:dir rw_dir_perms;
+allow vold sec_poc_file:file rw_file_perms;
+
+allow vold {
+    asec_apk_file
+    cache_file
+    cache_recovery_file
+    mnt_media_rw_stub_file
+    ringtone_file
+}:dir create_dir_perms;
+
+allow vold {
+    asec_apk_file
+    cache_file
+    cache_recovery_file
+    mnt_media_rw_stub_file
+    ringtone_file
+}:file create_file_perms;
+
+allow vold {
+    adsprpcd_file
+    dqmdbgblk_file
+    mnt_vendor_file
+    omr_file
+}:dir r_dir_perms;
+
+allow vold {
+    dqmdbgblk_file
+    seapp_contexts_file
+    vendor_configs_file
+}:file r_file_perms;
+
+r_dir_file(vold, apk_tmp_file);
+r_dir_file(vold, asec_public_file);
+r_dir_file(vold, dalvikcache_data_file);
+allow vold asec_apk_file:lnk_file relabelto;
+allow vold asec_image_file:dir { create mounton rmdir };
+allow vold mnt_user_file:dir { relabelfrom relabelto mounton };
+allow vold mnt_user_file:file { relabelfrom relabelto };
+allow vold mnt_user_file:lnk_file { relabelfrom relabelto };
+allow vold same_process_hal_file:file rx_file_perms;
+allow vold storage_file:lnk_file r_file_perms;
+allow vold storage_stub_file:dir { write relabelfrom add_name };
+allow vold wallpaper_file:file unlink;
+
+allow vold proc:file write;
+allow vold proc_fslog:dir r_dir_perms;
+allow vold { proc_fslog proc_sysrq }:file rw_file_perms;
+allow vold { proc_partition proc_swaps }:file r_file_perms;
+
+allow vold {
+    sysfs_ss_writable
+    sysfs_zram
+    vendor_sysfs_mmc_host
+    vendor_sysfs_scsi_host
+}:file rw_file_perms;
+
+allow vold sysfs_vnswap:file w_file_perms;
+allow vold { vendor_sysfs_mmc_host vendor_sysfs_scsi_host }:dir r_dir_perms;
+
+allow vold appdomain:fd use;
+
+allow vold configfs:dir r_dir_perms;
+allow vold configfs:file getattr;
+
+allow vold dumpstate_exec:file { read getattr map execute open };
+allow vold dumpstate:fd use;
+allow vold dumpstate:fifo_file rw_file_perms;
+allow vold dumpstate_socket:sock_file write;
+allow vold dumpstate:unix_stream_socket connectto;
+
+allow vold init:key write;
+
+allow vold kernel:key { write search };
+allow vold kernel:security check_context;
+allow vold kernel:system module_request;
+
+allow vold netpolicy_service:service_manager find;
+
+allow vold { sdcardfs sdcard_type }:filesystem relabelfrom;
+
+r_dir_file(vold, selinuxfs);
+allow vold selinuxfs:file w_file_perms;
+
+allow vold shell_exec:file rx_file_perms;
+
+allow vold self:capability { kill setgid setuid net_raw ipc_lock sys_boot sys_resource };
+allow vold self:key { view read write search link setattr create };
+allow vold self:netlink_socket { read write create bind };
+
+allow vold tmpfs:lnk_file r_file_perms;
+
+allow vold tz_socket:sock_file write;
+
+allow vold vfat:file r_file_perms;
+allowxperm vold vfat:file ioctl { 0x6c10 };
+
+allow vold labeledfs:filesystem { relabelfrom quotaget remount };
+
+allow vold unlabeled:dir r_dir_perms;
+allow vold unlabeled:file relabelfrom;
+allow vold unlabeled:lnk_file relabelfrom;
+allow vold unlabeled:filesystem { mount unmount relabelfrom };
+
+get_prop(vold, device_logging_prop)
+set_prop(vold, audio_prop)
+set_prop(vold, ctl_start_prop)
+set_prop(vold, exported_system_prop)
+set_prop(vold, system_prop)
