@@ -135,7 +135,6 @@ vendor/firmware/dax_param.bin
 vendor/lib/com.qualcomm.qti.ant@1.0.so
 vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
 vendor/lib/hw/audio.a2dpsink.default.so
-vendor/lib/hw/audio.bluetooth_qti.default.so
 vendor/lib/hw/vendor.samsung.hardware.bluetooth.a2dp@1.0-impl.so
 vendor/lib/hw/vendor.samsung.hardware.bluetooth.a2dpsink@1.0-impl.so
 vendor/lib/hw/vendor.samsung.hardware.bluetooth.audio@2.1-impl.so
@@ -155,7 +154,6 @@ vendor/lib/vendor.samsung.hardware.bluetooth.audio@2.1.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so
 vendor/lib64/hw/audio.a2dpsink.default.so
-vendor/lib64/hw/audio.bluetooth_qti.default.so
 vendor/lib64/hw/vendor.samsung.hardware.bluetooth.a2dp@1.0-impl.so
 vendor/lib64/hw/vendor.samsung.hardware.bluetooth.a2dpsink@1.0-impl.so
 vendor/lib64/hw/vendor.samsung.hardware.bluetooth.audio@2.1-impl.so
