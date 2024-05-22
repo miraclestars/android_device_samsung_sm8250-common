@@ -2,7 +2,7 @@
 
 <audioPolicyConfiguration version="7.0" xmlns:xi="http://www.w3.org/2001/XInclude">
 
-    <globalConfiguration speaker_drc_enabled="false"/>
+    <globalConfiguration speaker_drc_enabled="true" call_screen_mode_supported="true"/>
 
     <modules>
         <!-- Primary Audio HAL -->
