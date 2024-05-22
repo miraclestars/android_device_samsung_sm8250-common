@@ -1,6 +1,9 @@
 # Charger
 ro.charger.enable_suspend=1
 
+# Filesystem
+fs_mgr.overlayfs.prefer_cache_backing_storage=true
+
 # Keystore
 ro.security.keystore.keytype=sakv2,gak,sgak
 
