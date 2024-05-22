@@ -137,18 +137,6 @@
                              samplingRates="44100 48000 64000 88200 96000 128000 176400 192000"
                              channelMasks="AUDIO_CHANNEL_OUT_MONO AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_2POINT1 AUDIO_CHANNEL_OUT_QUAD AUDIO_CHANNEL_OUT_PENTA AUDIO_CHANNEL_OUT_5POINT1 AUDIO_CHANNEL_OUT_6POINT1 AUDIO_CHANNEL_OUT_7POINT1"/>
                 </devicePort>
-                <devicePort tagName="BT A2DP Out" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-                <devicePort tagName="BT A2DP Headphones" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_HEADPHONES" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-                <devicePort tagName="BT A2DP Speaker" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_SPEAKER" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
                 <devicePort tagName="USB Device Out" type="AUDIO_DEVICE_OUT_USB_DEVICE" role="sink"/>
                 <devicePort tagName="USB Headset Out" type="AUDIO_DEVICE_OUT_USB_HEADSET" role="sink"/>
 
@@ -210,15 +198,8 @@
                        sources="voice_tx,incall_music_uplink"/>
                 <route type="mix" sink="primary input"
                        sources="Built-In Mic,Built-In Back Mic,BT SCO Headset Mic,FM Tuner,Aux Device In,USB Device In,USB Headset In,Telephony Rx"/>
-
                 <route type="mix" sink="mmap_no_irq_in"
                        sources="Built-In Mic,Built-In Back Mic,USB Device In,USB Headset In"/>
-                <route type="mix" sink="BT A2DP Out"
-                       sources="primary output,deep_buffer,fast,raw,compressed_offload"/>
-                <route type="mix" sink="BT A2DP Headphones"
-                       sources="primary output,deep_buffer,fast,raw,compressed_offload"/>
-                <route type="mix" sink="BT A2DP Speaker"
-                       sources="primary output,deep_buffer,fast,raw,compressed_offload"/>
                 <route type="mix" sink="hifi_input" sources="USB Device In,USB Headset In" />
             </routes>
 
