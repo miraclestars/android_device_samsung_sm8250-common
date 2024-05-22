@@ -199,3 +199,6 @@ vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
 
 # Wifi
 wifi.aware.interface=wifi-aware0
+
+# Zygote
+zygote.critical_window.minute=10
