@@ -180,7 +180,7 @@ on boot
     chown system radio /sys/class/sensors/light_sensor/read_copr
     chown system radio /sys/class/sensors/light_sensor/boled_enable
     chown system radio /sys/class/sensors/light_sensor/hallic_info
-    chown system radio /sys/class/sensors/light_sensor/lcd_onoff
+    chown system system /sys/class/sensors/light_sensor/lcd_onoff
     chown system radio /sys/class/sensors/light_sensor/sensorhub_ddi_spi_check
     chown system radio /sys/class/sensors/light_sensor/light_cal
     chown system radio /sys/class/sensors/light_sensor/set_aod_rect
