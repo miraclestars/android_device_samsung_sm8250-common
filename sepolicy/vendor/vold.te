@@ -3,9 +3,7 @@ allow vold {
     apk_data_file
     dumplog_data_file
     fota_data_file
-    keydata_data_file
     keyfota_data_file
-    keyrefuge_data_file
     sec_data_file
     system_data_file
     users_system_data_file
@@ -17,9 +15,7 @@ allow vold {
     apk_data_file
     dumplog_data_file
     fota_data_file
-    keydata_data_file
     keyfota_data_file
-    keyrefuge_data_file
     sec_data_file
     users_system_data_file
 }:file create_file_perms;
@@ -36,8 +32,6 @@ allow vold wifi_data_file:dir rw_dir_perms;
 allow vold wifi_data_file:file rw_file_perms;
 
 allow vold {
-    keydata_block_device
-    keyrefuge_block_device
     param_block_device
     steady_block_device
     vendor_gpt_block_device

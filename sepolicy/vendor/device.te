@@ -4,8 +4,6 @@ type dqmdbg_block_device, dev_type;
 type dsp_block_device, dev_type;
 type efs_block_device, dev_type;
 type firmware_block_device, dev_type;
-type keydata_block_device, dev_type;
-type keyrefuge_block_device, dev_type;
 type nad_refer_block_device, dev_type;
 type omr_block_device, dev_type;
 type param_block_device, dev_type;
