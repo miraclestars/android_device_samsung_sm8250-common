@@ -114,11 +114,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.cas@1.2-service
 
-# CGroups
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/cgroups.json:$(TARGET_COPY_OUT_SYSTEM)/etc/cgroups.json \
-    $(COMMON_PATH)/configs/task_profiles.json:$(TARGET_COPY_OUT_SYSTEM)/etc/task_profiles.json
-
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images_vendor
