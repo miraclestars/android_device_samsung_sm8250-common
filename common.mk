@@ -507,7 +507,8 @@ PRODUCT_PACKAGES += \
     libxml2
 
 PRODUCT_PACKAGES += \
-    secril_config_svc
+    secril_config_svc \
+    sehradiomanager
 
 # Sensors
 PRODUCT_PACKAGES += \
