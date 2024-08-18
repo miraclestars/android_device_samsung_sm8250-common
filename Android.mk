@@ -174,12 +174,6 @@ $(CNE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@rm -rf $@
 	$(hide) ln -sf /vendor/lib64/$(notdir $@) $@
 
-WIFI_FIRMWARE_SYMLINKS := $(TARGET_OUT_VENDOR)/firmware/wlan/qca_cld
-$(WIFI_FIRMWARE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "Creating wifi firmware symlinks: $@"
-	@mkdir -p $@
-	$(hide) ln -sf /vendor/etc/wifi/WCNSS_qcom_cfg.ini $@/WCNSS_qcom_cfg.ini
-
 ALL_DEFAULT_INSTALLED_MODULES += \
     $(RFS_APQ_GNSS_SYMLINKS) \
     $(RFS_MDM_ADSP_SYMLINKS) \
@@ -193,7 +187,6 @@ ALL_DEFAULT_INSTALLED_MODULES += \
     $(RFS_MSM_SLPI_SYMLINKS) \
     $(EGL_32_SYMLINKS) \
     $(EGL_64_SYMLINKS) \
-    $(CNE_SYMLINKS) \
-    $(WIFI_FIRMWARE_SYMLINKS)
+    $(CNE_SYMLINKS)
 
 endif
