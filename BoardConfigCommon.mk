@@ -70,6 +70,7 @@ SOONG_CONFIG_samsungCameraVars_needs_sec_reserved_field := true
 SOONG_CONFIG_samsungCameraVars_extra_ids := 52
 
 # Compatibility Matrix
+DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 DEVICE_MATRIX_FILE += $(COMMON_PATH)/configs/compatibility_matrix.xml
 
 # Display
