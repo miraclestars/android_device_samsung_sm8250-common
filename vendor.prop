@@ -189,7 +189,7 @@ ro.vendor.nfc.support.uicc=true
 ro.vendor.extension_library=libqti-perfd-client.so
 
 # Power HAL
-vendor.powerhal.disp.idle_support=false
+vendor.powerhal.disp.idle_support=true
 
 # RIL
 persist.vendor.radio.atfwd.start=true
