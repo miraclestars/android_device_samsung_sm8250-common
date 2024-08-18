@@ -156,6 +156,9 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
 # HIDL Manifest
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest.xml
 
+# Include
+$(call soong_config_set,samsungVars,target_specific_header_path,$(COMMON_PATH)/include)
+
 # Kernel: config
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/samsung/sm8250

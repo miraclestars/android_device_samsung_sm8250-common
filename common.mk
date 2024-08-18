@@ -259,7 +259,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light-service.samsung.sm8250 \
+    android.hardware.light-service.samsung \
     lights.kona
 
 # LiveDisplay
