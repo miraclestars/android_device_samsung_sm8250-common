@@ -6,7 +6,6 @@
 /(vendor|system/vendor)/bin/vaultkeeperd        u:object_r:vaultkeeperd_exec:s0
 
 # Block devices
-/dev/block/platform/soc/1d84000.ufshc/by-name/bluetooth   u:object_r:vendor_modem_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/carrier     u:object_r:carrier_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/debug       u:object_r:debug_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/dqmdbg      u:object_r:dqmdbg_block_device:s0
