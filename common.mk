@@ -101,8 +101,8 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.metadata-V1-ndk.vendor \
     android.hardware.camera.provider-V1-ndk.vendor \
     android.hardware.camera.provider@2.5-legacy.samsung \
-    android.hardware.camera.provider@2.5-service_64.samsung \
     android.hardware.camera.provider@2.7.vendor \
+    android.hardware.camera.provider-service.samsung \
     libcamera2ndk_vendor \
     libgrallocusage.vendor \
     libgui_vendor \
