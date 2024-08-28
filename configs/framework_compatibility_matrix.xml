@@ -111,6 +111,13 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.memtrack</name>
+        <interface>
+            <name>IMemtrack</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl" optional="true">
         <name>android.hardware.neuralnetworks</name>
         <version>1.3</version>
