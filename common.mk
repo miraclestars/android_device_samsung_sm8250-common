@@ -401,6 +401,7 @@ PRODUCT_PACKAGES += \
     android.hardware.power-V2-ndk_platform.vendor \
     android.hardware.power@1.2.vendor:64 \
     android.hardware.power-service.pixel-libperfmgr \
+    libqti-perfd-client \
     vendor.qti.hardware.perf@2.3.vendor
 
 PRODUCT_COPY_FILES += \
@@ -510,6 +511,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(COMMON_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
+    hardware/qcom-caf/common/libqti-perfd-client \
     hardware/samsung
 
 # SoundTrigger
