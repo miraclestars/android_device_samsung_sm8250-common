@@ -147,6 +147,9 @@ vendor.display.idle_time=0
 vendor.display.use_smooth_motion=0
 vendor.gralloc.disable_ubwc=0
 
+# DRM
+drm.service.enabled=true
+
 # Factory Reset Protection
 ro.frp.pst=/dev/block/persistent
 
