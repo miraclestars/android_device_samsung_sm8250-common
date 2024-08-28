@@ -48,11 +48,6 @@
         <fqname>@4.0::IKeymasterDevice/strongbox</fqname>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.media.c2</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IComponentStore/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.media.omx</name>
         <transport>hwbinder</transport>
         <fqname>@1.0::IOmx/default</fqname>

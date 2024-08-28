@@ -220,8 +220,6 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.usb(@[0-9].[0-9])?-service\.samsung                              u:object_r:hal_usb_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator(@[0-9].[0-9])?-service\.samsung                         u:object_r:hal_vibrator_default_exec:s0
 
-/(vendor|system/vendor)/bin/hw/samsung\.software\.media\.c2@[0-9]\.[0-9]-service                                   u:object_r:mediacodec_exec:s0
-
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.fastcharge@[0-9]\.[0-9]-service\.samsung                           u:object_r:hal_lineage_fastcharge_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@[0-9]\.[0-9]-service\.samsung-qcom                     u:object_r:hal_lineage_livedisplay_sysfs_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.powershare@[0-9]\.[0-9]-service\.samsung                           u:object_r:hal_lineage_powershare_default_exec:s0

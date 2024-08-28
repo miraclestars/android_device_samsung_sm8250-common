@@ -266,8 +266,7 @@ PRODUCT_PACKAGES += \
 # Media
 PRODUCT_PACKAGES += \
     libavservices_minijail \
-    libavservices_minijail.vendor \
-    libavservices_minijail_vendor
+    libavservices_minijail.vendor
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2.xml \
@@ -318,9 +317,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 
 # OMX
 PRODUCT_PACKAGES += \
-    android.hardware.media.c2@1.2.vendor \
-    libcodec2_hidl@1.2.vendor \
-    libcodec2_vndk.vendor \
     libmm-omxcore \
     libOmxAacEnc \
     libOmxAmrEnc \
@@ -330,7 +326,6 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
-    libstagefright_bufferpool@2.0.1.vendor \
     libstagefrighthw
 
 # Overlays
