@@ -214,6 +214,9 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl:64 \
     android.hardware.gatekeeper@1.0-service
 
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/init/android.hardware.gatekeeper@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gatekeeper@1.0-service.rc
+
 # GNSS
 PRODUCT_PACKAGES += \
     android.hardware.gnss-V2-ndk.vendor \

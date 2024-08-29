@@ -34,7 +34,6 @@
         <name>android.hardware.gatekeeper</name>
         <transport>hwbinder</transport>
         <fqname>@1.0::IGatekeeper/default</fqname>
-        <fqname>@1.0::IGatekeeper/mdfpp</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.ir</name>
