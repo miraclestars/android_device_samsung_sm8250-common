@@ -475,6 +475,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
+# Add common definitions for Samsung Qualcomm
+$(call inherit-product, $(COMMON_PATH)/rfs_symlinks.mk)
+
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio-V1-ndk.vendor \
